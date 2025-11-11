@@ -1,10 +1,12 @@
 stages: [auth, build, deploy]
 
-# 안전한 기본값(콜론 포함 문자는 항상 따옴표)
+# Cloud Run 서비스명은 변수로 관리
 variables:
   SERVICE_NAME: 'hyperflow-works'
+  # 이미지 경로 (Artifact Registry)
   IMAGE: '${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${GCP_AR_REPO}/${SERVICE_NAME}:${CI_COMMIT_SHA}'
 
+# 1) GitLab OIDC 토큰 → WIF로 교환하여 gcloud 로그인 (키 파일 불필요)
 auth:
   stage: auth
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
@@ -12,15 +14,15 @@ auth:
     GITLAB_OIDC_TOKEN:
       aud: 'https://gitlab.com'
   script:
-    # 기본 확인
-    - 'test -n "${GCP_WIF_PROVIDER}" || (echo "GCP_WIF_PROVIDER empty" && exit 1)'
-    - 'test -n "${GCP_SERVICE_ACCOUNT}" || (echo "GCP_SERVICE_ACCOUNT empty" && exit 1)'
-    - 'test -n "${GITLAB_OIDC_TOKEN}" || (echo "GITLAB_OIDC_TOKEN empty" && exit 1)'
-    - echo "OIDC token length: ${#GITLAB_OIDC_TOKEN}"
-    - echo -n "$GITLAB_OIDC_TOKEN" > /tmp/oidc_token
-
-    # WIF 설정 파일 생성
     - |
+      # 기본 확인
+      test -n "${GCP_WIF_PROVIDER}" || (echo "GCP_WIF_PROVIDER empty" && exit 1)
+      test -n "${GCP_SERVICE_ACCOUNT}" || (echo "GCP_SERVICE_ACCOUNT empty" && exit 1)
+      test -n "${GITLAB_OIDC_TOKEN}" || (echo "GITLAB_OIDC_TOKEN empty" && exit 1)
+      echo "OIDC token length: ${#GITLAB_OIDC_TOKEN}"
+      echo -n "$GITLAB_OIDC_TOKEN" > /tmp/oidc_token
+
+      # WIF 설정 파일 생성
       cat > /tmp/wif.json <<EOF
       {
         "type": "external_account",
@@ -32,52 +34,70 @@ auth:
       }
       EOF
 
-    # 인증 설정
-    - export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/wif.json
-    - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/wif.json
-    - gcloud auth login --cred-file=/tmp/wif.json --no-launch-browser --quiet
-    - gcloud config set project "${GCP_PROJECT_ID}"
-    - gcloud auth list
+      # 인증 설정
+      export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/wif.json
+      export GOOGLE_APPLICATION_CREDENTIALS=/tmp/wif.json
+      gcloud auth login --cred-file=/tmp/wif.json --no-launch-browser --quiet
+      gcloud config set project "${GCP_PROJECT_ID}"
+      gcloud auth list
   artifacts:
     paths:
       - /tmp/wif.json
       - /tmp/oidc_token
     expire_in: '1h'
 
+# 2) Cloud Build가 Docker 이미지를 빌드하고 Artifact Registry로 푸시
+#    (docker:dind 불필요, Runner에 Docker 없어도 됨)
 build:
   stage: build
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
-  needs: ['auth']
+  needs:
+    - job: auth
+      artifacts: true
   script:
-    # Dockerfile 빌드 (또는 --pack 사용 가능)
-    - gcloud builds submit --tag "${IMAGE}" .
-  artifacts:
-    reports:
-      dotenv: build.env
-  after_script:
-    - echo "IMAGE=${IMAGE}" >> build.env
+    - |
+      # 인증 정보 복원 (auth job의 artifacts)
+      export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/wif.json
+      export GOOGLE_APPLICATION_CREDENTIALS=/tmp/wif.json
+      gcloud config set project "${GCP_PROJECT_ID}"
+
+      # Docker 이미지 빌드 및 푸시
+      gcloud builds submit --tag "${IMAGE}" .
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
 
+# 3) Cloud Run 배포
 deploy:
   stage: deploy
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
-  needs: ['build']
+  needs:
+    - job: auth
+      artifacts: true
+    - job: build
+      artifacts: false
   script:
-    - source build.env
-    - gcloud run deploy "${SERVICE_NAME}" \
-      --image "${IMAGE}" \
-      --region "${GCP_REGION}" \
-      --platform managed \
-      --allow-unauthenticated \
-      --service-account "${GCP_SERVICE_ACCOUNT}" \
-      --memory "512Mi" \
-      --cpu "1" \
-      --port "3000"
-    - gcloud run services describe "${SERVICE_NAME}" \
-      --region "${GCP_REGION}" \
-      --format='value(status.url)'
+    - |
+      # 인증 정보 복원 (auth job의 artifacts)
+      export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/wif.json
+      export GOOGLE_APPLICATION_CREDENTIALS=/tmp/wif.json
+      gcloud config set project "${GCP_PROJECT_ID}"
+
+      # Cloud Run 배포
+      gcloud run deploy "${SERVICE_NAME}" \
+        --image "${IMAGE}" \
+        --region "${GCP_REGION}" \
+        --platform managed \
+        --allow-unauthenticated \
+        --service-account "${GCP_SERVICE_ACCOUNT}" \
+        --memory "512Mi" \
+        --cpu "1" \
+        --port "3000"
+
+      # 서비스 URL 출력
+      gcloud run services describe "${SERVICE_NAME}" \
+        --region "${GCP_REGION}" \
+        --format='value(status.url)'
   environment:
-    name: 'production'
+    name: production
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
