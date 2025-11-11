@@ -205,8 +205,6 @@ hyperflow-works/
 ├── setup-gitlab-gcp.sh        # GCP setup automation script
 ├── convert-images-to-avif.sh  # Image conversion utility
 ├── DEPLOYMENT.md              # Detailed deployment guide
-├── WIF_SETUP_GUIDE.md         # Workload Identity Federation setup
-├── WIF_QUICK_START.md         # Quick WIF setup reference
 ├── package.json                # Root package.json (pnpm workspace)
 ├── pnpm-lock.yaml              # pnpm lock file
 ├── pnpm-workspace.yaml         # pnpm workspace configuration
