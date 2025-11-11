@@ -1,0 +1,215 @@
+.pricing-modal .ant-modal-content {
+  background: #1f1d2b;
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-modal .ant-modal-body {
+  padding: 0;
+}
+
+.pricing-modal .ant-modal-mask {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.pricing-modal-content {
+  position: relative;
+  padding: 60px 40px 40px;
+  background: #1f1d2b;
+  color: #ececec;
+}
+
+.pricing-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  color: #ececec;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.pricing-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.pricing-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #ececec !important;
+  margin-bottom: 16px !important;
+}
+
+.pricing-description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(236, 236, 236, 0.9) !important;
+  margin-bottom: 0 !important;
+}
+
+.pricing-cards {
+  margin-top: 40px;
+}
+
+.pricing-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 32px;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 24px rgba(155, 193, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card-popular {
+  background: linear-gradient(180deg, rgba(155, 81, 224, 0.2) 0%, rgba(48, 129, 237, 0.1) 100%);
+  border: 2px solid rgba(155, 81, 224, 0.5);
+  box-shadow: 0px 4px 20px rgba(155, 81, 224, 0.3);
+}
+
+.pricing-card-popular:hover {
+  box-shadow: 0px 8px 32px rgba(155, 81, 224, 0.4);
+  border-color: rgba(155, 81, 224, 0.7);
+}
+
+.pricing-card-header {
+  margin-bottom: 24px;
+}
+
+.pricing-card-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #ececec !important;
+  margin-bottom: 8px !important;
+}
+
+.pricing-card-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #ececec !important;
+  margin-bottom: 0 !important;
+}
+
+.pricing-card-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 24px 0;
+}
+
+.pricing-card-features {
+  margin-bottom: 32px;
+  min-height: 200px;
+}
+
+.pricing-feature-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.pricing-feature-icon {
+  color: #56b0ff;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pricing-feature-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(236, 236, 236, 0.9);
+}
+
+.pricing-card-button {
+  margin-top: auto;
+  height: 48px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.pricing-card-button.ant-btn-primary {
+  background: linear-gradient(126deg, #9b51e0 2%, #3081ed 100%);
+  border: none;
+}
+
+.pricing-card-button.ant-btn-primary:hover {
+  background: linear-gradient(126deg, #8b41d0 2%, #2071dd 100%);
+}
+
+.pricing-card-button.ant-btn-default {
+  background: #ececec;
+  color: #1f1d2b;
+  border: none;
+}
+
+.pricing-card-button.ant-btn-default:hover {
+  background: #ffffff;
+  color: #1f1d2b;
+}
+
+/* 모달 내부 Ant Design 컴포넌트 텍스트 색상 */
+.pricing-modal .ant-typography,
+.pricing-modal .ant-card,
+.pricing-modal .ant-card-body {
+  color: #ececec !important;
+}
+
+.pricing-modal .ant-typography h1,
+.pricing-modal .ant-typography h2,
+.pricing-modal .ant-typography h3,
+.pricing-modal .ant-typography h4,
+.pricing-modal .ant-typography h5,
+.pricing-modal .ant-typography h6 {
+  color: #ececec !important;
+}
+
+.pricing-modal .ant-typography p {
+  color: rgba(236, 236, 236, 0.9) !important;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .pricing-modal-content {
+    padding: 40px 20px 20px;
+  }
+
+  .pricing-title {
+    font-size: 36px;
+  }
+
+  .pricing-description {
+    font-size: 16px;
+  }
+
+  .pricing-card {
+    padding: 24px;
+  }
+}
+

@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "Produkt",
+    "pricing": "Cennik",
+    "blog": "Blog",
+    "support": "Wsparcie",
+    "login": "Zaloguj się"
+  },
+  "hero": {
+    "tagline": "Zintegrowana platforma do budowania potężnych rozwiązań AI bez kodu",
+    "title": "Ukończ swój przepływ pracy AI\nbez złożonego kodowania.",
+    "description": "Połącz różne LLM i twórz, wdrażaj chatboty za jednym razem.\nKażdy może tworzyć AI za pomocą interfejsu przeciągania i upuszczania HyperFlow AI.",
+    "cta": "Rozpocznij"
+  },
+  "features": {
+    "intro": {
+      "text": "Pracuj szybko i elastycznie od rozwoju bez kodu do testów w czasie rzeczywistym i uruchomienia usługi",
+      "title": "HyperFlow automatyzuje każdy proces rozwoju AI"
+    },
+    "sectionTitle": "Unikalne mocne strony HyperFlow AI, platformy rozwoju nowej generacji",
+    "cards": {
+      "dragDrop": {
+        "title": "Przepływ pracy przeciągania i upuszczania",
+        "description": "Projektuj przepływy AI, łącząc węzły za pomocą intuicyjnego interfejsu. Złożoną logikę można zaimplementować za pomocą przeciągania i upuszczania, pozwalając szybko budować wysokiej jakości aplikacje AI bez kodowania."
+      },
+      "ragChatbot": {
+        "title": "Łatwy chatbot RAG z wbudowanym",
+        "description": "Użyj wstępnie zbudowanych szablonów HyperFlow, aby zbudować kompletnego opartego na wiedzy chatbot AI tylko z przesyłaniem dokumentów i połączeniami bazy danych."
+      },
+      "multimodal": {
+        "title": "Wielowymiarowe wsparcie multimodalne",
+        "description": "Rozszerz możliwości AI, przetwarzając różne formy danych, w tym tekst, obrazy, audio, PDF i więcej."
+      },
+      "deployment": {
+        "title": "Natychmiastowe wdrożenie jednym kliknięciem",
+        "description": "Wdróż usługi AI natychmiast jednym kliknięciem. Bez złożonej konfiguracji środowiska wszystko od rozwoju do uruchomienia jest połączone w czasie rzeczywistym."
+      },
+      "noCode": {
+        "title": "Skalowalne środowisko no-code",
+        "description": "Buduj szybko za pomocą no-code i dodawaj niestandardowy kod w razie potrzeby. Hybrydowe środowisko HyperFlow zapewnia pełną kontrolę i elastyczność."
+      },
+      "security": {
+        "title": "Bezpieczeństwo na poziomie przedsiębiorstwa",
+        "description": "HyperFlow zapewnia bezpieczeństwo na poziomie przedsiębiorstwa. Zarejestruj klucze APT z uprawnieniami administratora i ustaw szczegółowe uprawnienia dostępu dla każdego projektu w celu zwiększenia bezpieczeństwa."
+      }
+    }
+  },
+  "llm": {
+    "title": "Swobodnie wykorzystuj różne LLM obsługiwane przez HyperFlow AI, aby ukończyć własne AI"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Przepływ cykliczny",
+      "description": "Wspiera strukturę automatycznej pętli uczenia, w której AI uczy się z wyników i dostosowuje dane wejściowe. Automatycznie powtarza proces test-modyfikacja-poprawa, implementując ewolucyjne środowisko rozwoju z ciągłą optymalizacją."
+    },
+    "superNode": {
+      "title": "02 Super węzeł",
+      "description": "Super węzły HyperFlow nie są powiązane z określonymi interfejsami API lub platformami, pozwalając na ponowne wykorzystanie przepływów bez ich odtwarzania przy wprowadzaniu nowych technologii lub zmianie dostawców. Zapewnia to szybsze i bardziej elastyczne środowisko rozwoju."
+    },
+    "processData": {
+      "title": "03 Integracja procesu i danych",
+      "description": "HyperFlow integruje multimodalne przepływy danych i przepływy pracy procesów w jednym systemie. Przechowuje również kontekst na każdym etapie poprzez funkcjonalność pamięci przepływu, umożliwiając odwoływanie się do poprzednich wyników lub stanów danych."
+    },
+    "dualEngine": {
+      "title": "04 Podwójny silnik wykonawczy",
+      "description": "HyperFlow działa identycznie zarówno w środowiskach testowych IDE, jak i rzeczywistych środowiskach produkcyjnych. Deweloperzy mogą wdrażać eksperymentalne przepływy bezpośrednio do produkcji bez oddzielnego procesu przejścia, umożliwiając budowę przepływów pracy AI, które łamią granice między rozwojem a wdrożeniem."
+    },
+    "assetStore": {
+      "title": "05 Zintegrowany sklep zasobów",
+      "description": "HyperFlow zintegrował wszystkie niezbędne narzędzia do rozwoju w jednym miejscu. Ponownie wykorzystuj przepływy i węzły przez Asset Store i ukończ wszystko od projektu do wdrożenia i zarządzania zautomatyzowanego w jednym kroku przez Chatbot i DevOps."
+    }
+  },
+  "superNodeSection": {
+    "title": "Automatyzuj złożone zadania AI za pomocą zintegrowanych super węzłów",
+    "cardTitle": "Super węzeł, który łączy wiele usług w jedną",
+    "cardDescription": "Super węzeł HyperFlow to elastyczny silnik abstrakcji, który kontroluje wszystkie usługi przez jeden interfejs.",
+    "button": "Zbadaj super węzeł"
+  },
+  "workflow": {
+    "title": "Rozpoczęcie pracy z HyperFlow AI",
+    "subtitle": "Trzy kroki wystarczą bez złożonego kodowania. Twój pomysł staje się usługą.",
+    "steps": {
+      "dataConnection": {
+        "title": "Połączenie danych",
+        "description": "Prześlij dokumenty lub połącz się z danymi, aby utworzyć bazę wiedzy dla usług AI."
+      },
+      "workflowDesign": {
+        "title": "Projekt przepływu pracy",
+        "description": "Projektuj przepływy pracy AI za pomocą intuicyjnego interfejsu przeciągania i upuszczania."
+      },
+      "deployManage": {
+        "title": "Wdrażanie i zarządzanie",
+        "description": "Osadź w różnych formach, takich jak chatboty i integracje API, i wdrażaj oraz zarządzaj jednym kliknięciem."
+      }
+    }
+  },
+  "templates": {
+    "title": "Stwórz wszystko, co możesz sobie wyobrazić",
+    "subtitle": "Twórz aplikacje AI dostosowane do różnych branż i celów. Buduj niestandardowe przepływy pracy i narzędzia, które rozwiązują prawdziwe problemy.",
+    "documentSearch": {
+      "title": "Wyszukiwanie i podsumowanie dokumentów",
+      "description": "Zbuduj system AI, który szybko znajduje i podsumowuje niezbędne informacje z dużych ilości dokumentów.",
+      "features": {
+        "instantSearch": "Natychmiastowe wyszukiwanie",
+        "knowledgeRef": "Referencja wiedzy",
+        "fileFormats": "Różne formaty plików",
+        "autoSummary": "Automatyczne podsumowanie"
+      },
+      "button": "Zobacz szablon"
+    },
+    "customerService": {
+      "title": "Chatbot obsługi klienta",
+      "description": "Zbuduj chatbot, który zapewnia wsparcie klienta 24/7, aby zwiększyć satysfakcję klienta i zmniejszyć koszty operacyjne.",
+      "features": {
+        "autoResponse": "Automatyczna odpowiedź 24/7",
+        "faqAuto": "Automatyczne przetwarzanie FAQ",
+        "humanConnect": "Połączenie z agentem ludzkim",
+        "autoSummary": "Automatyczne podsumowanie"
+      },
+      "button": "Zobacz szablon"
+    },
+    "personalized": {
+      "title": "Spersonalizowany system rekomendacji",
+      "description": "Stwórz własne AI, które analizuje preferencje użytkowników i wzorce zachowań, aby zapewnić spersonalizowane rekomendacje.",
+      "features": {
+        "realtimeAnalysis": "Analiza w czasie rzeczywistym",
+        "behaviorPattern": "Uczenie wzorców zachowań",
+        "knowledgeLearning": "Uczenie wiedzy",
+        "personalized": "Spersonalizowane rekomendacje"
+      },
+      "button": "Zobacz szablon"
+    },
+    "contentGeneration": {
+      "title": "Narzędzie generowania treści",
+      "description": "Opracuj narzędzie AI, które automatycznie generuje posty na blogu, kopie marketingowe i treści w mediach społecznościowych.",
+      "features": {
+        "autoWriting": "Automatyczne pisanie",
+        "seoOptimization": "Optymalizacja SEO",
+        "variousStyles": "Różne style",
+        "brandTone": "Ton i sposób marki"
+      },
+      "button": "Zobacz szablon"
+    }
+  },
+  "lowContent": {
+    "title": "Prowadź innowacje w erze AI z HyperFlow AI",
+    "text": "Era AI już się rozpoczęła. HyperFlow będzie silnikiem, który przyspieszy tę zmianę i połączy Twoją wyobraźnię z biznesem."
+  },
+  "footer": {
+    "tagline": "Zintegrowana platforma do budowania potężnych rozwiązań AI bez kodu",
+    "copyright": "© 2025 Mirinae Technologies Inc. Wszelkie prawa zastrzeżone."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Proszę wprowadzić swój ID.",
+      "password": "Proszę wprowadzić hasło"
+    },
+    "link": {
+      "signIn": "Zarejestruj się",
+      "findPassword": "Odzyskaj hasło"
+    },
+    "button": {
+      "login": "Zaloguj się",
+      "google": "Zaloguj się przez Google"
+    },
+    "divider": {
+      "text": "Lub zaloguj się przez e-mail"
+    },
+    "warning": {
+      "enterCredentials": "Proszę wprowadzić swój ID i hasło."
+    },
+    "success": "Logowanie udane!",
+    "successGoogle": "Logowanie Google udane!",
+    "info": {
+      "googleLogin": "Próba logowania Google..."
+    },
+    "error": {
+      "google": "Logowanie Google nie powiodło się."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Biblioteka",
+      "knowledgeBases": "Baza wiedzy"
+    },
+    "filter": {
+      "all": "Wszystkie",
+      "favorites": "Ulubione"
+    },
+    "share": {
+      "title": "Udostępnij HyperFlow zespołowi",
+      "subtitle": "Otrzymaj 500 kredytów"
+    },
+    "input": {
+      "title": "Jak mogę Ci dzisiaj pomóc?",
+      "placeholder": "Jak mogę Ci dzisiaj pomóc?"
+    },
+    "media": {
+      "image": "Obraz",
+      "video": "Wideo",
+      "audio": "Audio"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Agent, który utworzyłem"
+    },
+    "emptyState": "Brak przykładów"
+  },
+  "library": {
+    "title": "Moja biblioteka",
+    "description": "Zarządzaj i wdrażaj swoje chatboty zbudowane z agentów i wykresów przepływu",
+    "table": {
+      "name": "Nazwa",
+      "memo": "Notatka",
+      "deploymentDate": "Data wdrożenia",
+      "access": "Dostęp",
+      "status": "Status",
+      "deploy": "Wdróż"
+    },
+    "moveToFlowgraph": "Przenieś do Flowgraph"
+  },
+  "knowledgeBase": {
+    "title": "Baza wiedzy",
+    "description": "HyperFlow zarządza i modyfikuje bazę wiedzy, aby zapewnić zoptymalizowane odpowiedzi zgodnie z potrzebami i preferencjami użytkownika, oraz obsługuje funkcjonalność RAG.",
+    "uploadText": "Proszę wybrać plik do przesłania"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "sidebar": {
+      "settings": "Ustawienia",
+      "usage": "Użycie",
+      "connectors": "Złącza",
+      "getHelp": "Uzyskaj pomoc"
+    },
+    "language": "Język",
+    "mode": "Tryb",
+    "mode.light": "Jasny",
+    "mode.dark": "Ciemny",
+    "manageCookies": "Zarządzaj ciasteczkami",
+    "manage": "Zarządzaj",
+    "goToHyperFlow": "Przejdź do HyperFlow"
+  }
+}

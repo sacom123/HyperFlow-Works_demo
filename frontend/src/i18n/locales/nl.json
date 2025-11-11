@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "Product",
+    "pricing": "Prijzen",
+    "blog": "Blog",
+    "support": "Ondersteuning",
+    "login": "Inloggen"
+  },
+  "hero": {
+    "tagline": "Een geïntegreerd platform voor het bouwen van krachtige AI-oplossingen zonder code",
+    "title": "Voltooi uw AI-workflow\nzonder complexe codering.",
+    "description": "Combineer verschillende LLM's en bouw, implementeer chatbots in één keer.\nIedereen kan AI maken met de drag-and-drop interface van HyperFlow AI.",
+    "cta": "Aan de slag"
+  },
+  "features": {
+    "intro": {
+      "text": "Werk snel en flexibel van no-code ontwikkeling tot real-time testen en service lancering",
+      "title": "HyperFlow automatiseert elk proces van AI-ontwikkeling"
+    },
+    "sectionTitle": "Unieke sterke punten van HyperFlow AI, het ontwikkelingsplatform van de volgende generatie",
+    "cards": {
+      "dragDrop": {
+        "title": "Drag-and-drop workflow",
+        "description": "Ontwerp AI-flows door knooppunten te verbinden met een intuïtieve interface. Complexe logica kan worden geïmplementeerd met alleen drag-and-drop, waardoor u snel hoogwaardige AI-applicaties kunt bouwen zonder te coderen."
+      },
+      "ragChatbot": {
+        "title": "Eenvoudige RAG-chatbot met ingebouwd",
+        "description": "Gebruik de vooraf gebouwde sjablonen van HyperFlow om een complete kennisgebaseerde AI-chatbot te bouwen met alleen document uploads en databaseverbindingen."
+      },
+      "multimodal": {
+        "title": "Multidimensionale multimodale ondersteuning",
+        "description": "Breid AI-mogelijkheden uit door verschillende vormen van gegevens te verwerken, waaronder tekst, afbeeldingen, audio, PDF's en meer."
+      },
+      "deployment": {
+        "title": "Directe implementatie met één klik",
+        "description": "Implementeer AI-services direct met één klik. Zonder complexe omgevingsconfiguratie wordt alles van ontwikkeling tot lancering in real-time verbonden."
+      },
+      "noCode": {
+        "title": "Schaalbaar no-code omgeving",
+        "description": "Bouw snel met no-code en voeg aangepaste code toe wanneer dat nodig is. De hybride omgeving van HyperFlow biedt volledige controle en flexibiliteit."
+      },
+      "security": {
+        "title": "Bedrijfsniveau beveiliging",
+        "description": "HyperFlow biedt beveiliging op bedrijfsniveau. Registreer APT-sleutels met beheerdersrechten en stel gedetailleerde toegangsrechten per project in voor verbeterde beveiliging."
+      }
+    }
+  },
+  "llm": {
+    "title": "Gebruik vrijelijk verschillende LLM's die worden ondersteund door HyperFlow AI om uw eigen AI te voltooien"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Circulaire flow",
+      "description": "Ondersteunt een automatische leerlusstructuur waarbij AI leert van resultaten en inputs aanpast. Herhaalt automatisch het test-wijzig-verbeter proces, implementeert een evolutionaire ontwikkelomgeving met continue optimalisatie."
+    },
+    "superNode": {
+      "title": "02 Super knooppunt",
+      "description": "De super knooppunten van HyperFlow zijn niet gebonden aan specifieke API's of platforms, waardoor u flows kunt hergebruiken zonder ze opnieuw te maken bij het introduceren van nieuwe technologieën of het wijzigen van leveranciers. Dit biedt een snellere en flexibelere ontwikkelomgeving."
+    },
+    "processData": {
+      "title": "03 Proces- en gegevensintegratie",
+      "description": "HyperFlow integreert multimodale gegevensstromen en procesworkflows binnen een enkel systeem. Het slaat ook context op in elke fase via flow memory functionaliteit, waardoor verwijzingen naar eerdere resultaten of gegevensstatussen mogelijk zijn."
+    },
+    "dualEngine": {
+      "title": "04 Dubbele uitvoeringsmotor",
+      "description": "HyperFlow draait identiek in zowel IDE-testomgevingen als werkelijke productieomgevingen. Ontwikkelaars kunnen experimentele flows direct naar productie implementeren zonder een apart overgangsproces, waardoor AI-workflowconstructie mogelijk is die de grenzen tussen ontwikkeling en implementatie doorbreekt."
+    },
+    "assetStore": {
+      "title": "05 Geïntegreerde asset store",
+      "description": "HyperFlow heeft alle essentiële tools voor ontwikkeling op één plek geïntegreerd. Hergebruik flows en knooppunten via Asset Store, en voltooi alles van ontwerp tot implementatie en geautomatiseerd beheer in één stap via Chatbot en DevOps."
+    }
+  },
+  "superNodeSection": {
+    "title": "Automatiseer complexe AI-taken met geïntegreerde super knooppunten",
+    "cardTitle": "Super knooppunt dat meerdere services in één verbindt",
+    "cardDescription": "Het super knooppunt van HyperFlow is een flexibele abstractie-engine die alle services via een enkele interface beheert.",
+    "button": "Verken super knooppunt"
+  },
+  "workflow": {
+    "title": "Aan de slag met HyperFlow AI",
+    "subtitle": "Drie stappen zijn voldoende zonder complexe codering. Uw idee wordt een service.",
+    "steps": {
+      "dataConnection": {
+        "title": "Gegevensverbinding",
+        "description": "Upload documenten of maak verbinding met gegevens om een kennisbank voor AI-services te maken."
+      },
+      "workflowDesign": {
+        "title": "Workflow-ontwerp",
+        "description": "Ontwerp AI-workflows met een intuïtieve drag-and-drop interface."
+      },
+      "deployManage": {
+        "title": "Implementeren en beheren",
+        "description": "Embed in verschillende vormen zoals chatbots en API-integraties, en implementeer en beheer met één klik."
+      }
+    }
+  },
+  "templates": {
+    "title": "Maak alles wat u zich kunt voorstellen",
+    "subtitle": "Maak AI-applicaties op maat voor verschillende industrieën en doeleinden. Bouw aangepaste workflows en tools die echte problemen oplossen.",
+    "documentSearch": {
+      "title": "Document zoeken en samenvatten",
+      "description": "Bouw een AI-systeem dat snel de benodigde informatie uit grote hoeveelheden documenten vindt en samenvat.",
+      "features": {
+        "instantSearch": "Direct zoeken",
+        "knowledgeRef": "Kennisreferentie",
+        "fileFormats": "Verschillende bestandsformaten",
+        "autoSummary": "Automatische samenvatting"
+      },
+      "button": "Bekijk sjabloon"
+    },
+    "customerService": {
+      "title": "Klantenservice chatbot",
+      "description": "Bouw een chatbot die 24/7 klantenondersteuning biedt om klanttevredenheid te verhogen en operationele kosten te verlagen.",
+      "features": {
+        "autoResponse": "24/7 automatische reactie",
+        "faqAuto": "Automatische FAQ-verwerking",
+        "humanConnect": "Menselijke agent verbinding",
+        "autoSummary": "Automatische samenvatting"
+      },
+      "button": "Bekijk sjabloon"
+    },
+    "personalized": {
+      "title": "Gepersonaliseerd aanbevelingssysteem",
+      "description": "Maak uw eigen AI die gebruikersvoorkeuren en gedragspatronen analyseert om gepersonaliseerde aanbevelingen te bieden.",
+      "features": {
+        "realtimeAnalysis": "Real-time analyse",
+        "behaviorPattern": "Gedragspatroon leren",
+        "knowledgeLearning": "Kennis leren",
+        "personalized": "Gepersonaliseerde aanbevelingen"
+      },
+      "button": "Bekijk sjabloon"
+    },
+    "contentGeneration": {
+      "title": "Content generatie tool",
+      "description": "Ontwikkel een AI-tool die automatisch blogposts, marketingteksten en social media-inhoud genereert.",
+      "features": {
+        "autoWriting": "Automatisch schrijven",
+        "seoOptimization": "SEO-optimalisatie",
+        "variousStyles": "Verschillende stijlen",
+        "brandTone": "Merktoon en manier"
+      },
+      "button": "Bekijk sjabloon"
+    }
+  },
+  "lowContent": {
+    "title": "Leid innovatie in het AI-tijdperk met HyperFlow AI",
+    "text": "Het AI-tijdperk is al begonnen. HyperFlow zal de motor zijn die die verandering versnelt en uw verbeelding met het bedrijf verbindt."
+  },
+  "footer": {
+    "tagline": "Een geïntegreerd platform voor het bouwen van krachtige AI-oplossingen zonder code",
+    "copyright": "© 2025 Mirinae Technologies Inc. Alle rechten voorbehouden."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Voer uw ID in.",
+      "password": "Voer uw wachtwoord in"
+    },
+    "link": {
+      "signIn": "Registreren",
+      "findPassword": "Wachtwoord herstellen"
+    },
+    "button": {
+      "login": "Inloggen",
+      "google": "Inloggen met Google"
+    },
+    "divider": {
+      "text": "Of inloggen met e-mail"
+    },
+    "warning": {
+      "enterCredentials": "Voer uw ID en wachtwoord in."
+    },
+    "success": "Inloggen gelukt!",
+    "successGoogle": "Google-inloggen gelukt!",
+    "info": {
+      "googleLogin": "Poging tot Google-inloggen..."
+    },
+    "error": {
+      "google": "Google-inloggen mislukt."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Bibliotheek",
+      "knowledgeBases": "Kennisbank"
+    },
+    "filter": {
+      "all": "Alle",
+      "favorites": "Favorieten"
+    },
+    "share": {
+      "title": "Deel HyperFlow met een team",
+      "subtitle": "Ontvang 500 credits"
+    },
+    "input": {
+      "title": "Hoe kan ik u vandaag helpen?",
+      "placeholder": "Hoe kan ik u vandaag helpen?"
+    },
+    "media": {
+      "image": "Afbeelding",
+      "video": "Video",
+      "audio": "Audio"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Agent die ik heb gemaakt"
+    },
+    "emptyState": "Geen voorbeelden"
+  },
+  "library": {
+    "title": "Mijn bibliotheek",
+    "description": "Beheer en implementeer uw chatbots die zijn gebouwd met agenten en stroomdiagrammen",
+    "table": {
+      "name": "Naam",
+      "memo": "Memo",
+      "deploymentDate": "Implementatiedatum",
+      "access": "Toegang",
+      "status": "Status",
+      "deploy": "Implementeren"
+    },
+    "moveToFlowgraph": "Verplaats naar Flowgraph"
+  },
+  "knowledgeBase": {
+    "title": "Kennisbank",
+    "description": "HyperFlow beheert en wijzigt de kennisdatabase om geoptimaliseerde antwoorden te bieden volgens gebruikersbehoeften en voorkeuren, en ondersteunt RAG-functionaliteit.",
+    "uploadText": "Selecteer een bestand om te uploaden"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "sidebar": {
+      "settings": "Instellingen",
+      "usage": "Gebruik",
+      "connectors": "Connectors",
+      "getHelp": "Hulp krijgen"
+    },
+    "language": "Taal",
+    "mode": "Modus",
+    "mode.light": "Licht",
+    "mode.dark": "Donker",
+    "manageCookies": "Cookies beheren",
+    "manage": "Beheren",
+    "goToHyperFlow": "Ga naar HyperFlow"
+  }
+}

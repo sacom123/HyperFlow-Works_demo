@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "product": "Product",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "support": "Support",
+    "login": "Login"
+  },
+  "hero": {
+    "tagline": "An integrated platform for building powerful AI solutions without code",
+    "title": "Complete your AI workflow\nwithout complex coding.",
+    "description": "Combine various LLMs and build, deploy chatbots all at once.\nAnyone can create AI with HyperFlow AI's drag-and-drop interface.",
+    "cta": "Get Started"
+  },
+  "features": {
+    "intro": {
+      "text": "Work quickly and flexibly from no-code development to real-time testing and service launch",
+      "title": "HyperFlow automates every process of AI development"
+    },
+    "sectionTitle": "Unique strengths of HyperFlow AI, the next-generation development platform",
+    "cards": {
+      "dragDrop": {
+        "title": "Drag and Drop Workflow",
+        "description": "Design AI flows by connecting nodes with an intuitive interface. Complex logic can be implemented with just drag and drop, allowing you to quickly build high-quality AI applications without coding."
+      },
+      "ragChatbot": {
+        "title": "Easy RAG Chatbot with Built-In",
+        "description": "Use HyperFlow's pre-built templates to build a complete knowledge-based AI chatbot with just document uploads and database connections."
+      },
+      "multimodal": {
+        "title": "Multidimensional Multimodal Support",
+        "description": "Expand AI capabilities by processing various forms of data including text, images, audio, PDFs, and more."
+      },
+      "deployment": {
+        "title": "Instant Deployment with One Click",
+        "description": "Deploy AI services instantly with a single click. Without complex environment setup, everything from development to launch is connected in real-time."
+      },
+      "noCode": {
+        "title": "Scalable No-Code Environment",
+        "description": "Build quickly with no-code, and add custom code when needed. HyperFlow's hybrid environment provides complete control and flexibility."
+      },
+      "security": {
+        "title": "Enterprise-Level Security",
+        "description": "HyperFlow provides enterprise-level security. Register APT keys with admin privileges and set granular access permissions per project for enhanced security."
+      }
+    }
+  },
+  "llm": {
+    "title": "Freely utilize various LLMs supported by HyperFlow AI to complete your own AI"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Circular Flow",
+      "description": "Supports an automatic learning loop structure where AI learns from results and adjusts inputs. Automatically repeats the test-modify-improve process, implementing an evolutionary development environment with continuous optimization."
+    },
+    "superNode": {
+      "title": "02 Super Node",
+      "description": "HyperFlow's super nodes are not tied to specific APIs or platforms, allowing you to reuse flows without recreating them when introducing new technologies or changing vendors. This provides a faster and more flexible development environment."
+    },
+    "processData": {
+      "title": "03 Process & Data Integration",
+      "description": "HyperFlow integrates multimodal data flows and process workflows within a single system. It also stores context at each stage through flow memory functionality, allowing reference to previous results or data states."
+    },
+    "dualEngine": {
+      "title": "04 Dual Execution Engine",
+      "description": "HyperFlow runs identically in both IDE test environments and actual production environments. Developers can deploy experimental flows directly to production without a separate transition process, enabling AI workflow construction that breaks down the boundaries between development and deployment."
+    },
+    "assetStore": {
+      "title": "05 Integrated Asset Store",
+      "description": "HyperFlow has integrated all essential tools for development in one place. Reuse flows and nodes through Asset Store, and complete everything from design to deployment and automated management in one stop through Chatbot and DevOps."
+    }
+  },
+  "superNodeSection": {
+    "title": "Automate complex AI tasks with integrated super nodes",
+    "cardTitle": "Super Node that connects multiple services into one",
+    "cardDescription": "HyperFlow's super node is a flexible abstraction engine that controls all services through a single interface.",
+    "button": "Explore Super Node"
+  },
+  "workflow": {
+    "title": "Getting Started with HyperFlow AI",
+    "subtitle": "Three steps are enough without complex coding. Your idea becomes a service.",
+    "steps": {
+      "dataConnection": {
+        "title": "Data Connection",
+        "description": "Upload documents or connect to data to create a knowledge base for AI services."
+      },
+      "workflowDesign": {
+        "title": "Workflow Design",
+        "description": "Design AI workflows with an intuitive drag-and-drop interface."
+      },
+      "deployManage": {
+        "title": "Deploy & Manage",
+        "description": "Embed in various forms such as chatbots and API integrations, and deploy and manage with one click."
+      }
+    }
+  },
+  "templates": {
+    "title": "Create everything you can imagine",
+    "subtitle": "Create AI applications tailored to various industries and purposes. Build customized workflows and tools that solve real problems.",
+    "documentSearch": {
+      "title": "Document Search & Summary",
+      "description": "Build an AI system that quickly finds and summarizes necessary information from large volumes of documents.",
+      "features": {
+        "instantSearch": "Instant Search",
+        "knowledgeRef": "Knowledge Reference",
+        "fileFormats": "Various File Formats",
+        "autoSummary": "Auto Summary"
+      },
+      "button": "View Template"
+    },
+    "customerService": {
+      "title": "Customer Service Chatbot",
+      "description": "Build a chatbot that provides 24/7 customer support to increase customer satisfaction and reduce operating costs.",
+      "features": {
+        "autoResponse": "24/7 Auto Response",
+        "faqAuto": "FAQ Auto Processing",
+        "humanConnect": "Human Agent Connection",
+        "autoSummary": "Auto Summary"
+      },
+      "button": "View Template"
+    },
+    "personalized": {
+      "title": "Personalized Recommendation System",
+      "description": "Create your own AI that analyzes user preferences and behavior patterns to provide personalized recommendations.",
+      "features": {
+        "realtimeAnalysis": "Real-time Analysis",
+        "behaviorPattern": "Behavior Pattern Learning",
+        "knowledgeLearning": "Knowledge Learning",
+        "personalized": "Personalized Recommendations"
+      },
+      "button": "View Template"
+    },
+    "contentGeneration": {
+      "title": "Content Generation Tool",
+      "description": "Develop an AI tool that automatically generates blog posts, marketing copy, and social media content.",
+      "features": {
+        "autoWriting": "Auto Writing",
+        "seoOptimization": "SEO Optimization",
+        "variousStyles": "Various Styles",
+        "brandTone": "Brand Tone & Manner"
+      },
+      "button": "View Template"
+    }
+  },
+  "lowContent": {
+    "title": "Lead innovation in the AI era with HyperFlow AI",
+    "text": "The AI era has already begun. HyperFlow will be the engine that accelerates that change and connects your imagination to business."
+  },
+  "footer": {
+    "tagline": "An integrated platform for building powerful AI solutions without code",
+    "copyright": "© 2025 Mirinae Technologies Inc. All rights reserved."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Please enter your ID.",
+      "password": "Please enter your Password"
+    },
+    "link": {
+      "signIn": "Sign in",
+      "findPassword": "Find Password"
+    },
+    "button": {
+      "login": "Log in",
+      "google": "Log in with Google"
+    },
+    "divider": {
+      "text": "Or log in with email"
+    },
+    "warning": {
+      "enterCredentials": "Please enter your ID and password."
+    },
+    "success": "Login successful!",
+    "successGoogle": "Google login successful!",
+    "info": {
+      "googleLogin": "Attempting Google login..."
+    },
+    "error": {
+      "google": "Google login failed."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Library",
+      "knowledgeBases": "Knowledge bases"
+    },
+    "filter": {
+      "all": "All",
+      "favorites": "Favorites"
+    },
+    "share": {
+      "title": "Share HyperFlow with a Team",
+      "subtitle": "Receive 500 Credits"
+    },
+    "input": {
+      "title": "How may I help you today?",
+      "placeholder": "How may I help you today?"
+    },
+    "media": {
+      "image": "Image",
+      "video": "Video",
+      "audio": "Audio"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Agent I created"
+    },
+    "emptyState": "No examples"
+  },
+  "library": {
+    "title": "My library",
+    "description": "Manage and deploy your chatbots built with agents and flow graphs",
+    "table": {
+      "name": "Name",
+      "memo": "Memo",
+      "deploymentDate": "Deployment Date",
+      "access": "Access",
+      "status": "Status",
+      "deploy": "Deploy"
+    },
+    "moveToFlowgraph": "Move to Flowgraph"
+  },
+  "knowledgeBase": {
+    "title": "Knowledge Base",
+    "description": "HyperFlow manages and modifies the knowledge DB to provide optimized answers according to user needs and preferences, and supports RAG functionality.",
+    "uploadText": "Please select a file to upload"
+  },
+  "settings": {
+    "title": "Settings",
+    "sidebar": {
+      "settings": "Settings",
+      "usage": "Usage",
+      "connectors": "Connectors",
+      "getHelp": "Get help"
+    },
+    "language": "Language",
+    "mode": "Mode",
+    "mode.light": "Light",
+    "mode.dark": "Dark",
+    "manageCookies": "Manage Cookies",
+    "manage": "Manage",
+    "goToHyperFlow": "Go to HyperFlow"
+  }
+}
+

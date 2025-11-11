@@ -1,0 +1,107 @@
+# GCP Cloud Build configuration
+# Build: Vite
+# Test: Vitest
+# Deploy Server: GCP Cloud Run
+
+steps:
+  # Install pnpm
+  - name: 'node:18-alpine'
+    entrypoint: 'npm'
+    args: ['install', '-g', 'pnpm@10.10.0']
+    id: 'install-pnpm'
+
+  # Install dependencies
+  - name: 'node:18-alpine'
+    entrypoint: 'pnpm'
+    args: ['install', '--frozen-lockfile']
+    id: 'install-dependencies'
+    waitFor: ['install-pnpm']
+
+  # Build frontend with Vite
+  - name: 'node:18-alpine'
+    entrypoint: 'pnpm'
+    args: ['--filter', 'frontend', 'build']
+    id: 'build-frontend'
+    waitFor: ['install-dependencies']
+
+  # Build backend
+  - name: 'node:18-alpine'
+    entrypoint: 'pnpm'
+    args: ['--filter', 'backend', 'build']
+    id: 'build-backend'
+    waitFor: ['install-dependencies']
+
+  # Run tests
+  - name: 'node:18-alpine'
+    entrypoint: 'pnpm'
+    args: ['test', '--run']
+    id: 'run-tests'
+    waitFor: ['build-frontend', 'build-backend']
+
+  # Build Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$SHORT_SHA',
+      '-t', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:latest',
+      '.'
+    ]
+    id: 'build-docker-image'
+    waitFor: ['run-tests']
+
+  # Push Docker image to GCR
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$SHORT_SHA']
+    id: 'push-docker-image'
+    waitFor: ['build-docker-image']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:latest']
+    id: 'push-docker-image-latest'
+    waitFor: ['build-docker-image']
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - '$_SERVICE_NAME'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$SHORT_SHA'
+      - '--platform'
+      - 'managed'
+      - '--region'
+      - '$_REGION'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '3000'
+      - '--memory'
+      - '512Mi'
+      - '--cpu'
+      - '1'
+      - '--max-instances'
+      - '10'
+      - '--set-env-vars'
+      - 'NODE_ENV=production'
+    id: 'deploy-cloud-run'
+    waitFor: ['push-docker-image']
+
+# Substitutions
+substitutions:
+  _SERVICE_NAME: 'hyperflow-works'
+  _REGION: 'asia-northeast3'  # Seoul region
+
+# Options
+options:
+  machineType: 'N1_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+
+# Timeout
+timeout: '1200s'
+
+# Images to be pushed to the Container Registry
+images:
+  - 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$SHORT_SHA'
+  - 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:latest'
+

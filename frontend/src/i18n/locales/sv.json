@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "Produkt",
+    "pricing": "Prissättning",
+    "blog": "Blogg",
+    "support": "Support",
+    "login": "Logga in"
+  },
+  "hero": {
+    "tagline": "En integrerad plattform för att bygga kraftfulla AI-lösningar utan kod",
+    "title": "Slutför ditt AI-arbetsflöde\nutan komplex kodning.",
+    "description": "Kombinera olika LLM:er och bygg, distribuera chatbotar på en gång.\nVem som helst kan skapa AI med HyperFlow AI:s drag-and-drop-gränssnitt.",
+    "cta": "Kom igång"
+  },
+  "features": {
+    "intro": {
+      "text": "Arbeta snabbt och flexibelt från no-code-utveckling till realtidstestning och servicelansering",
+      "title": "HyperFlow automatiserar varje process av AI-utveckling"
+    },
+    "sectionTitle": "Unika styrkor hos HyperFlow AI, nästa generations utvecklingsplattform",
+    "cards": {
+      "dragDrop": {
+        "title": "Drag-and-drop-arbetsflöde",
+        "description": "Designa AI-flöden genom att koppla noder med ett intuitivt gränssnitt. Komplex logik kan implementeras med bara drag-and-drop, vilket gör att du snabbt kan bygga högkvalitativa AI-applikationer utan kodning."
+      },
+      "ragChatbot": {
+        "title": "Enkel RAG-chatbot med inbyggd",
+        "description": "Använd HyperFlows förbyggda mallar för att bygga en komplett kunskapsbaserad AI-chatbot med bara dokumentuppladdningar och databasanslutningar."
+      },
+      "multimodal": {
+        "title": "Multidimensionellt multimodalt stöd",
+        "description": "Utöka AI-kapaciteter genom att bearbeta olika former av data, inklusive text, bilder, ljud, PDF:er och mer."
+      },
+      "deployment": {
+        "title": "Omedelbar distribution med ett klick",
+        "description": "Distribuera AI-tjänster omedelbart med ett klick. Utan komplex miljökonfiguration är allt från utveckling till lansering anslutet i realtid."
+      },
+      "noCode": {
+        "title": "Skalbar no-code miljö",
+        "description": "Bygg snabbt med no-code och lägg till anpassad kod vid behov. HyperFlows hybridmiljö ger full kontroll och flexibilitet."
+      },
+      "security": {
+        "title": "Företagsnivå säkerhet",
+        "description": "HyperFlow tillhandahåller säkerhet på företagsnivå. Registrera APT-nycklar med administratörsbehörigheter och ställ in detaljerade åtkomstbehörigheter per projekt för förbättrad säkerhet."
+      }
+    }
+  },
+  "llm": {
+    "title": "Använd fritt olika LLM:er som stöds av HyperFlow AI för att slutföra din egen AI"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Cirkulärt flöde",
+      "description": "Stöder en automatisk inlärningsloopstruktur där AI lär sig från resultat och justerar indata. Upprepar automatiskt test-modifiera-förbättra-processen, implementerar en evolutionär utvecklingsmiljö med kontinuerlig optimering."
+    },
+    "superNode": {
+      "title": "02 Supernod",
+      "description": "HyperFlows supernoder är inte bundna till specifika API:er eller plattformar, vilket gör att du kan återanvända flöden utan att återskapa dem när du introducerar nya teknologier eller byter leverantör. Detta ger en snabbare och mer flexibel utvecklingsmiljö."
+    },
+    "processData": {
+      "title": "03 Process- och dataintegration",
+      "description": "HyperFlow integrerar multimodala dataflöden och processarbetsflöden inom ett enda system. Den lagrar också kontext i varje steg genom flödesminnesfunktionalitet, vilket möjliggör referenser till tidigare resultat eller datatillstånd."
+    },
+    "dualEngine": {
+      "title": "04 Dubbel körningsmotor",
+      "description": "HyperFlow körs identiskt i både IDE-testmiljöer och faktiska produktionsmiljöer. Utvecklare kan distribuera experimentella flöden direkt till produktion utan en separat övergångsprocess, vilket möjliggör AI-arbetsflödeskonstruktion som bryter ner gränserna mellan utveckling och distribution."
+    },
+    "assetStore": {
+      "title": "05 Integrerad tillgångsbutik",
+      "description": "HyperFlow har integrerat alla väsentliga verktyg för utveckling på ett ställe. Återanvänd flöden och noder via Asset Store, och slutför allt från design till distribution och automatiserad hantering i ett steg via Chatbot och DevOps."
+    }
+  },
+  "superNodeSection": {
+    "title": "Automatisera komplexa AI-uppgifter med integrerade supernoder",
+    "cardTitle": "Supernod som ansluter flera tjänster till en",
+    "cardDescription": "HyperFlows supernod är en flexibel abstraktionsmotor som styr alla tjänster via ett enda gränssnitt.",
+    "button": "Utforska supernod"
+  },
+  "workflow": {
+    "title": "Komma igång med HyperFlow AI",
+    "subtitle": "Tre steg räcker utan komplex kodning. Din idé blir en tjänst.",
+    "steps": {
+      "dataConnection": {
+        "title": "Dataanslutning",
+        "description": "Ladda upp dokument eller anslut till data för att skapa en kunskapsbas för AI-tjänster."
+      },
+      "workflowDesign": {
+        "title": "Arbetsflödesdesign",
+        "description": "Designa AI-arbetsflöden med ett intuitivt drag-and-drop-gränssnitt."
+      },
+      "deployManage": {
+        "title": "Distribuera och hantera",
+        "description": "Bädda in i olika former som chatbotar och API-integrationer, och distribuera och hantera med ett klick."
+      }
+    }
+  },
+  "templates": {
+    "title": "Skapa allt du kan föreställa dig",
+    "subtitle": "Skapa AI-applikationer anpassade för olika branscher och ändamål. Bygg anpassade arbetsflöden och verktyg som löser verkliga problem.",
+    "documentSearch": {
+      "title": "Dokumentsökning och sammanfattning",
+      "description": "Bygg ett AI-system som snabbt hittar och sammanfattar nödvändig information från stora volymer dokument.",
+      "features": {
+        "instantSearch": "Omedelbar sökning",
+        "knowledgeRef": "Kunskapsreferens",
+        "fileFormats": "Olika filformat",
+        "autoSummary": "Automatisk sammanfattning"
+      },
+      "button": "Visa mall"
+    },
+    "customerService": {
+      "title": "Kundtjänstchatbot",
+      "description": "Bygg en chatbot som ger 24/7-kundsupport för att öka kundnöjdheten och minska driftskostnaderna.",
+      "features": {
+        "autoResponse": "24/7 automatisk svar",
+        "faqAuto": "Automatisk FAQ-bearbetning",
+        "humanConnect": "Mänsklig agentanslutning",
+        "autoSummary": "Automatisk sammanfattning"
+      },
+      "button": "Visa mall"
+    },
+    "personalized": {
+      "title": "Personifierat rekommendationssystem",
+      "description": "Skapa din egen AI som analyserar användarpreferenser och beteendemönster för att ge personifierade rekommendationer.",
+      "features": {
+        "realtimeAnalysis": "Realtidsanalys",
+        "behaviorPattern": "Beteendemönsterinlärning",
+        "knowledgeLearning": "Kunskapsinlärning",
+        "personalized": "Personifierade rekommendationer"
+      },
+      "button": "Visa mall"
+    },
+    "contentGeneration": {
+      "title": "Verktyg för innehållsgenerering",
+      "description": "Utveckla ett AI-verktyg som automatiskt genererar blogginlägg, marknadsföringskopior och sociala medieinnehåll.",
+      "features": {
+        "autoWriting": "Automatisk skrivning",
+        "seoOptimization": "SEO-optimering",
+        "variousStyles": "Olika stilar",
+        "brandTone": "Varumärkets ton och sätt"
+      },
+      "button": "Visa mall"
+    }
+  },
+  "lowContent": {
+    "title": "Leda innovation i AI-eran med HyperFlow AI",
+    "text": "AI-eran har redan börjat. HyperFlow kommer att vara motorn som påskyndar den förändringen och kopplar din fantasi till affärer."
+  },
+  "footer": {
+    "tagline": "En integrerad plattform för att bygga kraftfulla AI-lösningar utan kod",
+    "copyright": "© 2025 Mirinae Technologies Inc. Alla rättigheter förbehållna."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Vänligen ange ditt ID.",
+      "password": "Vänligen ange ditt lösenord"
+    },
+    "link": {
+      "signIn": "Registrera",
+      "findPassword": "Återställ lösenord"
+    },
+    "button": {
+      "login": "Logga in",
+      "google": "Logga in med Google"
+    },
+    "divider": {
+      "text": "Eller logga in med e-post"
+    },
+    "warning": {
+      "enterCredentials": "Vänligen ange ditt ID och lösenord."
+    },
+    "success": "Inloggning lyckades!",
+    "successGoogle": "Google-inloggning lyckades!",
+    "info": {
+      "googleLogin": "Försöker logga in med Google..."
+    },
+    "error": {
+      "google": "Google-inloggning misslyckades."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Bibliotek",
+      "knowledgeBases": "Kunskapsbas"
+    },
+    "filter": {
+      "all": "Alla",
+      "favorites": "Favoriter"
+    },
+    "share": {
+      "title": "Dela HyperFlow med ett team",
+      "subtitle": "Få 500 poäng"
+    },
+    "input": {
+      "title": "Hur kan jag hjälpa dig idag?",
+      "placeholder": "Hur kan jag hjälpa dig idag?"
+    },
+    "media": {
+      "image": "Bild",
+      "video": "Video",
+      "audio": "Ljud"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Agent som jag skapade"
+    },
+    "emptyState": "Inga exempel"
+  },
+  "library": {
+    "title": "Min bibliotek",
+    "description": "Hantera och distribuera dina chatbots byggda med agenter och flödesdiagram",
+    "table": {
+      "name": "Namn",
+      "memo": "Memo",
+      "deploymentDate": "Distributionsdatum",
+      "access": "Åtkomst",
+      "status": "Status",
+      "deploy": "Distribuera"
+    },
+    "moveToFlowgraph": "Flytta till Flowgraph"
+  },
+  "knowledgeBase": {
+    "title": "Kunskapsbas",
+    "description": "HyperFlow hanterar och modifierar kunskapsdatabasen för att tillhandahålla optimerade svar enligt användarens behov och preferenser och stöder RAG-funktionalitet.",
+    "uploadText": "Vänligen välj en fil att ladda upp"
+  },
+  "settings": {
+    "title": "Inställningar",
+    "sidebar": {
+      "settings": "Inställningar",
+      "usage": "Användning",
+      "connectors": "Kontakter",
+      "getHelp": "Få hjälp"
+    },
+    "language": "Språk",
+    "mode": "Läge",
+    "mode.light": "Ljus",
+    "mode.dark": "Mörk",
+    "manageCookies": "Hantera cookies",
+    "manage": "Hantera",
+    "goToHyperFlow": "Gå till HyperFlow"
+  }
+}

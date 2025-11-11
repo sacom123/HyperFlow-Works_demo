@@ -1,0 +1,188 @@
+# Azure Pipelines configuration
+# Build: Vite
+# Test: Vitest
+# Deploy Server: Azure
+trigger:
+  branches:
+    include:
+      - main
+      - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  nodeVersion: '18.x'
+  pnpmVersion: '10.10.0'
+
+stages:
+  - stage: Build
+    displayName: 'Build Stage'
+    jobs:
+      - job: BuildFrontend
+        displayName: 'Build Frontend with Vite'
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+            displayName: 'Install Node.js'
+
+          - script: |
+              npm install -g pnpm@$(pnpmVersion)
+            displayName: 'Install pnpm'
+
+          - script: |
+              pnpm config set store-dir .pnpm-store
+              pnpm install --frozen-lockfile
+            displayName: 'Install dependencies'
+
+          - script: |
+              echo "Building frontend with Vite..."
+              pnpm --filter frontend build
+            displayName: 'Build Frontend (Vite)'
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: 'frontend/dist'
+              artifactName: 'frontend-dist'
+            displayName: 'Publish Frontend Artifacts'
+
+      - job: BuildBackend
+        displayName: 'Build Backend'
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+            displayName: 'Install Node.js'
+
+          - script: |
+              npm install -g pnpm@$(pnpmVersion)
+            displayName: 'Install pnpm'
+
+          - script: |
+              pnpm config set store-dir .pnpm-store
+              pnpm install --frozen-lockfile
+            displayName: 'Install dependencies'
+
+          - script: |
+              echo "Building backend..."
+              pnpm --filter backend build
+            displayName: 'Build Backend'
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: 'backend/dist'
+              artifactName: 'backend-dist'
+            displayName: 'Publish Backend Artifacts'
+
+  - stage: Test
+    displayName: 'Test Stage'
+    dependsOn: Build
+    jobs:
+      - job: TestFrontend
+        displayName: 'Test Frontend with Vitest'
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+            displayName: 'Install Node.js'
+
+          - script: |
+              npm install -g pnpm@$(pnpmVersion)
+            displayName: 'Install pnpm'
+
+          - script: |
+              pnpm config set store-dir .pnpm-store
+              pnpm install --frozen-lockfile
+            displayName: 'Install dependencies'
+
+          - script: |
+              echo "Running frontend tests with Vitest..."
+              pnpm --filter frontend test --run
+            displayName: 'Run Frontend Tests (Vitest)'
+
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: 'frontend/test-results.xml'
+              failTaskOnFailedTests: true
+            condition: always()
+            displayName: 'Publish Test Results'
+
+      - job: TestBackend
+        displayName: 'Test Backend with Vitest'
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+            displayName: 'Install Node.js'
+
+          - script: |
+              npm install -g pnpm@$(pnpmVersion)
+            displayName: 'Install pnpm'
+
+          - script: |
+              pnpm config set store-dir .pnpm-store
+              pnpm install --frozen-lockfile
+            displayName: 'Install dependencies'
+
+          - script: |
+              echo "Running backend tests with Vitest..."
+              pnpm --filter backend test --run
+            displayName: 'Run Backend Tests (Vitest)'
+
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: 'backend/test-results.xml'
+              failTaskOnFailedTests: true
+            condition: always()
+            displayName: 'Publish Test Results'
+
+  - stage: Deploy
+    displayName: 'Deploy to Azure'
+    dependsOn: Test
+    condition: succeeded()
+    jobs:
+      - deployment: DeployToAzure
+        displayName: 'Deploy to Azure Web App'
+        environment: 'production'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: frontend-dist
+                  displayName: 'Download Frontend Artifacts'
+
+                - download: current
+                  artifact: backend-dist
+                  displayName: 'Download Backend Artifacts'
+
+                - script: |
+                    echo "Preparing deployment package..."
+                    mkdir -p $(Build.ArtifactStagingDirectory)/deployment
+                    cp -r $(Pipeline.Workspace)/frontend-dist $(Build.ArtifactStagingDirectory)/deployment/frontend
+                    cp -r $(Pipeline.Workspace)/backend-dist $(Build.ArtifactStagingDirectory)/deployment/backend
+                    cp package.json $(Build.ArtifactStagingDirectory)/deployment/
+                    cp pnpm-lock.yaml $(Build.ArtifactStagingDirectory)/deployment/
+                    cp frontend/package.json $(Build.ArtifactStagingDirectory)/deployment/frontend/
+                    cp backend/package.json $(Build.ArtifactStagingDirectory)/deployment/backend/
+                  displayName: 'Prepare Deployment Package'
+
+                - task: ArchiveFiles@2
+                  inputs:
+                    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/deployment'
+                    includeRootFolder: false
+                    archiveType: 'zip'
+                    archiveFile: '$(Build.ArtifactStagingDirectory)/deployment.zip'
+                    replaceExistingArchive: true
+                  displayName: 'Create Deployment Archive'
+
+                - task: AzureWebApp@1
+                  inputs:
+                    azureSubscription: 'Azure-Service-Connection'
+                    appName: 'hyperflow-works'
+                    package: '$(Build.ArtifactStagingDirectory)/deployment.zip'
+                  displayName: 'Deploy to Azure Web App'
+

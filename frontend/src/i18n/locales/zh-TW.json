@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "產品",
+    "pricing": "定價",
+    "blog": "部落格",
+    "support": "支援",
+    "login": "登入"
+  },
+  "hero": {
+    "tagline": "無需程式碼即可建構強大AI解決方案的一體化平台",
+    "title": "無需複雜編碼\n即可完成您的AI工作流程。",
+    "description": "組合各種LLM，一次性完成從聊天機器人製作到部署。\n任何人都可以透過HyperFlow AI的拖放介面建立AI。",
+    "cta": "開始使用"
+  },
+  "features": {
+    "intro": {
+      "text": "從無程式碼開發到即時測試和服務發布，快速靈活地工作",
+      "title": "HyperFlow自動化AI開發的所有流程"
+    },
+    "sectionTitle": "下一代開發平台HyperFlow AI的獨特優勢",
+    "cards": {
+      "dragDrop": {
+        "title": "拖放工作流程",
+        "description": "透過直觀的介面連接節點來設計AI流程。複雜的邏輯也可以透過拖放來實現，讓您無需編碼即可快速建構高品質的AI應用程式。"
+      },
+      "ragChatbot": {
+        "title": "內建便捷RAG聊天機器人",
+        "description": "使用HyperFlow的預建構範本，只需上傳文件並連接資料庫即可建構完整的基於知識的AI聊天機器人。"
+      },
+      "multimodal": {
+        "title": "多維多模態支援",
+        "description": "透過處理包括文字、圖像、音訊、PDF等多種形式的資料來擴展AI應用範圍。"
+      },
+      "deployment": {
+        "title": "一鍵即時部署",
+        "description": "一鍵即可即時部署AI服務。無需複雜的環境配置，從開發到發布的一切都即時連接。"
+      },
+      "noCode": {
+        "title": "可擴展的無程式碼環境",
+        "description": "使用無程式碼快速建構，需要時新增自訂程式碼。HyperFlow的混合環境提供完全的控制和靈活性。"
+      },
+      "security": {
+        "title": "企業級安全",
+        "description": "HyperFlow提供企業級安全。使用管理員權限註冊APT金鑰，並為每個專案設定細粒度的存取權限以增強安全性。"
+      }
+    }
+  },
+  "llm": {
+    "title": "自由使用HyperFlow AI支援的各種LLM來完成您自己的AI"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 循環流程",
+      "description": "支援AI從結果中學習並調整輸入值的自動學習循環結構。自動重複測試-修改-改進過程，實現持續優化的進化型開發環境。"
+    },
+    "superNode": {
+      "title": "02 超級節點",
+      "description": "HyperFlow的超級節點不綁定特定API或平台，即使引入新技術或更換供應商，也無需重新建立流程即可重複使用。這提供了更快、更靈活的開發環境。"
+    },
+    "processData": {
+      "title": "03 流程與資料整合",
+      "description": "HyperFlow在單一系統內整合多模態資料流和流程工作流程。它還透過流程記憶體功能儲存每個階段的上下文，允許參照以前的結果或資料狀態。"
+    },
+    "dualEngine": {
+      "title": "04 雙執行引擎",
+      "description": "HyperFlow在IDE測試環境和實際生產環境中以相同方式執行。開發人員可以在沒有單獨轉換過程的情況下直接將實驗中的流程部署到生產環境，實現打破開發和部署邊界的AI工作流程建構。"
+    },
+    "assetStore": {
+      "title": "05 整合資產商店",
+      "description": "HyperFlow將所有開發所需的核心工具整合在一個地方。透過資產商店重複使用流程和節點，透過聊天機器人和DevOps一站式完成從設計到部署和自動化管理的所有工作。"
+    }
+  },
+  "superNodeSection": {
+    "title": "使用整合超級節點自動化複雜的AI任務",
+    "cardTitle": "將多個服務連接為一個的超級節點",
+    "cardDescription": "HyperFlow的超級節點是透過單一介面控制所有服務的靈活抽象引擎。",
+    "button": "探索超級節點"
+  },
+  "workflow": {
+    "title": "HyperFlow AI入門",
+    "subtitle": "無需複雜編碼，三個步驟就足夠了。您的想法很快就會成為服務。",
+    "steps": {
+      "dataConnection": {
+        "title": "資料連接",
+        "description": "上傳文件或連接資料，為AI服務建立知識庫。"
+      },
+      "workflowDesign": {
+        "title": "工作流程設計",
+        "description": "使用直觀的拖放介面設計AI工作流程。"
+      },
+      "deployManage": {
+        "title": "部署與管理",
+        "description": "以聊天機器人、API整合等多種形式嵌入，一鍵部署和管理。"
+      }
+    }
+  },
+  "templates": {
+    "title": "創造您能想像的一切",
+    "subtitle": "建立適合各種產業和用途的AI應用程式。建構解決實際問題的客製化工作流程和工具。",
+    "documentSearch": {
+      "title": "文件搜尋與摘要",
+      "description": "建構一個AI系統，能夠快速查找和總結大量文件中的必要資訊。",
+      "features": {
+        "instantSearch": "即時搜尋",
+        "knowledgeRef": "知識參考",
+        "fileFormats": "各種檔案格式",
+        "autoSummary": "自動摘要"
+      },
+      "button": "查看範本"
+    },
+    "customerService": {
+      "title": "客戶服務聊天機器人",
+      "description": "建構提供24/7客戶支援的聊天機器人，提高客戶滿意度並降低營運成本。",
+      "features": {
+        "autoResponse": "24/7自動回應",
+        "faqAuto": "FAQ自動處理",
+        "humanConnect": "人工客服連接",
+        "autoSummary": "自動摘要"
+      },
+      "button": "查看範本"
+    },
+    "personalized": {
+      "title": "個人化推薦系統",
+      "description": "建立您自己的AI，分析使用者偏好和行為模式以提供個人化推薦。",
+      "features": {
+        "realtimeAnalysis": "即時分析",
+        "behaviorPattern": "行為模式學習",
+        "knowledgeLearning": "知識學習",
+        "personalized": "個人化推薦"
+      },
+      "button": "查看範本"
+    },
+    "contentGeneration": {
+      "title": "內容產生工具",
+      "description": "開發一個AI工具，自動產生部落格文章、行銷文案和社群媒體內容。",
+      "features": {
+        "autoWriting": "自動寫作",
+        "seoOptimization": "SEO優化",
+        "variousStyles": "各種風格",
+        "brandTone": "品牌調性"
+      },
+      "button": "查看範本"
+    }
+  },
+  "lowContent": {
+    "title": "與HyperFlow AI一起引領AI時代的創新",
+    "text": "AI時代已經開始。HyperFlow將成為加速這一變化並將您的想像力與業務聯繫起來的引擎。"
+  },
+  "footer": {
+    "tagline": "無需程式碼即可建構強大AI解決方案的一體化平台",
+    "copyright": "© 2025 Mirinae Technologies Inc. 保留所有權利。"
+  },
+  "login": {
+    "placeholder": {
+      "id": "請輸入您的ID。",
+      "password": "請輸入您的密碼"
+    },
+    "link": {
+      "signIn": "註冊",
+      "findPassword": "找回密碼"
+    },
+    "button": {
+      "login": "登入",
+      "google": "使用Google登入"
+    },
+    "divider": {
+      "text": "或使用電子郵件登入"
+    },
+    "warning": {
+      "enterCredentials": "請輸入您的ID和密碼。"
+    },
+    "success": "登入成功！",
+    "successGoogle": "Google登入成功！",
+    "info": {
+      "googleLogin": "正在嘗試Google登入..."
+    },
+    "error": {
+      "google": "Google登入失敗。"
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "資料庫",
+      "knowledgeBases": "知識庫"
+    },
+    "filter": {
+      "all": "全部",
+      "favorites": "收藏"
+    },
+    "share": {
+      "title": "與團隊共享HyperFlow",
+      "subtitle": "獲得500積分"
+    },
+    "input": {
+      "title": "今天我能為您做些什麼？",
+      "placeholder": "今天我能為您做些什麼？"
+    },
+    "media": {
+      "image": "圖片",
+      "video": "影片",
+      "audio": "音訊"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "我建立的代理"
+    },
+    "emptyState": "無範例"
+  },
+  "library": {
+    "title": "我的資料庫",
+    "description": "管理和部署使用代理和流程圖構建的聊天機器人",
+    "table": {
+      "name": "名稱",
+      "memo": "備註",
+      "deploymentDate": "部署日期",
+      "access": "存取",
+      "status": "狀態",
+      "deploy": "部署"
+    },
+    "moveToFlowgraph": "移動到流程圖"
+  },
+  "knowledgeBase": {
+    "title": "知識庫",
+    "description": "HyperFlow管理和修改知識資料庫，根據使用者需求和偏好提供最佳化答案，並支援RAG功能。",
+    "uploadText": "請選擇要上傳的檔案"
+  },
+  "settings": {
+    "title": "設定",
+    "sidebar": {
+      "settings": "設定",
+      "usage": "使用量",
+      "connectors": "連接器",
+      "getHelp": "取得協助"
+    },
+    "language": "語言",
+    "mode": "模式",
+    "mode.light": "淺色",
+    "mode.dark": "深色",
+    "manageCookies": "管理 Cookie",
+    "manage": "管理",
+    "goToHyperFlow": "前往 HyperFlow"
+  }
+}

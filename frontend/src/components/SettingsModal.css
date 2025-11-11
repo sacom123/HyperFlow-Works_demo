@@ -1,0 +1,483 @@
+/* Settings Modal Overlay - 블러 배경 */
+.settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Settings Modal Container - Figma: width: 946px, height: 890px */
+.settings-modal-container {
+  width: 946px;
+  max-width: 90vw;
+  max-height: 90vh;
+  height: 890px;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Left Sidebar - Figma: width: 266px */
+.settings-modal-sidebar {
+  width: 266px;
+  min-width: 266px;
+  background: linear-gradient(180deg, rgba(9, 109, 217, 0.02) 0%, rgba(9, 109, 217, 0.04) 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-right: 0.5px solid #000000;
+}
+
+/* Sidebar Header - Logo */
+.settings-modal-sidebar-header {
+  padding: 34px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.settings-modal-logo {
+  width: 145px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Sidebar Menu */
+.settings-modal-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  flex: 1;
+  gap: 0;
+}
+
+.settings-modal-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 21px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4290000200271606em;
+  letter-spacing: 1.45%;
+  color: #171719;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.settings-modal-sidebar-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.settings-modal-sidebar-item.active {
+  background: rgba(37, 37, 37, 0.05);
+}
+
+.settings-modal-sidebar-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.settings-modal-sidebar-item svg.settings-modal-sidebar-icon {
+  stroke: currentColor;
+  fill: none;
+}
+
+/* Sidebar Divider */
+.settings-modal-sidebar-divider {
+  width: 254px;
+  height: 0;
+  border-top: 0.4px solid rgba(0, 0, 0, 0.7);
+  margin: 0 6px;
+}
+
+/* Sidebar Footer - Go to HyperFlow Button */
+.settings-modal-sidebar-footer {
+  padding: 0 23px 40px 23px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.settings-modal-go-to-button {
+  width: 225px;
+  height: 40px;
+  background: #1677FF;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4290000200271606em;
+  letter-spacing: 1.45%;
+  color: #ffffff;
+}
+
+.settings-modal-go-to-button:hover {
+  background: #0958d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22, 119, 255, 0.3);
+}
+
+.settings-modal-go-to-icon {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* Main Content Area */
+.settings-modal-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Modal Header */
+.settings-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 29px 34px;
+  position: relative;
+  border-bottom: 0.5px solid #000000;
+}
+
+.settings-modal-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4290000597635906em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  padding: 0;
+}
+
+.settings-modal-close-btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #45474B;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.settings-modal-close-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+.settings-modal-close-btn svg {
+  font-size: 24px;
+}
+
+/* Divider */
+.settings-modal-divider {
+  width: 100%;
+  height: 0;
+  border-top: 0.5px solid #000000;
+  margin: 0;
+}
+
+/* Modal Content */
+.settings-modal-content {
+  flex: 1;
+  padding: 69px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  overflow-y: auto;
+}
+
+/* Section */
+.settings-modal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings-modal-label {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4290000200271606em;
+  letter-spacing: 1.45%;
+  color: #171719;
+  margin: 0;
+  padding: 0;
+}
+
+/* Language Button - Figma: width: 281px, height: 63px */
+.settings-modal-language-button {
+  width: 281px;
+  height: 63px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.429000006781684em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.settings-modal-language-button:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.settings-modal-language-button span {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.settings-modal-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Mode Buttons */
+.settings-modal-mode-buttons {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+}
+
+.settings-modal-mode-button {
+  width: 75px;
+  height: 63px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.429000006781684em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.3);
+  padding: 16px 15px;
+  white-space: nowrap;
+}
+
+.settings-modal-mode-button:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.settings-modal-mode-button.active {
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* Cookies Section */
+.settings-modal-cookies-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.settings-modal-manage-button {
+  width: 101px;
+  height: 37px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4290000200271606em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 16px 15px;
+  white-space: nowrap;
+}
+
+.settings-modal-manage-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Language Dropdown */
+.settings-language-dropdown {
+  z-index: 10001;
+}
+
+.settings-language-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.429000006781684em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.settings-language-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.settings-language-item.active {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .settings-modal-container {
+    width: 90vw;
+    max-width: 946px;
+    height: 90vh;
+    max-height: 890px;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .settings-modal-sidebar {
+    width: 100%;
+    min-width: 100%;
+    border-right: none;
+    border-bottom: 0.5px solid #000000;
+  }
+
+  .settings-modal-sidebar-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0;
+  }
+
+  .settings-modal-sidebar-item {
+    min-width: fit-content;
+    white-space: nowrap;
+  }
+
+  .settings-modal-sidebar-divider {
+    display: none;
+  }
+
+  .settings-modal-sidebar-footer {
+    display: none;
+  }
+
+  .settings-modal-content {
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .settings-modal-language-button {
+    width: 100%;
+    max-width: 281px;
+  }
+
+  .settings-modal-cookies-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .settings-modal-container {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .settings-modal-header {
+    padding: 20px;
+  }
+
+  .settings-modal-content {
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .settings-modal-language-button {
+    width: 100%;
+  }
+
+  .settings-modal-mode-buttons {
+    width: 100%;
+  }
+
+  .settings-modal-mode-button {
+    flex: 1;
+  }
+}
+

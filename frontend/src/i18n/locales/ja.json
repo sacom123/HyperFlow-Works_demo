@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "製品",
+    "pricing": "価格",
+    "blog": "ブログ",
+    "support": "サポート",
+    "login": "ログイン"
+  },
+  "hero": {
+    "tagline": "コードなしで強力なAIソリューションを構築する統合プラットフォーム",
+    "title": "複雑なコーディングなしで\nAIワークフローを完成させましょう。",
+    "description": "様々なLLMを組み合わせ、チャットボットの作成からデプロイまで一度に。\nHyperFlow AIのドラッグアンドドロップインターフェースで誰でもAIを作成できます。",
+    "cta": "始める"
+  },
+  "features": {
+    "intro": {
+      "text": "ノーコード開発、リアルタイムテスト、サービスローンチまで迅速かつ柔軟に作業してください",
+      "title": "HyperFlowはAI開発の全プロセスを自動化します"
+    },
+    "sectionTitle": "次世代開発プラットフォームHyperFlow AI独自の強み",
+    "cards": {
+      "dragDrop": {
+        "title": "ドラッグアンドドロップワークフロー",
+        "description": "直感的なインターフェースでノードを接続してAIの流れを設計します。複雑なロジックもドラッグアンドドロップだけで実装でき、コーディングなしで高品質なAIアプリケーションを迅速に構築できます。"
+      },
+      "ragChatbot": {
+        "title": "Built-Inで簡単なRAGチャットボット",
+        "description": "HyperFlowの事前準備されたテンプレートを活用して、ドキュメントのアップロードとデータベース接続だけで完全な知識ベースAIチャットボットを構築できます。"
+      },
+      "multimodal": {
+        "title": "多次元マルチモーダルサポート",
+        "description": "テキストだけでなく、画像、オーディオ、PDFなど様々な形式のデータを処理し、AIの活用範囲を拡張します。"
+      },
+      "deployment": {
+        "title": "ワンクリックで即座にデプロイ",
+        "description": "ワンクリックでAIサービスを即座にデプロイできます。複雑な環境設定なしで、開発からローンチまでリアルタイムで接続されます。"
+      },
+      "noCode": {
+        "title": "拡張可能なノーコード環境",
+        "description": "ノーコードで迅速に構築し、必要なときに直接コードを追加できます。HyperFlowのハイブリッド環境は、完全な制御と柔軟性を提供します。"
+      },
+      "security": {
+        "title": "エンタープライズレベルの徹底したセキュリティ",
+        "description": "HyperFlowはエンタープライズレベルのセキュリティ環境を提供します。管理者権限でAPTキーを登録し、プロジェクトごとに細分化されたアクセス権限を設定できるため、セキュリティが強化されます。"
+      }
+    }
+  },
+  "llm": {
+    "title": "HyperFlow AIがサポートする様々なLLMを自由に活用して、あなただけのAIを完成させましょう"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 循環型フロー",
+      "description": "AIが結果を自ら学習し、入力値を調整する自動学習ループ構造をサポートします。テスト-修正-改善のプロセスを自動的に繰り返し、継続的な最適化が行われる進化型開発環境を実装します。"
+    },
+    "superNode": {
+      "title": "02 スーパーノード",
+      "description": "HyperFlowのスーパーノードは特定のAPIやプラットフォームに依存せず、新しい技術を導入したりベンダーを変更しても、フローを再作成する必要なく再利用できます。これにより、より迅速で柔軟な開発環境を提供します。"
+    },
+    "processData": {
+      "title": "03 プロセス・データ統合",
+      "description": "HyperFlowはマルチモーダルデータフローとプロセスワークフローを1つのシステム内で統合して動作させます。また、フローメモリ機能により各段階のコンテキストを保存し、以前の結果やデータ状態を参照できます。"
+    },
+    "dualEngine": {
+      "title": "04 デュアル実行エンジン",
+      "description": "HyperFlowはIDEテスト環境と実際の本番環境で同じように実行されます。開発者は実験中のフローを別の移行プロセスなしで直接本番環境にデプロイできます。これにより、開発とデプロイの境界を超えたAIワークフロー構築が可能になります。"
+    },
+    "assetStore": {
+      "title": "05 統合アセットストア",
+      "description": "HyperFlowは開発に必要な主要ツールを1つの場所に統合しました。Asset Storeでフローとノードを再利用し、ChatbotとDevOpsを通じて設計からデプロイ、自動化管理までワンストップで完成できます。"
+    }
+  },
+  "superNodeSection": {
+    "title": "統合型スーパーノードで複雑なAI作業を自動化",
+    "cardTitle": "複数のサービスを1つに接続するスーパーノード",
+    "cardDescription": "HyperFlowのスーパーノードは、単一インターフェースですべてのサービスを制御する柔軟な抽象化エンジンです。",
+    "button": "スーパーノードを見る"
+  },
+  "workflow": {
+    "title": "HyperFlow AIを始める",
+    "subtitle": "複雑なコーディングなしで、3つのステップで十分です。あなたのアイデアがすぐにサービスになります。",
+    "steps": {
+      "dataConnection": {
+        "title": "データ接続",
+        "description": "ドキュメントをアップロードするか、データに接続して、AIサービスのための知識ベースを作成します。"
+      },
+      "workflowDesign": {
+        "title": "ワークフロー設計",
+        "description": "直感的なドラッグアンドドロップインターフェースでAIワークフローを設計します。"
+      },
+      "deployManage": {
+        "title": "デプロイと管理",
+        "description": "チャットボット、API統合など様々な形式で埋め込み、ワンクリックでデプロイおよび管理できます。"
+      }
+    }
+  },
+  "templates": {
+    "title": "想像できるすべてのものを作成してください",
+    "subtitle": "様々な業界や用途に合わせたAIアプリケーションを作成してください。実際の問題を解決するカスタマイズされたワークフローとツールを構築できます。",
+    "documentSearch": {
+      "title": "ドキュメント検索と要約",
+      "description": "大量のドキュメントから必要な情報を迅速に見つけて要約するAIシステムを構築してください。",
+      "features": {
+        "instantSearch": "即座に検索",
+        "knowledgeRef": "知識参照",
+        "fileFormats": "様々なファイル形式",
+        "autoSummary": "自動要約"
+      },
+      "button": "テンプレートを見る"
+    },
+    "customerService": {
+      "title": "カスタマーサービスチャットボット",
+      "description": "24/7カスタマーサポートを提供するチャットボットを構築し、顧客満足度を向上させ、運営コストを削減してください。",
+      "features": {
+        "autoResponse": "24/7自動応答",
+        "faqAuto": "FAQ自動処理",
+        "humanConnect": "人間のエージェント接続",
+        "autoSummary": "自動要약"
+      },
+      "button": "テンプレートを見る"
+    },
+    "personalized": {
+      "title": "パーソナライズされた推奨システム",
+      "description": "ユーザーの好みと行動パターンを分析して、パーソナライズされた推奨を提供する独自のAIを作成してください。",
+      "features": {
+        "realtimeAnalysis": "リアルタイム分析",
+        "behaviorPattern": "行動パターン学習",
+        "knowledgeLearning": "知識学習",
+        "personalized": "パーソナライズされた推奨"
+      },
+      "button": "テンプレートを見る"
+    },
+    "contentGeneration": {
+      "title": "コンテンツ生成ツール",
+      "description": "ブログ投稿、マーケティングコピー、ソーシャルメディアコンテンツを自動生成するAIツールを開発してください。",
+      "features": {
+        "autoWriting": "自動書き込み",
+        "seoOptimization": "SEO最適化",
+        "variousStyles": "様々なスタイル",
+        "brandTone": "ブランドトーン＆マナー"
+      },
+      "button": "テンプレートを見る"
+    }
+  },
+  "lowContent": {
+    "title": "HyperFlow AIと共にAI時代の革新をリードしましょう",
+    "text": "AI時代はすでに始まっています。HyperFlowはその変化を加速し、あなたの想像をビジネスに結びつけるエンジンになるでしょう。"
+  },
+  "footer": {
+    "tagline": "コードなしで強力なAIソリューションを構築する統合プラットフォーム",
+    "copyright": "© 2025 Mirinae Technologies Inc. All rights reserved."
+  },
+  "login": {
+    "placeholder": {
+      "id": "IDを入力してください。",
+      "password": "パスワードを入力してください"
+    },
+    "link": {
+      "signIn": "サインアップ",
+      "findPassword": "パスワードを忘れた場合"
+    },
+    "button": {
+      "login": "ログイン",
+      "google": "Googleでログイン"
+    },
+    "divider": {
+      "text": "またはメールでログイン"
+    },
+    "warning": {
+      "enterCredentials": "IDとパスワードを入力してください。"
+    },
+    "success": "ログイン成功！",
+    "successGoogle": "Googleログイン成功！",
+    "info": {
+      "googleLogin": "Googleログインを試行しています..."
+    },
+    "error": {
+      "google": "Googleログインに失敗しました。"
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "ライブラリ",
+      "knowledgeBases": "ナレッジベース"
+    },
+    "filter": {
+      "all": "すべて",
+      "favorites": "お気に入り"
+    },
+    "share": {
+      "title": "チームとHyperFlowを共有",
+      "subtitle": "500クレジットを受け取る"
+    },
+    "input": {
+      "title": "今日は何をお手伝いできますか？",
+      "placeholder": "今日は何をお手伝いできますか？"
+    },
+    "media": {
+      "image": "画像",
+      "video": "動画",
+      "audio": "音声"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "作成したエージェント"
+    },
+    "emptyState": "事例なし"
+  },
+  "library": {
+    "title": "マイライブラリ",
+    "description": "エージェントとフログラフで構築したチャットボットを管理およびデプロイします",
+    "table": {
+      "name": "名前",
+      "memo": "メモ",
+      "deploymentDate": "デプロイ日",
+      "access": "アクセス",
+      "status": "ステータス",
+      "deploy": "デプロイ"
+    },
+    "moveToFlowgraph": "フログラフに移動"
+  },
+  "knowledgeBase": {
+    "title": "ナレッジベース",
+    "description": "HyperFlowは、ユーザーのニーズと好みに応じて最適化された回答を提供するために知識DBを管理および変更し、RAG機能をサポートします。",
+    "uploadText": "アップロードするファイルを選択してください"
+  },
+  "settings": {
+    "title": "設定",
+    "sidebar": {
+      "settings": "設定",
+      "usage": "使用量",
+      "connectors": "コネクタ",
+      "getHelp": "ヘルプ"
+    },
+    "language": "言語",
+    "mode": "モード",
+    "mode.light": "ライト",
+    "mode.dark": "ダーク",
+    "manageCookies": "Cookieの管理",
+    "manage": "管理",
+    "goToHyperFlow": "HyperFlowに移動"
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "Produk",
+    "pricing": "Harga",
+    "blog": "Blog",
+    "support": "Dukungan",
+    "login": "Masuk"
+  },
+  "hero": {
+    "tagline": "Platform terintegrasi untuk membangun solusi AI yang kuat tanpa kode",
+    "title": "Selesaikan alur kerja AI Anda\ntanpa pengkodean yang kompleks.",
+    "description": "Gabungkan berbagai LLM dan buat, deploy chatbot sekaligus.\nSiapa pun dapat membuat AI dengan antarmuka drag-and-drop HyperFlow AI.",
+    "cta": "Mulai"
+  },
+  "features": {
+    "intro": {
+      "text": "Bekerja dengan cepat dan fleksibel dari pengembangan no-code hingga pengujian waktu nyata dan peluncuran layanan",
+      "title": "HyperFlow mengotomatisasi setiap proses pengembangan AI"
+    },
+    "sectionTitle": "Kekuatan unik HyperFlow AI, platform pengembangan generasi berikutnya",
+    "cards": {
+      "dragDrop": {
+        "title": "Alur Kerja Drag and Drop",
+        "description": "Rancang alur AI dengan menghubungkan node menggunakan antarmuka yang intuitif. Logika kompleks dapat diimplementasikan hanya dengan drag and drop, memungkinkan Anda membangun aplikasi AI berkualitas tinggi dengan cepat tanpa pengkodean."
+      },
+      "ragChatbot": {
+        "title": "Chatbot RAG Mudah dengan Built-In",
+        "description": "Gunakan template yang sudah dibuat sebelumnya dari HyperFlow untuk membangun chatbot AI berbasis pengetahuan lengkap hanya dengan unggahan dokumen dan koneksi database."
+      },
+      "multimodal": {
+        "title": "Dukungan Multimodal Multidimensi",
+        "description": "Perluas kemampuan AI dengan memproses berbagai bentuk data termasuk teks, gambar, audio, PDF, dan lainnya."
+      },
+      "deployment": {
+        "title": "Deployment Instan dengan Satu Klik",
+        "description": "Deploy layanan AI secara instan dengan satu klik. Tanpa konfigurasi lingkungan yang kompleks, semuanya dari pengembangan hingga peluncuran terhubung secara real-time."
+      },
+      "noCode": {
+        "title": "Lingkungan No-Code yang Dapat Diskala",
+        "description": "Bangun dengan cepat menggunakan no-code dan tambahkan kode kustom saat diperlukan. Lingkungan hybrid HyperFlow menyediakan kontrol penuh dan fleksibilitas."
+      },
+      "security": {
+        "title": "Keamanan Tingkat Perusahaan",
+        "description": "HyperFlow menyediakan keamanan tingkat perusahaan. Daftarkan kunci APT dengan hak istimewa admin dan atur izin akses granular per proyek untuk keamanan yang ditingkatkan."
+      }
+    }
+  },
+  "llm": {
+    "title": "Gunakan secara bebas berbagai LLM yang didukung oleh HyperFlow AI untuk menyelesaikan AI Anda sendiri"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Alur Sirkuler",
+      "description": "Mendukung struktur loop pembelajaran otomatis di mana AI belajar dari hasil dan menyesuaikan input. Secara otomatis mengulangi proses uji-modifikasi-perbaikan, mengimplementasikan lingkungan pengembangan evolusioner dengan optimisasi berkelanjutan."
+    },
+    "superNode": {
+      "title": "02 Super Node",
+      "description": "Super node HyperFlow tidak terikat pada API atau platform tertentu, memungkinkan Anda menggunakan kembali alur tanpa membuat ulang saat memperkenalkan teknologi baru atau mengubah vendor. Ini menyediakan lingkungan pengembangan yang lebih cepat dan lebih fleksibel."
+    },
+    "processData": {
+      "title": "03 Integrasi Proses & Data",
+      "description": "HyperFlow mengintegrasikan alur data multimodal dan alur kerja proses dalam satu sistem. Ini juga menyimpan konteks di setiap tahap melalui fungsionalitas memori alur, memungkinkan referensi ke hasil sebelumnya atau status data."
+    },
+    "dualEngine": {
+      "title": "04 Mesin Eksekusi Ganda",
+      "description": "HyperFlow berjalan identik baik di lingkungan pengujian IDE maupun lingkungan produksi aktual. Pengembang dapat men-deploy alur eksperimental langsung ke produksi tanpa proses transisi terpisah, memungkinkan konstruksi alur kerja AI yang menghancurkan batas antara pengembangan dan deployment."
+    },
+    "assetStore": {
+      "title": "05 Toko Aset Terintegrasi",
+      "description": "HyperFlow telah mengintegrasikan semua alat penting untuk pengembangan di satu tempat. Gunakan kembali alur dan node melalui Asset Store, dan selesaikan semuanya dari desain hingga deployment dan manajemen otomatis dalam satu langkah melalui Chatbot dan DevOps."
+    }
+  },
+  "superNodeSection": {
+    "title": "Otomatisasi tugas AI yang kompleks dengan super node terintegrasi",
+    "cardTitle": "Super Node yang menghubungkan beberapa layanan menjadi satu",
+    "cardDescription": "Super node HyperFlow adalah mesin abstraksi fleksibel yang mengontrol semua layanan melalui satu antarmuka.",
+    "button": "Jelajahi Super Node"
+  },
+  "workflow": {
+    "title": "Memulai dengan HyperFlow AI",
+    "subtitle": "Tiga langkah sudah cukup tanpa pengkodean yang kompleks. Ide Anda menjadi layanan.",
+    "steps": {
+      "dataConnection": {
+        "title": "Koneksi Data",
+        "description": "Unggah dokumen atau hubungkan ke data untuk membuat basis pengetahuan untuk layanan AI."
+      },
+      "workflowDesign": {
+        "title": "Desain Alur Kerja",
+        "description": "Rancang alur kerja AI dengan antarmuka drag-and-drop yang intuitif."
+      },
+      "deployManage": {
+        "title": "Deploy & Kelola",
+        "description": "Sematkan dalam berbagai bentuk seperti chatbot dan integrasi API, dan deploy serta kelola dengan satu klik."
+      }
+    }
+  },
+  "templates": {
+    "title": "Buat semua yang bisa Anda bayangkan",
+    "subtitle": "Buat aplikasi AI yang disesuaikan dengan berbagai industri dan tujuan. Bangun alur kerja dan alat yang disesuaikan yang memecahkan masalah nyata.",
+    "documentSearch": {
+      "title": "Pencarian & Ringkasan Dokumen",
+      "description": "Buat sistem AI yang dengan cepat menemukan dan merangkum informasi yang diperlukan dari volume besar dokumen.",
+      "features": {
+        "instantSearch": "Pencarian Instan",
+        "knowledgeRef": "Referensi Pengetahuan",
+        "fileFormats": "Berbagai Format File",
+        "autoSummary": "Ringkasan Otomatis"
+      },
+      "button": "Lihat Template"
+    },
+    "customerService": {
+      "title": "Chatbot Layanan Pelanggan",
+      "description": "Buat chatbot yang menyediakan dukungan pelanggan 24/7 untuk meningkatkan kepuasan pelanggan dan mengurangi biaya operasional.",
+      "features": {
+        "autoResponse": "Respons Otomatis 24/7",
+        "faqAuto": "Pemrosesan FAQ Otomatis",
+        "humanConnect": "Koneksi Agen Manusia",
+        "autoSummary": "Ringkasan Otomatis"
+      },
+      "button": "Lihat Template"
+    },
+    "personalized": {
+      "title": "Sistem Rekomendasi yang Dipersonalisasi",
+      "description": "Buat AI Anda sendiri yang menganalisis preferensi dan pola perilaku pengguna untuk memberikan rekomendasi yang dipersonalisasi.",
+      "features": {
+        "realtimeAnalysis": "Analisis Waktu Nyata",
+        "behaviorPattern": "Pembelajaran Pola Perilaku",
+        "knowledgeLearning": "Pembelajaran Pengetahuan",
+        "personalized": "Rekomendasi yang Dipersonalisasi"
+      },
+      "button": "Lihat Template"
+    },
+    "contentGeneration": {
+      "title": "Alat Generasi Konten",
+      "description": "Kembangkan alat AI yang secara otomatis menghasilkan posting blog, salinan pemasaran, dan konten media sosial.",
+      "features": {
+        "autoWriting": "Penulisan Otomatis",
+        "seoOptimization": "Optimisasi SEO",
+        "variousStyles": "Berbagai Gaya",
+        "brandTone": "Nada & Cara Merek"
+      },
+      "button": "Lihat Template"
+    }
+  },
+  "lowContent": {
+    "title": "Pimpin inovasi di era AI dengan HyperFlow AI",
+    "text": "Era AI sudah dimulai. HyperFlow akan menjadi mesin yang mempercepat perubahan itu dan menghubungkan imajinasi Anda dengan bisnis."
+  },
+  "footer": {
+    "tagline": "Platform terintegrasi untuk membangun solusi AI yang kuat tanpa kode",
+    "copyright": "© 2025 Mirinae Technologies Inc. Hak cipta dilindungi."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Silakan masukkan ID Anda.",
+      "password": "Silakan masukkan kata sandi Anda"
+    },
+    "link": {
+      "signIn": "Daftar",
+      "findPassword": "Pulihkan kata sandi"
+    },
+    "button": {
+      "login": "Masuk",
+      "google": "Masuk dengan Google"
+    },
+    "divider": {
+      "text": "Atau masuk dengan email"
+    },
+    "warning": {
+      "enterCredentials": "Silakan masukkan ID dan kata sandi Anda."
+    },
+    "success": "Login berhasil!",
+    "successGoogle": "Login Google berhasil!",
+    "info": {
+      "googleLogin": "Mencoba login Google..."
+    },
+    "error": {
+      "google": "Login Google gagal."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Perpustakaan",
+      "knowledgeBases": "Basis pengetahuan"
+    },
+    "filter": {
+      "all": "Semua",
+      "favorites": "Favorit"
+    },
+    "share": {
+      "title": "Bagikan HyperFlow dengan tim",
+      "subtitle": "Terima 500 kredit"
+    },
+    "input": {
+      "title": "Bagaimana saya bisa membantu Anda hari ini?",
+      "placeholder": "Bagaimana saya bisa membantu Anda hari ini?"
+    },
+    "media": {
+      "image": "Gambar",
+      "video": "Video",
+      "audio": "Audio"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Agen yang saya buat"
+    },
+    "emptyState": "Tidak ada contoh"
+  },
+  "library": {
+    "title": "Perpustakaan saya",
+    "description": "Kelola dan terapkan chatbot Anda yang dibangun dengan agen dan grafik alur",
+    "table": {
+      "name": "Nama",
+      "memo": "Memo",
+      "deploymentDate": "Tanggal Penerapan",
+      "access": "Akses",
+      "status": "Status",
+      "deploy": "Terapkan"
+    },
+    "moveToFlowgraph": "Pindah ke Flowgraph"
+  },
+  "knowledgeBase": {
+    "title": "Basis pengetahuan",
+    "description": "HyperFlow mengelola dan memodifikasi basis pengetahuan untuk memberikan jawaban yang dioptimalkan sesuai dengan kebutuhan dan preferensi pengguna, dan mendukung fungsionalitas RAG.",
+    "uploadText": "Silakan pilih file untuk diunggah"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "sidebar": {
+      "settings": "Pengaturan",
+      "usage": "Penggunaan",
+      "connectors": "Konektor",
+      "getHelp": "Dapatkan bantuan"
+    },
+    "language": "Bahasa",
+    "mode": "Mode",
+    "mode.light": "Terang",
+    "mode.dark": "Gelap",
+    "manageCookies": "Kelola cookie",
+    "manage": "Kelola",
+    "goToHyperFlow": "Buka HyperFlow"
+  }
+}

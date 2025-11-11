@@ -1,0 +1,1185 @@
+/* Library 전체 레이아웃 - Figma: 1440x810, 반응형 */
+.library-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 810px;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+/* 우측 상단 Header - Figma: x: 1279.5px, y: 18px */
+.library-top-header {
+  position: absolute;
+  right: 21.75px; /* 1440 - 1279.5 - 138.75 = 21.75px */
+  top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 7.5px;
+  z-index: 100;
+  height: 37.5px;
+}
+
+/* Premium 버튼 - Figma: width: 93px, height: 37.5px */
+.library-premium-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 93px;
+  height: 37.5px;
+  background: #ffffff;
+  border: 0.375px solid #1677FF;
+  border-radius: 7499.25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.library-premium-btn:hover {
+  background: rgba(22, 119, 255, 0.05);
+}
+
+.library-premium-text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.3em;
+  color: #1677FF;
+  margin-left: 15.75px;
+  margin-right: 15.75px;
+}
+
+/* 사용자 아바타 - Figma: width: 37.5px, height: 37.5px */
+.library-user-avatar {
+  width: 37.5px;
+  height: 37.5px;
+  background: #1677FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.library-user-avatar:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.library-user-initial {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.3em;
+  color: #ffffff;
+}
+
+/* Mobile Menu Toggle Button - 데스크톱에서는 숨김 */
+.library-mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-size: 20px;
+  color: #000000;
+  padding: 0;
+}
+
+.library-mobile-menu-toggle:hover {
+  background: #f5f5f5;
+}
+
+/* Mobile Overlay - 데스크톱에서는 숨김 */
+.library-mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+/* Sidebar Header - Figma: 로고와 아이콘들의 정확한 위치 조정 */
+.library-sidebar-header {
+  position: absolute;
+  left: 18.75px;
+  top: 12px;
+  z-index: 2;
+  width: 239.25px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0;
+  min-height: 23.25px;
+}
+
+.library-header-logo {
+  width: 128.81px;
+  height: 18.75px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Header Actions - 로고 옆 버튼들 */
+.library-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.library-header-action-btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.library-header-action-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 1);
+}
+
+.library-header-action-btn:active {
+  background: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 1);
+}
+
+.library-header-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+
+.library-header-action-btn svg.library-header-icon {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  color: inherit;
+}
+
+.library-sidebar.collapsed .library-header-action-btn:last-child svg.library-header-icon {
+  transform: rotate(180deg);
+}
+
+/* SideBar - Figma: width: 258px, height: 812.25px */
+.library-sidebar {
+  width: 258px;
+  height: 100vh;
+  min-height: 812.25px;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 10;
+  overflow: visible;
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.library-sidebar.collapsed {
+  width: 60px;
+  min-width: 60px;
+}
+
+.library-sidebar.collapsed .library-sidebar-header {
+  width: 60px;
+  left: 0;
+  padding: 0 12px;
+  justify-content: center;
+}
+
+.library-sidebar.collapsed .library-header-logo,
+.library-sidebar.collapsed .library-header-actions button:first-child {
+  display: none;
+}
+
+.library-sidebar.collapsed .library-sidebar-main-content,
+.library-sidebar.collapsed .library-sidebar-footer,
+.library-sidebar.collapsed .library-sidebar-background,
+.library-sidebar.collapsed .library-menu-background {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.library-sidebar.collapsed .library-header-actions {
+  margin-left: 0;
+  justify-content: center;
+}
+
+/* SideBar 배경 - Figma: left: 18.75px, width: 239.25px */
+.library-sidebar-background {
+  position: absolute;
+  left: 18.75px;
+  top: 0;
+  width: 239.25px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 109, 217, 0.02) 0%,
+    rgba(9, 109, 217, 0.04) 100%
+  );
+  z-index: 0;
+}
+
+/* 메뉴 배경 (Active 상태) - Library가 세 번째 메뉴 아이템 */
+/* Figma: x: -18.75, y: 201, width: 247.5, height: 46.5, borderRadius: 15px */
+.library-menu-background {
+  position: absolute;
+  left: -18.75px;
+  top: 201px;
+  width: 247.5px;
+  height: 46.5px;
+  background: rgba(0, 45, 116, 0.08);
+  border-radius: 15px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Main Content Section - Figma: x: -33.25px, y: 110.25px, width: 281px, gap: 39px */
+.library-sidebar-main-content {
+  position: absolute;
+  left: -33.25px;
+  top: 110.25px;
+  width: 281px;
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  z-index: 2;
+  align-items: center;
+  height: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 메뉴 섹션 - Figma: gap: 32px, padding: 0px 20px */
+.library-menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  align-items: flex-end;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  align-self: stretch;
+  margin-bottom: 0;
+}
+
+.library-menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4290000200271606em;
+  letter-spacing: 1.45%;
+  color: #000000;
+  min-height: 23px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  width: 180px;
+  height: 23px;
+  box-sizing: border-box;
+}
+
+.library-menu-item.active {
+  background: transparent;
+  color: #000000;
+}
+
+.library-menu-item:hover:not(.active) {
+  opacity: 0.7;
+}
+
+.library-menu-icon {
+  width: 13.85px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.library-menu-icon-library {
+  width: 16.04px;
+  height: 16px;
+}
+
+.library-menu-item-knowledge {
+  width: 180px;
+}
+
+.library-menu-icon-lightbulb {
+  width: 12.12px !important;
+  height: 18px !important;
+  object-fit: contain;
+}
+
+.library-menu-item-knowledge span {
+  width: 158.37px;
+  max-width: 158.37px;
+}
+
+.library-menu-item span {
+  height: 23px;
+  display: flex;
+  align-items: center;
+  width: 158.37px;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+/* Knowledge Bases Section - 필터와 empty state */
+.library-knowledge-bases-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding: 0;
+  align-self: stretch;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* 필터 섹션 - Figma: gap: 4.5px */
+.library-filter-section {
+  display: flex;
+  gap: 4.5px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.library-filter-tab {
+  padding: 7.5px 11.25px;
+  border: 0.75px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16.5px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 500;
+  font-size: 10.5px;
+  line-height: 1.4290000370570592em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.library-filter-tab:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.library-filter-tab.active {
+  background: #1677ff;
+  color: #ffffff;
+  border-color: #1677ff;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+}
+
+/* Knowledge Bases Empty State - Favorites 선택 시 */
+.library-knowledge-empty-state {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Footer Section - Figma: x: 18.75px, y: 712.5px, width: 239.25px, height: 85.75px */
+.library-sidebar-footer {
+  position: absolute;
+  left: 18.75px;
+  bottom: 12px;
+  width: 239.25px;
+  height: 85.75px;
+  min-height: 85.75px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* 구분선 (Line 74) - Figma: top of footer, width: 239.25px */
+.library-sidebar-divider {
+  width: 100%;
+  height: 0;
+  border-top: 0.75px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+/* Share 배너 - Figma: x: 26px (footer 기준), y: 18.75px (footer 기준), gap: 13px */
+.library-share-banner {
+  position: absolute;
+  left: 26px;
+  top: 18.75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  width: auto;
+}
+
+.library-share-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 169px;
+}
+
+.library-share-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4290000597635906em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.8);
+  width: 185px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.library-share-subtitle {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 1.429000006781684em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.library-share-arrow {
+  width: 13.5px;
+  height: 13.5px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Setting 버튼 - Figma: x: 23.25px, y: 778px */
+.library-setting-btn {
+  position: absolute;
+  left: 23.25px;
+  bottom: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-bottom: 0;
+}
+
+.library-setting-btn:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.library-setting-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Main Content - Figma: 사이드바 다음부터 시작 */
+.library-main-content {
+  position: absolute;
+  left: 258px;
+  top: 0;
+  width: calc(100% - 258px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow: visible;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.library-main-content.expanded {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
+/* Title Section - Figma: x: 289.5, y: 128.25 */
+.library-title-section {
+  position: absolute;
+  left: 31.5px; /* 289.5 - 258 = 31.5 */
+  top: 128.25px;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.library-main-content.expanded .library-title-section {
+  left: 229.5px; /* 289.5 - 60 = 229.5 */
+}
+
+.library-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.4670000076293945em;
+  letter-spacing: 0.96%;
+  color: #1677FF;
+  margin: 0;
+  padding: 0;
+}
+
+/* 구분선 - Figma: x: 264.75, y: 297.37, width: 1146 */
+.library-divider {
+  position: absolute;
+  left: 6.75px; /* 264.75 - 258 = 6.75 */
+  top: 297.37px;
+  width: 1146px;
+  max-width: calc(100vw - 264.75px);
+  height: 0;
+  border-top: 0.375px solid rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.library-main-content.expanded .library-divider {
+  left: calc(6.75px + 198px);
+  max-width: calc(100vw - 462.75px);
+}
+
+/* Table Container - Figma: x: 260.25, y: 99.75, width: 1155, height: 624 */
+.library-table-container {
+  position: absolute;
+  left: 2.25px; /* 260.25 - 258 = 2.25 */
+  top: 99.75px;
+  width: 1155px;
+  max-width: calc(100vw - 260.25px);
+  background: rgba(230, 244, 255, 0.23);
+  border: 1.5px solid rgba(112, 115, 124, 0.3);
+  border-radius: 22.5px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.library-main-content.expanded .library-table-container {
+  left: 200.25px; /* 260.25 - 60 = 200.25 */
+  max-width: calc(100vw - 260.25px);
+}
+
+/* Description - 컨테이너 내부 x: 32.25, y: 59.25 */
+.library-description {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.1em;
+  color: #737373;
+  margin: 59.25px 0 0 32.25px;
+  padding: 0;
+  width: 453px;
+  max-width: calc(100% - 64.5px);
+}
+
+/* Table Header - Figma: 컨테이너 내부 y: 96, height: 36.75px */
+.library-table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr 1fr 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  height: 36.75px;
+  background: #1677FF;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+  margin-top: 19.75px; /* 96 - 59.25 - 17(설명 높이) = 19.75px */
+  position: relative;
+}
+
+.library-table-header-cell {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.1em;
+  color: #ffffff;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Table Body */
+.library-table-body {
+  width: 100%;
+  min-height: 587.25px; /* 624 - 36.75 */
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ShareAlt Icon - Figma: x: 1081.5 (컨테이너 기준), y: 153 (컨테이너 기준) */
+.library-table-share-icon {
+  position: absolute;
+  right: 54.75px; /* 1155 - 1081.5 - 18.75 = 54.75px */
+  top: 153px;
+  width: 18.75px;
+  height: 18.75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.library-table-share-icon:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.library-table-share-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Empty State */
+.library-empty-state {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Action Button - Figma: x: 711, y: 622, width: 253.5, height: 46.8 */
+.library-action-button-container {
+  position: absolute;
+  left: 453px; /* 711 - 258 = 453 */
+  top: 622px;
+  width: 253.5px;
+  height: 46.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.library-main-content.expanded .library-action-button-container {
+  left: 651px; /* 711 - 60 = 651 */
+}
+
+.library-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12.33px 0;
+  width: 253.5px;
+  height: 46.8px;
+  background: #1677FF;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4290000200271606em;
+  letter-spacing: 1.45%;
+  color: #ffffff;
+}
+
+.library-action-button:hover {
+  background: #0958d9;
+  transform: scale(1.02);
+}
+
+.library-action-button-icon {
+  font-size: 13.65px;
+  width: 13.65px;
+  height: 21.45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 반응형: 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .library-mobile-menu-toggle {
+    display: flex !important;
+  }
+
+  .library-top-header {
+    right: 15px;
+    top: 15px;
+    gap: 8px;
+  }
+
+  .library-premium-btn {
+    width: 80px;
+    height: 32px;
+  }
+
+  .library-premium-text {
+    font-size: 13px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .library-user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .library-user-initial {
+    font-size: 13px;
+  }
+
+  .library-sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    background: #ffffff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .library-sidebar.open {
+    left: 0;
+  }
+
+  .library-mobile-overlay {
+    display: block !important;
+  }
+
+  .library-main-content {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 80px 20px 20px;
+    align-items: flex-start;
+  }
+
+  .library-title-section {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 20px;
+  }
+
+  .library-title {
+    font-size: 16px;
+  }
+
+  .library-divider {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  .library-table-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .library-description {
+    margin: 20px 0 0 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    font-size: 13px;
+  }
+
+  .library-table-header {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 10px;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .library-table-header-cell {
+    font-size: 12px;
+    padding: 4px 0;
+  }
+
+  .library-table-body {
+    min-height: 200px;
+    padding: 20px;
+  }
+
+  .library-action-button-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .library-action-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .library-sidebar-header {
+    padding-top: 60px;
+    top: 12px;
+    left: 20px;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+  }
+
+  .library-sidebar.collapsed {
+    width: 0;
+    min-width: 0;
+  }
+
+  .library-sidebar.collapsed .library-sidebar-header {
+    display: none;
+  }
+
+  .library-header-actions {
+    gap: 6px;
+  }
+
+  .library-header-action-btn {
+    width: 18px;
+    height: 18px;
+  }
+
+  .library-header-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .library-sidebar-background {
+    width: 100%;
+    left: 0;
+  }
+
+  .library-sidebar-footer {
+    width: calc(100% - 40px);
+    left: 20px;
+    top: auto;
+    bottom: 12px;
+    height: auto;
+    min-height: 85.75px;
+  }
+
+  .library-setting-btn {
+    bottom: 12px;
+    margin-bottom: 0;
+  }
+  
+  .library-sidebar-main-content {
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    top: 120px;
+  }
+  
+  .library-menu-background {
+    left: 0;
+    width: 100%;
+  }
+  
+  .library-share-banner {
+    left: 0;
+    top: 20px;
+    width: 100%;
+  }
+  
+  .library-setting-btn {
+    left: 0;
+    bottom: 20px;
+    top: auto;
+  }
+}
+
+/* 태블릿 반응형 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .library-sidebar {
+    width: calc(258px * (100vw / 1440px));
+    min-width: 200px;
+  }
+
+  .library-main-content {
+    left: calc(258px * (100vw / 1440px));
+    width: calc(100% - calc(258px * (100vw / 1440px)));
+  }
+
+  .library-main-content.expanded {
+    left: calc(60px * (100vw / 1440px));
+    width: calc(100% - calc(60px * (100vw / 1440px)));
+  }
+
+  .library-title-section {
+    left: calc(31.5px * (100vw / 1440px));
+    top: calc(128.25px * (100vh / 810px));
+  }
+
+  .library-main-content.expanded .library-title-section {
+    left: calc(229.5px * (100vw / 1440px));
+  }
+
+  .library-divider {
+    left: calc(6.75px * (100vw / 1440px));
+    top: calc(297.37px * (100vh / 810px));
+    width: calc(1146px * (100vw / 1440px));
+    max-width: calc(100vw - calc(264.75px * (100vw / 1440px)));
+  }
+
+  .library-main-content.expanded .library-divider {
+    left: calc(204.75px * (100vw / 1440px));
+    max-width: calc(100vw - calc(462.75px * (100vw / 1440px)));
+  }
+
+  .library-table-container {
+    left: calc(2.25px * (100vw / 1440px));
+    top: calc(99.75px * (100vh / 810px));
+    width: calc(1155px * (100vw / 1440px));
+    max-width: calc(100vw - calc(260.25px * (100vw / 1440px)));
+  }
+
+  .library-main-content.expanded .library-table-container {
+    left: calc(200.25px * (100vw / 1440px));
+    max-width: calc(100vw - calc(260.25px * (100vw / 1440px)));
+  }
+
+  .library-action-button-container {
+    left: calc(453px * (100vw / 1440px));
+    top: calc(622px * (100vh / 810px));
+    width: calc(253.5px * (100vw / 1440px));
+    height: calc(46.8px * (100vh / 810px));
+  }
+
+  .library-main-content.expanded .library-action-button-container {
+    left: calc(651px * (100vw / 1440px));
+  }
+
+  .library-top-header {
+    right: calc(21.75px * (100vw / 1440px));
+    top: calc(18px * (100vh / 810px));
+  }
+
+  .library-sidebar-header {
+    left: calc(18.75px * (100vw / 1440px));
+    width: calc(239.25px * (100vw / 1440px));
+  }
+
+  .library-sidebar-background {
+    left: calc(18.75px * (100vw / 1440px));
+    width: calc(239.25px * (100vw / 1440px));
+  }
+
+  .library-menu-background {
+    left: calc(-18.75px * (100vw / 1440px));
+    top: calc(201px * (100vh / 810px));
+    width: calc(247.5px * (100vw / 1440px));
+    height: calc(46.5px * (100vh / 810px));
+  }
+
+  .library-sidebar-main-content {
+    left: calc(-33.25px * (100vw / 1440px));
+    top: calc(110.25px * (100vh / 810px));
+    width: calc(281px * (100vw / 1440px));
+    gap: calc(39px * (100vh / 810px));
+  }
+
+  .library-sidebar-footer {
+    left: calc(18.75px * (100vw / 1440px));
+    bottom: calc(12px * (100vh / 810px));
+    width: calc(239.25px * (100vw / 1440px));
+    height: calc(85.75px * (100vh / 810px));
+    min-height: calc(85.75px * (100vh / 810px));
+  }
+}
+
+/* FHD 반응형 (1025px ~ 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .library-sidebar {
+    width: calc(258px * (100vw / 1440px));
+  }
+
+  .library-main-content {
+    left: calc(258px * (100vw / 1440px));
+    width: calc(100% - calc(258px * (100vw / 1440px)));
+  }
+
+  .library-main-content.expanded {
+    left: calc(60px * (100vw / 1440px));
+    width: calc(100% - calc(60px * (100vw / 1440px)));
+  }
+
+  .library-title-section {
+    left: calc(31.5px * (100vw / 1440px));
+    top: calc(128.25px * (100vh / 810px));
+  }
+
+  .library-main-content.expanded .library-title-section {
+    left: calc(229.5px * (100vw / 1440px));
+  }
+
+  .library-divider {
+    left: calc(6.75px * (100vw / 1440px));
+    top: calc(297.37px * (100vh / 810px));
+    width: calc(1146px * (100vw / 1440px));
+    max-width: calc(100vw - calc(264.75px * (100vw / 1440px)));
+  }
+
+  .library-main-content.expanded .library-divider {
+    left: calc(204.75px * (100vw / 1440px));
+    max-width: calc(100vw - calc(462.75px * (100vw / 1440px)));
+  }
+
+  .library-table-container {
+    left: calc(2.25px * (100vw / 1440px));
+    top: calc(99.75px * (100vh / 810px));
+    width: calc(1155px * (100vw / 1440px));
+    max-width: calc(100vw - calc(260.25px * (100vw / 1440px)));
+  }
+
+  .library-main-content.expanded .library-table-container {
+    left: calc(200.25px * (100vw / 1440px));
+    max-width: calc(100vw - calc(260.25px * (100vw / 1440px)));
+  }
+
+  .library-action-button-container {
+    left: calc(453px * (100vw / 1440px));
+    top: calc(622px * (100vh / 810px));
+    width: calc(253.5px * (100vw / 1440px));
+    height: calc(46.8px * (100vh / 810px));
+  }
+
+  .library-main-content.expanded .library-action-button-container {
+    left: calc(651px * (100vw / 1440px));
+  }
+}
+
+/* FHD 이상 반응형 (1440px 이상) */
+@media (min-width: 1440px) {
+  .library-table-container {
+    width: 1155px;
+  }
+}
+
+/* QHD 반응형 (1921px ~ 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .library-sidebar {
+    max-width: 300px;
+  }
+
+  .library-main-content {
+    left: 300px;
+    width: calc(100% - 300px);
+  }
+
+  .library-main-content.expanded {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+
+  .library-title-section {
+    left: calc(31.5px * (100vw / 1440px));
+    top: calc(128.25px * (100vh / 810px));
+  }
+
+  .library-main-content.expanded .library-title-section {
+    left: calc(229.5px * (100vw / 1440px));
+  }
+}
+
+/* UHD 반응형 (2561px 이상) */
+@media (min-width: 2561px) {
+  .library-sidebar {
+    max-width: 350px;
+  }
+
+  .library-main-content {
+    left: 350px;
+    width: calc(100% - 350px);
+  }
+
+  .library-main-content.expanded {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+
+  .library-title-section {
+    left: calc(31.5px * (100vw / 1440px));
+    top: calc(128.25px * (100vh / 810px));
+  }
+
+  .library-main-content.expanded .library-title-section {
+    left: calc(229.5px * (100vw / 1440px));
+  }
+}

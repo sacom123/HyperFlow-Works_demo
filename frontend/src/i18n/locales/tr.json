@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "Ürün",
+    "pricing": "Fiyatlandırma",
+    "blog": "Blog",
+    "support": "Destek",
+    "login": "Giriş yap"
+  },
+  "hero": {
+    "tagline": "Kod olmadan güçlü AI çözümleri oluşturmak için entegre bir platform",
+    "title": "AI iş akışınızı tamamlayın\nkarmaşık kodlama olmadan.",
+    "description": "Çeşitli LLM'leri birleştirin ve chatbot'ları bir kerede oluşturun, dağıtın.\nHerkes HyperFlow AI'nin sürükle-bırak arayüzü ile AI oluşturabilir.",
+    "cta": "Başlayın"
+  },
+  "features": {
+    "intro": {
+      "text": "Kod olmayan geliştirmeden gerçek zamanlı testlere ve hizmet lansmanına kadar hızlı ve esnek çalışın",
+      "title": "HyperFlow AI geliştirmenin her sürecini otomatikleştirir"
+    },
+    "sectionTitle": "Yeni nesil geliştirme platformu HyperFlow AI'nin benzersiz güçlü yönleri",
+    "cards": {
+      "dragDrop": {
+        "title": "Sürükle ve Bırak İş Akışı",
+        "description": "Sezgisel bir arayüzle düğümleri bağlayarak AI akışları tasarlayın. Karmaşık mantık yalnızca sürükle ve bırak ile uygulanabilir, kodlama olmadan hızlı bir şekilde yüksek kaliteli AI uygulamaları oluşturmanıza olanak tanır."
+      },
+      "ragChatbot": {
+        "title": "Yerleşik ile Kolay RAG Chatbot",
+        "description": "Yalnızca belge yüklemeleri ve veritabanı bağlantıları ile eksiksiz bir bilgi tabanlı AI chatbot oluşturmak için HyperFlow'un önceden oluşturulmuş şablonlarını kullanın."
+      },
+      "multimodal": {
+        "title": "Çok Boyutlu Multimodal Destek",
+        "description": "Metin, görüntüler, ses, PDF'ler ve daha fazlası dahil olmak üzere çeşitli veri biçimlerini işleyerek AI yeteneklerini genişletin."
+      },
+      "deployment": {
+        "title": "Tek tıkla anında dağıtım",
+        "description": "AI hizmetlerini tek tıkla anında dağıtın. Karmaşık ortam yapılandırması olmadan, geliştirmeden lansmana kadar her şey gerçek zamanlı olarak bağlanır."
+      },
+      "noCode": {
+        "title": "Ölçeklenebilir no-code ortam",
+        "description": "No-code ile hızlıca oluşturun ve gerektiğinde özel kod ekleyin. HyperFlow'un hibrit ortamı tam kontrol ve esneklik sağlar."
+      },
+      "security": {
+        "title": "Kurumsal düzey güvenlik",
+        "description": "HyperFlow kurumsal düzey güvenlik sağlar. Yönetici ayrıcalıklarıyla APT anahtarlarını kaydedin ve geliştirilmiş güvenlik için proje başına ayrıntılı erişim izinleri ayarlayın."
+      }
+    }
+  },
+  "llm": {
+    "title": "Kendi AI'nizi tamamlamak için HyperFlow AI tarafından desteklenen çeşitli LLM'leri özgürce kullanın"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Döngüsel Akış",
+      "description": "AI'nin sonuçlardan öğrendiği ve girdileri ayarladığı otomatik öğrenme döngüsü yapısını destekler. Test-değiştir-iyileştir sürecini otomatik olarak tekrarlar, sürekli optimizasyon ile evrimsel bir geliştirme ortamı uygular."
+    },
+    "superNode": {
+      "title": "02 Süper Düğüm",
+      "description": "HyperFlow'un süper düğümleri belirli API'lere veya platformlara bağlı değildir, yeni teknolojiler tanıtırken veya satıcıları değiştirirken akışları yeniden oluşturmadan yeniden kullanmanıza olanak tanır. Bu, daha hızlı ve daha esnek bir geliştirme ortamı sağlar."
+    },
+    "processData": {
+      "title": "03 Süreç ve Veri Entegrasyonu",
+      "description": "HyperFlow, multimodal veri akışlarını ve süreç iş akışlarını tek bir sistem içinde entegre eder. Ayrıca akış bellek işlevselliği aracılığıyla her aşamada bağlamı saklar, önceki sonuçlara veya veri durumlarına referans sağlar."
+    },
+    "dualEngine": {
+      "title": "04 Çift Yürütme Motoru",
+      "description": "HyperFlow hem IDE test ortamlarında hem de gerçek üretim ortamlarında aynı şekilde çalışır. Geliştiriciler, ayrı bir geçiş süreci olmadan deneysel akışları doğrudan üretime dağıtabilir, geliştirme ve dağıtım arasındaki sınırları kıran AI iş akışı yapısını mümkün kılar."
+    },
+    "assetStore": {
+      "title": "05 Entegre Varlık Mağazası",
+      "description": "HyperFlow, geliştirme için gerekli tüm temel araçları tek bir yerde entegre etti. Asset Store aracılığıyla akışları ve düğümleri yeniden kullanın ve Chatbot ve DevOps aracılığıyla tasarımdan dağıtıma ve otomatik yönetime kadar her şeyi tek adımda tamamlayın."
+    }
+  },
+  "superNodeSection": {
+    "title": "Entegre süper düğümlerle karmaşık AI görevlerini otomatikleştirin",
+    "cardTitle": "Birden fazla hizmeti bir araya getiren süper düğüm",
+    "cardDescription": "HyperFlow'un süper düğümü, tek bir arayüz aracılığıyla tüm hizmetleri kontrol eden esnek bir soyutlama motorudur.",
+    "button": "Süper düğümü keşfedin"
+  },
+  "workflow": {
+    "title": "HyperFlow AI ile Başlarken",
+    "subtitle": "Karmaşık kodlama olmadan üç adım yeterlidir. Fikriniz bir hizmet haline gelir.",
+    "steps": {
+      "dataConnection": {
+        "title": "Veri Bağlantısı",
+        "description": "AI hizmetleri için bir bilgi tabanı oluşturmak üzere belgeleri yükleyin veya verilere bağlanın."
+      },
+      "workflowDesign": {
+        "title": "İş Akışı Tasarımı",
+        "description": "Sezgisel bir sürükle-bırak arayüzü ile AI iş akışları tasarlayın."
+      },
+      "deployManage": {
+        "title": "Dağıt ve Yönet",
+        "description": "Chatbot'lar ve API entegrasyonları gibi çeşitli biçimlerde gömün ve tek tıkla dağıtın ve yönetin."
+      }
+    }
+  },
+  "templates": {
+    "title": "Hayal edebileceğiniz her şeyi oluşturun",
+    "subtitle": "Çeşitli endüstrilere ve amaçlara uygun AI uygulamaları oluşturun. Gerçek problemleri çözen özelleştirilmiş iş akışları ve araçlar oluşturun.",
+    "documentSearch": {
+      "title": "Belge Arama ve Özet",
+      "description": "Büyük miktarda belgeden gerekli bilgileri hızlı bir şekilde bulan ve özetleyen bir AI sistemi oluşturun.",
+      "features": {
+        "instantSearch": "Anında Arama",
+        "knowledgeRef": "Bilgi Referansı",
+        "fileFormats": "Çeşitli Dosya Formatları",
+        "autoSummary": "Otomatik Özet"
+      },
+      "button": "Şablonu Görüntüle"
+    },
+    "customerService": {
+      "title": "Müşteri Hizmetleri Chatbot",
+      "description": "Müşteri memnuniyetini artırmak ve operasyonel maliyetleri düşürmek için 24/7 müşteri desteği sağlayan bir chatbot oluşturun.",
+      "features": {
+        "autoResponse": "24/7 Otomatik Yanıt",
+        "faqAuto": "SSS Otomatik İşleme",
+        "humanConnect": "İnsan Ajan Bağlantısı",
+        "autoSummary": "Otomatik Özet"
+      },
+      "button": "Şablonu Görüntüle"
+    },
+    "personalized": {
+      "title": "Kişiselleştirilmiş Öneri Sistemi",
+      "description": "Kişiselleştirilmiş öneriler sağlamak için kullanıcı tercihlerini ve davranış kalıplarını analiz eden kendi AI'nizi oluşturun.",
+      "features": {
+        "realtimeAnalysis": "Gerçek Zamanlı Analiz",
+        "behaviorPattern": "Davranış Kalıbı Öğrenme",
+        "knowledgeLearning": "Bilgi Öğrenme",
+        "personalized": "Kişiselleştirilmiş Öneriler"
+      },
+      "button": "Şablonu Görüntüle"
+    },
+    "contentGeneration": {
+      "title": "İçerik Oluşturma Aracı",
+      "description": "Blog gönderileri, pazarlama kopyaları ve sosyal medya içeriğini otomatik olarak oluşturan bir AI aracı geliştirin.",
+      "features": {
+        "autoWriting": "Otomatik Yazma",
+        "seoOptimization": "SEO Optimizasyonu",
+        "variousStyles": "Çeşitli Stiller",
+        "brandTone": "Marka Tonu ve Tarzı"
+      },
+      "button": "Şablonu Görüntüle"
+    }
+  },
+  "lowContent": {
+    "title": "HyperFlow AI ile AI çağında yeniliğe öncülük edin",
+    "text": "AI çağı zaten başladı. HyperFlow, bu değişikliği hızlandıran ve hayal gücünüzü işletmeye bağlayan motor olacaktır."
+  },
+  "footer": {
+    "tagline": "Kod olmadan güçlü AI çözümleri oluşturmak için entegre bir platform",
+    "copyright": "© 2025 Mirinae Technologies Inc. Tüm hakları saklıdır."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Lütfen ID'nizi girin.",
+      "password": "Lütfen şifrenizi girin"
+    },
+    "link": {
+      "signIn": "Kayıt ol",
+      "findPassword": "Şifreyi kurtar"
+    },
+    "button": {
+      "login": "Giriş yap",
+      "google": "Google ile giriş yap"
+    },
+    "divider": {
+      "text": "Veya e-posta ile giriş yap"
+    },
+    "warning": {
+      "enterCredentials": "Lütfen ID ve şifrenizi girin."
+    },
+    "success": "Giriş başarılı!",
+    "successGoogle": "Google girişi başarılı!",
+    "info": {
+      "googleLogin": "Google girişi deneniyor..."
+    },
+    "error": {
+      "google": "Google girişi başarısız."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Kütüphane",
+      "knowledgeBases": "Bilgi tabanı"
+    },
+    "filter": {
+      "all": "Tümü",
+      "favorites": "Favoriler"
+    },
+    "share": {
+      "title": "Bir takımla HyperFlow paylaş",
+      "subtitle": "500 kredi al"
+    },
+    "input": {
+      "title": "Bugün size nasıl yardımcı olabilirim?",
+      "placeholder": "Bugün size nasıl yardımcı olabilirim?"
+    },
+    "media": {
+      "image": "Resim",
+      "video": "Video",
+      "audio": "Ses"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Oluşturduğum Ajan"
+    },
+    "emptyState": "Örnek yok"
+  },
+  "library": {
+    "title": "Kütüphanem",
+    "description": "Ajanlar ve akış grafikleriyle oluşturulan chatbot'larınızı yönetin ve dağıtın",
+    "table": {
+      "name": "Ad",
+      "memo": "Not",
+      "deploymentDate": "Dağıtım Tarihi",
+      "access": "Erişim",
+      "status": "Durum",
+      "deploy": "Dağıt"
+    },
+    "moveToFlowgraph": "Flowgraph'a Taşı"
+  },
+  "knowledgeBase": {
+    "title": "Bilgi tabanı",
+    "description": "HyperFlow, kullanıcı ihtiyaçlarına ve tercihlerine göre optimize edilmiş yanıtlar sağlamak için bilgi veritabanını yönetir ve değiştirir ve RAG işlevselliğini destekler.",
+    "uploadText": "Lütfen yüklenecek bir dosya seçin"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "sidebar": {
+      "settings": "Ayarlar",
+      "usage": "Kullanım",
+      "connectors": "Bağlayıcılar",
+      "getHelp": "Yardım al"
+    },
+    "language": "Dil",
+    "mode": "Mod",
+    "mode.light": "Açık",
+    "mode.dark": "Koyu",
+    "manageCookies": "Çerezleri yönet",
+    "manage": "Yönet",
+    "goToHyperFlow": "HyperFlow'a git"
+  }
+}

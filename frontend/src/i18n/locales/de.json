@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "Produkt",
+    "pricing": "Preise",
+    "blog": "Blog",
+    "support": "Support",
+    "login": "Anmelden"
+  },
+  "hero": {
+    "tagline": "Eine integrierte Plattform zum Erstellen leistungsstarker KI-Lösungen ohne Code",
+    "title": "Vervollständigen Sie Ihren KI-Workflow\nohne komplexe Codierung.",
+    "description": "Kombinieren Sie verschiedene LLMs und erstellen, implementieren Sie Chatbots auf einmal.\nJeder kann KI mit der Drag-and-Drop-Oberfläche von HyperFlow AI erstellen.",
+    "cta": "Loslegen"
+  },
+  "features": {
+    "intro": {
+      "text": "Arbeiten Sie schnell und flexibel von der No-Code-Entwicklung bis zu Echtzeittests und Service-Launch",
+      "title": "HyperFlow automatisiert jeden Prozess der KI-Entwicklung"
+    },
+    "sectionTitle": "Einzigartige Stärken von HyperFlow AI, der Entwicklungsplattform der nächsten Generation",
+    "cards": {
+      "dragDrop": {
+        "title": "Drag-and-Drop-Workflow",
+        "description": "Entwerfen Sie KI-Flows durch Verbinden von Knoten mit einer intuitiven Oberfläche. Komplexe Logik kann mit nur Drag-and-Drop implementiert werden, sodass Sie schnell hochwertige KI-Anwendungen ohne Codierung erstellen können."
+      },
+      "ragChatbot": {
+        "title": "Einfacher RAG-Chatbot mit integriert",
+        "description": "Verwenden Sie die vorgefertigten Vorlagen von HyperFlow, um einen vollständigen wissensbasierten KI-Chatbot nur mit Dokument-Uploads und Datenbankverbindungen zu erstellen."
+      },
+      "multimodal": {
+        "title": "Mehrdimensionaler multimodaler Support",
+        "description": "Erweitern Sie die KI-Fähigkeiten durch Verarbeitung verschiedener Datenformen, einschließlich Text, Bilder, Audio, PDFs und mehr."
+      },
+      "deployment": {
+        "title": "Sofortiges Deployment mit einem Klick",
+        "description": "Stellen Sie KI-Dienste mit einem einzigen Klick sofort bereit. Ohne komplexe Umgebungskonfiguration wird alles von der Entwicklung bis zum Start in Echtzeit verbunden."
+      },
+      "noCode": {
+        "title": "Skalierbare No-Code-Umgebung",
+        "description": "Bauen Sie schnell mit No-Code und fügen Sie bei Bedarf benutzerdefinierten Code hinzu. Die Hybrid-Umgebung von HyperFlow bietet vollständige Kontrolle und Flexibilität."
+      },
+      "security": {
+        "title": "Unternehmensebene Sicherheit",
+        "description": "HyperFlow bietet Sicherheit auf Unternehmensebene. Registrieren Sie APT-Schlüssel mit Administratorrechten und legen Sie granulare Zugriffsberechtigungen pro Projekt für erhöhte Sicherheit fest."
+      }
+    }
+  },
+  "llm": {
+    "title": "Nutzen Sie frei verschiedene von HyperFlow AI unterstützte LLMs, um Ihre eigene KI zu vervollständigen"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Zirkulärer Flow",
+      "description": "Unterstützt eine automatische Lernschleifenstruktur, bei der die KI aus Ergebnissen lernt und Eingaben anpasst. Wiederholt automatisch den Test-Modify-Improve-Prozess und implementiert eine evolutionäre Entwicklungsumgebung mit kontinuierlicher Optimierung."
+    },
+    "superNode": {
+      "title": "02 Super-Knoten",
+      "description": "Die Super-Knoten von HyperFlow sind nicht an spezifische APIs oder Plattformen gebunden, sodass Sie Flows ohne Neuerstellung wiederverwenden können, wenn Sie neue Technologien einführen oder Anbieter wechseln. Dies bietet eine schnellere und flexiblere Entwicklungsumgebung."
+    },
+    "processData": {
+      "title": "03 Prozess- und Datenintegration",
+      "description": "HyperFlow integriert multimodale Datenflüsse und Prozess-Workflows innerhalb eines einzigen Systems. Es speichert auch den Kontext in jeder Phase über die Flow-Speicherfunktionalität und ermöglicht Verweise auf vorherige Ergebnisse oder Datenzustände."
+    },
+    "dualEngine": {
+      "title": "04 Dualer Ausführungsmotor",
+      "description": "HyperFlow läuft identisch sowohl in IDE-Testumgebungen als auch in tatsächlichen Produktionsumgebungen. Entwickler können experimentelle Flows direkt in die Produktion bereitstellen, ohne einen separaten Übergangsprozess, was die Erstellung von KI-Workflows ermöglicht, die die Grenzen zwischen Entwicklung und Bereitstellung aufheben."
+    },
+    "assetStore": {
+      "title": "05 Integrierter Asset-Store",
+      "description": "HyperFlow hat alle wesentlichen Tools für die Entwicklung an einem Ort integriert. Wiederverwenden Sie Flows und Knoten über Asset Store und vervollständigen Sie alles vom Design bis zur Bereitstellung und automatisierten Verwaltung in einem Schritt über Chatbot und DevOps."
+    }
+  },
+  "superNodeSection": {
+    "title": "Automatisieren Sie komplexe KI-Aufgaben mit integrierten Super-Knoten",
+    "cardTitle": "Super-Knoten, der mehrere Dienste zu einem verbindet",
+    "cardDescription": "Der Super-Knoten von HyperFlow ist eine flexible Abstraktions-Engine, die alle Dienste über eine einzige Schnittstelle steuert.",
+    "button": "Super-Knoten erkunden"
+  },
+  "workflow": {
+    "title": "Erste Schritte mit HyperFlow AI",
+    "subtitle": "Drei Schritte reichen ohne komplexe Codierung. Ihre Idee wird zu einem Service.",
+    "steps": {
+      "dataConnection": {
+        "title": "Datenverbindung",
+        "description": "Laden Sie Dokumente hoch oder verbinden Sie sich mit Daten, um eine Wissensbasis für KI-Dienste zu erstellen."
+      },
+      "workflowDesign": {
+        "title": "Workflow-Design",
+        "description": "Entwerfen Sie KI-Workflows mit einer intuitiven Drag-and-Drop-Oberfläche."
+      },
+      "deployManage": {
+        "title": "Bereitstellen und verwalten",
+        "description": "Einbetten in verschiedenen Formen wie Chatbots und API-Integrationen und Bereitstellen und Verwalten mit einem Klick."
+      }
+    }
+  },
+  "templates": {
+    "title": "Erstellen Sie alles, was Sie sich vorstellen können",
+    "subtitle": "Erstellen Sie KI-Anwendungen für verschiedene Branchen und Zwecke. Erstellen Sie maßgeschneiderte Workflows und Tools, die echte Probleme lösen.",
+    "documentSearch": {
+      "title": "Dokumentensuche und -zusammenfassung",
+      "description": "Erstellen Sie ein KI-System, das schnell notwendige Informationen aus großen Dokumentenmengen findet und zusammenfasst.",
+      "features": {
+        "instantSearch": "Sofortige Suche",
+        "knowledgeRef": "Wissensreferenz",
+        "fileFormats": "Verschiedene Dateiformate",
+        "autoSummary": "Automatische Zusammenfassung"
+      },
+      "button": "Vorlage ansehen"
+    },
+    "customerService": {
+      "title": "Kundenservice-Chatbot",
+      "description": "Erstellen Sie einen Chatbot, der 24/7-Kundensupport bietet, um die Kundenzufriedenheit zu erhöhen und Betriebskosten zu senken.",
+      "features": {
+        "autoResponse": "24/7 automatische Antwort",
+        "faqAuto": "Automatische FAQ-Verarbeitung",
+        "humanConnect": "Menschliche Agentenverbindung",
+        "autoSummary": "Automatische Zusammenfassung"
+      },
+      "button": "Vorlage ansehen"
+    },
+    "personalized": {
+      "title": "Personalisierte Empfehlungssystem",
+      "description": "Erstellen Sie Ihre eigene KI, die Benutzerpräferenzen und Verhaltensmuster analysiert, um personalisierte Empfehlungen zu bieten.",
+      "features": {
+        "realtimeAnalysis": "Echtzeitanalyse",
+        "behaviorPattern": "Verhaltensmusterlernen",
+        "knowledgeLearning": "Wissenslernen",
+        "personalized": "Personalisierte Empfehlungen"
+      },
+      "button": "Vorlage ansehen"
+    },
+    "contentGeneration": {
+      "title": "Content-Generierungstool",
+      "description": "Entwickeln Sie ein KI-Tool, das automatisch Blog-Posts, Marketing-Texte und Social-Media-Inhalte generiert.",
+      "features": {
+        "autoWriting": "Automatisches Schreiben",
+        "seoOptimization": "SEO-Optimierung",
+        "variousStyles": "Verschiedene Stile",
+        "brandTone": "Markenton und Manier"
+      },
+      "button": "Vorlage ansehen"
+    }
+  },
+  "lowContent": {
+    "title": "Führen Sie Innovation im KI-Zeitalter mit HyperFlow AI an",
+    "text": "Das KI-Zeitalter hat bereits begonnen. HyperFlow wird der Motor sein, der diese Veränderung beschleunigt und Ihre Vorstellungskraft mit dem Geschäft verbindet."
+  },
+  "footer": {
+    "tagline": "Eine integrierte Plattform zum Erstellen leistungsstarker KI-Lösungen ohne Code",
+    "copyright": "© 2025 Mirinae Technologies Inc. Alle Rechte vorbehalten."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Bitte geben Sie Ihre ID ein.",
+      "password": "Bitte geben Sie Ihr Passwort ein"
+    },
+    "link": {
+      "signIn": "Registrieren",
+      "findPassword": "Passwort wiederherstellen"
+    },
+    "button": {
+      "login": "Anmelden",
+      "google": "Mit Google anmelden"
+    },
+    "divider": {
+      "text": "Oder mit E-Mail anmelden"
+    },
+    "warning": {
+      "enterCredentials": "Bitte geben Sie Ihre ID und Ihr Passwort ein."
+    },
+    "success": "Anmeldung erfolgreich!",
+    "successGoogle": "Google-Anmeldung erfolgreich!",
+    "info": {
+      "googleLogin": "Google-Anmeldung wird versucht..."
+    },
+    "error": {
+      "google": "Google-Anmeldung fehlgeschlagen."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Bibliothek",
+      "knowledgeBases": "Wissensdatenbank"
+    },
+    "filter": {
+      "all": "Alle",
+      "favorites": "Favoriten"
+    },
+    "share": {
+      "title": "HyperFlow mit einem Team teilen",
+      "subtitle": "500 Credits erhalten"
+    },
+    "input": {
+      "title": "Wie kann ich Ihnen heute helfen?",
+      "placeholder": "Wie kann ich Ihnen heute helfen?"
+    },
+    "media": {
+      "image": "Bild",
+      "video": "Video",
+      "audio": "Audio"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Von mir erstellter Agent"
+    },
+    "emptyState": "Keine Beispiele"
+  },
+  "library": {
+    "title": "Meine Bibliothek",
+    "description": "Verwalten und bereitstellen Sie Ihre Chatbots, die mit Agenten und Flussdiagrammen erstellt wurden",
+    "table": {
+      "name": "Name",
+      "memo": "Memo",
+      "deploymentDate": "Bereitstellungsdatum",
+      "access": "Zugriff",
+      "status": "Status",
+      "deploy": "Bereitstellen"
+    },
+    "moveToFlowgraph": "Zu Flowgraph verschieben"
+  },
+  "knowledgeBase": {
+    "title": "Wissensdatenbank",
+    "description": "HyperFlow verwaltet und modifiziert die Wissensdatenbank, um optimierte Antworten entsprechend den Benutzeranforderungen und -präferenzen bereitzustellen, und unterstützt RAG-Funktionalität.",
+    "uploadText": "Bitte wählen Sie eine Datei zum Hochladen aus"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "sidebar": {
+      "settings": "Einstellungen",
+      "usage": "Nutzung",
+      "connectors": "Connectors",
+      "getHelp": "Hilfe erhalten"
+    },
+    "language": "Sprache",
+    "mode": "Modus",
+    "mode.light": "Hell",
+    "mode.dark": "Dunkel",
+    "manageCookies": "Cookies verwalten",
+    "manage": "Verwalten",
+    "goToHyperFlow": "Zu HyperFlow gehen"
+  }
+}

@@ -1,0 +1,1000 @@
+/* HyperAgents 전체 레이아웃 - Figma: 1440x810, 반응형 */
+.hyper-agents-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 810px;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+/* 우측 상단 Header - Figma: x: 1279.5px, y: 18px, width: 138.75px, height: 37.5px */
+.hyper-agents-top-header {
+  position: absolute;
+  right: 21.75px;
+  top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 7.5px;
+  z-index: 100;
+  height: 37.5px;
+}
+
+/* Premium 버튼 */
+.hyper-agents-premium-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 93px;
+  height: 37.5px;
+  background: #ffffff;
+  border: 0.375px solid #1677FF;
+  border-radius: 7499.25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hyper-agents-premium-btn:hover {
+  background: rgba(22, 119, 255, 0.05);
+}
+
+.hyper-agents-premium-text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.3em;
+  color: #1677FF;
+  margin-left: 15.75px;
+  margin-right: 15.75px;
+}
+
+/* 사용자 아바타 */
+.hyper-agents-user-avatar {
+  width: 37.5px;
+  height: 37.5px;
+  background: #1677FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hyper-agents-user-avatar:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.hyper-agents-user-initial {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.3em;
+  color: #ffffff;
+}
+
+/* Mobile Menu Toggle Button */
+.hyper-agents-mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-size: 20px;
+  color: #000000;
+  padding: 0;
+}
+
+.hyper-agents-mobile-menu-toggle:hover {
+  background: #f5f5f5;
+}
+
+/* Mobile Overlay */
+.hyper-agents-mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+/* Sidebar Header */
+.hyper-agents-sidebar-header {
+  position: absolute;
+  left: 18.75px;
+  top: 12px;
+  z-index: 2;
+  width: 239.25px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0;
+  min-height: 23.25px;
+}
+
+.hyper-agents-header-logo {
+  width: 128.81px;
+  height: 18.75px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Header Actions */
+.hyper-agents-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.hyper-agents-header-action-btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.hyper-agents-header-action-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 1);
+}
+
+.hyper-agents-header-action-btn:active {
+  background: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 1);
+}
+
+.hyper-agents-header-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+
+.hyper-agents-header-action-btn svg.hyper-agents-header-icon {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  color: inherit;
+}
+
+.hyper-agents-sidebar.collapsed .hyper-agents-header-action-btn:last-child svg.hyper-agents-header-icon {
+  transform: rotate(180deg);
+}
+
+/* SideBar */
+.hyper-agents-sidebar {
+  width: 258px;
+  height: 100vh;
+  min-height: 812.25px;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 10;
+  overflow: visible;
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.hyper-agents-sidebar.collapsed {
+  width: 60px;
+  min-width: 60px;
+}
+
+.hyper-agents-sidebar.collapsed .hyper-agents-sidebar-header {
+  width: 60px;
+  left: 0;
+  padding: 0 12px;
+  justify-content: center;
+}
+
+.hyper-agents-sidebar.collapsed .hyper-agents-header-logo,
+.hyper-agents-sidebar.collapsed .hyper-agents-header-actions button:first-child {
+  display: none;
+}
+
+.hyper-agents-sidebar.collapsed .hyper-agents-sidebar-main-content,
+.hyper-agents-sidebar.collapsed .hyper-agents-sidebar-footer,
+.hyper-agents-sidebar.collapsed .hyper-agents-sidebar-background,
+.hyper-agents-sidebar.collapsed .hyper-agents-menu-background {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hyper-agents-sidebar.collapsed .hyper-agents-header-actions {
+  margin-left: 0;
+  justify-content: center;
+}
+
+/* SideBar 배경 */
+.hyper-agents-sidebar-background {
+  position: absolute;
+  left: 18.75px;
+  top: 0;
+  width: 239.25px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 109, 217, 0.02) 0%,
+    rgba(9, 109, 217, 0.04) 100%
+  );
+  z-index: 0;
+}
+
+/* 메뉴 배경 (Active 상태) - Hyper Agent가 두 번째 메뉴 아이템이므로 top 조정 */
+/* 첫 번째 아이템: 98.25px, 두 번째 아이템: 98.25px + 23px (아이템 높이) + 32px (gap) = 153.25px */
+.hyper-agents-menu-background {
+  position: absolute;
+  left: 0;
+  top: 153.25px; /* 98.25px + 23px (첫 번째 메뉴 아이템 높이) + 32px (gap) */
+  width: 247.75px;
+  height: 46.5px;
+  background: rgba(0, 45, 116, 0.08);
+  border-radius: 5px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Main Content Section */
+.hyper-agents-sidebar-main-content {
+  position: absolute;
+  left: -33.25px;
+  top: 110.25px;
+  width: 281px;
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  z-index: 2;
+  align-items: center;
+  height: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 메뉴 섹션 */
+.hyper-agents-menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  align-items: flex-end;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+
+.hyper-agents-menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4290000200271606em;
+  letter-spacing: 1.45%;
+  color: #000000;
+  min-height: 23px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  width: 180px;
+  height: 23px;
+  box-sizing: border-box;
+}
+
+.hyper-agents-menu-item.active {
+  background: transparent;
+  color: #000000;
+}
+
+.hyper-agents-menu-item:hover:not(.active) {
+  opacity: 0.7;
+}
+
+.hyper-agents-menu-icon {
+  width: 13.85px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.hyper-agents-menu-icon-library {
+  width: 16.04px;
+  height: 16px;
+}
+
+.hyper-agents-menu-item-knowledge {
+  width: 180px;
+}
+
+.hyper-agents-menu-icon-lightbulb {
+  width: 12.12px !important;
+  height: 18px !important;
+  object-fit: contain;
+}
+
+.hyper-agents-menu-item-knowledge span {
+  width: 158.37px;
+  max-width: 158.37px;
+}
+
+.hyper-agents-menu-item span {
+  height: 23px;
+  display: flex;
+  align-items: center;
+  width: 158.37px;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+/* Knowledge Bases Section - 필터와 empty state */
+.hyper-agents-knowledge-bases-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding: 0;
+  align-self: stretch;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* 필터 섹션 */
+.hyper-agents-filter-section {
+  display: flex;
+  gap: 4.5px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hyper-agents-filter-tab {
+  padding: 7.5px 11.25px;
+  border: 0.75px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16.5px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 500;
+  font-size: 10.5px;
+  line-height: 1.4290000370570592em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.hyper-agents-filter-tab:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.hyper-agents-filter-tab.active {
+  background: #1677ff;
+  color: #ffffff;
+  border-color: #1677ff;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+}
+
+/* Knowledge Bases Empty State - All 또는 Favorites 선택 시 */
+.hyper-agents-knowledge-empty-state {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Footer Section */
+.hyper-agents-sidebar-footer {
+  position: absolute;
+  left: 18.75px;
+  bottom: 12px;
+  width: 239.25px;
+  height: 85.75px;
+  min-height: 85.75px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* 구분선 */
+.hyper-agents-sidebar-divider {
+  width: 100%;
+  height: 0;
+  border-top: 0.75px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+/* Share 배너 */
+.hyper-agents-share-banner {
+  position: absolute;
+  left: 26px;
+  top: 18.75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  width: auto;
+}
+
+.hyper-agents-share-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 169px;
+}
+
+.hyper-agents-share-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4290000597635906em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.8);
+  width: 185px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hyper-agents-share-subtitle {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 1.429000006781684em;
+  letter-spacing: 1.45%;
+  color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.hyper-agents-share-arrow {
+  width: 13.5px;
+  height: 13.5px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Setting 버튼 */
+.hyper-agents-setting-btn {
+  position: absolute;
+  left: 23.25px;
+  bottom: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-bottom: 0;
+}
+
+.hyper-agents-setting-btn:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.hyper-agents-setting-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Main Content - Figma: 탭이 x: 664에 위치 */
+.hyper-agents-main-content {
+  position: absolute;
+  left: 258px; /* 사이드바 너비만큼 오프셋 */
+  top: 0;
+  width: calc(100% - 258px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow: visible;
+  padding-top: 96px;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.hyper-agents-main-content.expanded {
+  left: 60px; /* collapsed 사이드바 너비 */
+  width: calc(100% - 60px);
+}
+
+.hyper-agents-main-content.expanded .hyper-agents-tabs-section {
+  margin-left: 604px; /* 탭 위치 조정 (664 - 60 = 604) */
+}
+
+/* Tabs Section - Figma: x: 664, y: 96, height: 38.7px */
+.hyper-agents-tabs-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 21.6px;
+  width: auto;
+  min-width: 338.1px;
+  height: 38.7px;
+  position: relative;
+  margin-bottom: 0;
+  margin-left: 406px; /* 탭이 x: 664에 오도록 (664 - 258 = 406) */
+}
+
+/* Tab */
+.hyper-agents-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  min-width: auto;
+  height: 38.7px;
+  flex-shrink: 0;
+}
+
+.hyper-agents-tab-text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 21.6px;
+  line-height: 1.4669999993818779em;
+  letter-spacing: 0.96%;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 0;
+  padding: 0 8.1px;
+  box-sizing: border-box;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.hyper-agents-tab.active .hyper-agents-tab-text {
+  color: #1677FF;
+}
+
+/* Tab Underline - Figma: height: 3.6px */
+.hyper-agents-tab-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3.6px;
+  background: #1677FF;
+  border-radius: 0;
+}
+
+/* Content Area */
+.hyper-agents-content-area {
+  width: 100%;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 40px;
+  padding-left: 406px; /* 탭과 같은 위치에 맞춤 */
+  box-sizing: border-box;
+}
+
+.hyper-agents-main-content.expanded .hyper-agents-content-area {
+  padding-left: 604px; /* collapsed 사이드바일 때 위치 조정 */
+}
+
+/* Empty State */
+.hyper-agents-empty-state {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+/* 반응형: 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .hyper-agents-mobile-menu-toggle {
+    display: flex !important;
+  }
+
+  .hyper-agents-top-header {
+    right: 15px;
+    top: 15px;
+    gap: 8px;
+  }
+
+  .hyper-agents-premium-btn {
+    width: 80px;
+    height: 32px;
+  }
+
+  .hyper-agents-premium-text {
+    font-size: 13px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .hyper-agents-user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hyper-agents-user-initial {
+    font-size: 13px;
+  }
+
+  .hyper-agents-sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    background: #ffffff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .hyper-agents-sidebar.open {
+    left: 0;
+  }
+
+  .hyper-agents-mobile-overlay {
+    display: block !important;
+  }
+
+  .hyper-agents-main-content {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 80px 20px 20px;
+    padding-left: 20px;
+    padding-top: 80px;
+    margin-left: 0;
+    align-items: flex-start;
+  }
+
+  .hyper-agents-tabs-section {
+    width: 100%;
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  .hyper-agents-content-area {
+    padding-left: 0;
+  }
+
+  .hyper-agents-tab {
+    min-width: auto;
+    flex: 1;
+  }
+
+  .hyper-agents-tab-text {
+    font-size: 18px;
+  }
+
+  .hyper-agents-tab-underline {
+    width: 100%;
+  }
+
+  .hyper-agents-sidebar-header {
+    padding-top: 60px;
+    top: 12px;
+    left: 20px;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+  }
+
+  .hyper-agents-sidebar.collapsed {
+    width: 0;
+    min-width: 0;
+  }
+
+  .hyper-agents-sidebar.collapsed .hyper-agents-sidebar-header {
+    display: none;
+  }
+
+  .hyper-agents-header-actions {
+    gap: 6px;
+  }
+
+  .hyper-agents-header-action-btn {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hyper-agents-header-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hyper-agents-sidebar-background {
+    width: 100%;
+    left: 0;
+  }
+
+  .hyper-agents-sidebar-footer {
+    width: calc(100% - 40px);
+    left: 20px;
+    top: auto;
+    bottom: 12px;
+    height: auto;
+    min-height: 85.75px;
+  }
+
+  .hyper-agents-setting-btn {
+    bottom: 12px;
+    margin-bottom: 0;
+  }
+  
+  .hyper-agents-sidebar-main-content {
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    top: 120px;
+  }
+  
+  .hyper-agents-menu-background {
+    left: 0;
+    width: 100%;
+  }
+  
+  .hyper-agents-share-banner {
+    left: 0;
+    top: 20px;
+    width: 100%;
+  }
+  
+  .hyper-agents-setting-btn {
+    left: 0;
+    bottom: 20px;
+    top: auto;
+  }
+}
+
+/* 태블릿 반응형 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hyper-agents-sidebar {
+    width: calc(258px * (100vw / 1440px));
+    min-width: 200px;
+  }
+
+  .hyper-agents-main-content {
+    left: calc(258px * (100vw / 1440px));
+    width: calc(100% - calc(258px * (100vw / 1440px)));
+    padding-top: calc(96px * (100vh / 810px));
+  }
+
+  .hyper-agents-tabs-section {
+    width: auto;
+    min-width: calc(338.1px * (100vw / 1440px));
+    height: calc(38.7px * (100vh / 810px));
+    gap: calc(21.6px * (100vw / 1440px));
+    margin-left: calc(406px * (100vw / 1440px));
+  }
+
+  .hyper-agents-tab {
+    min-width: auto;
+    height: calc(38.7px * (100vh / 810px));
+  }
+
+  .hyper-agents-tab-text {
+    font-size: calc(21.6px * (100vw / 1440px));
+    white-space: nowrap;
+  }
+
+  .hyper-agents-tab-underline {
+    width: 100%;
+    height: calc(3.6px * (100vh / 810px));
+  }
+
+  .hyper-agents-content-area {
+    padding-left: calc(406px * (100vw / 1440px));
+  }
+
+  .hyper-agents-top-header {
+    right: calc(21.75px * (100vw / 1440px));
+    top: calc(18px * (100vh / 810px));
+  }
+
+  .hyper-agents-sidebar-header {
+    left: calc(18.75px * (100vw / 1440px));
+    width: calc(239.25px * (100vw / 1440px));
+    justify-content: space-between;
+  }
+
+  .hyper-agents-sidebar-background {
+    left: calc(18.75px * (100vw / 1440px));
+    width: calc(239.25px * (100vw / 1440px));
+  }
+
+  .hyper-agents-menu-background {
+    top: calc(153.25px * (100vh / 810px));
+    width: calc(247.75px * (100vw / 1440px));
+    height: calc(46.5px * (100vh / 810px));
+  }
+
+  .hyper-agents-sidebar-main-content {
+    left: calc(-33.25px * (100vw / 1440px));
+    top: calc(110.25px * (100vh / 810px));
+    width: calc(281px * (100vw / 1440px));
+    gap: calc(39px * (100vh / 810px));
+  }
+
+  .hyper-agents-sidebar-footer {
+    left: calc(18.75px * (100vw / 1440px));
+    bottom: calc(12px * (100vh / 810px));
+    width: calc(239.25px * (100vw / 1440px));
+    height: calc(85.75px * (100vh / 810px));
+    min-height: calc(85.75px * (100vh / 810px));
+    top: auto;
+  }
+}
+
+/* FHD 반응형 (1025px ~ 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .hyper-agents-sidebar {
+    width: calc(258px * (100vw / 1440px));
+  }
+
+  .hyper-agents-main-content {
+    left: calc(258px * (100vw / 1440px));
+    width: calc(100% - calc(258px * (100vw / 1440px)));
+    padding-top: calc(96px * (100vh / 810px));
+  }
+
+  .hyper-agents-tabs-section {
+    width: auto;
+    min-width: calc(338.1px * (100vw / 1440px));
+    height: calc(38.7px * (100vh / 810px));
+    gap: calc(21.6px * (100vw / 1440px));
+    margin-left: calc(406px * (100vw / 1440px));
+  }
+
+  .hyper-agents-content-area {
+    padding-left: calc(406px * (100vw / 1440px));
+  }
+
+  .hyper-agents-tab {
+    min-width: auto;
+    height: calc(38.7px * (100vh / 810px));
+  }
+
+  .hyper-agents-tab-text {
+    font-size: calc(21.6px * (100vw / 1440px));
+    white-space: nowrap;
+  }
+
+  .hyper-agents-tab-underline {
+    width: 100%;
+    height: calc(3.6px * (100vh / 810px));
+  }
+}
+
+/* FHD 이상 반응형 (1440px 이상) */
+@media (min-width: 1440px) {
+  .hyper-agents-tabs-section {
+    width: auto;
+    height: 38.7px;
+    min-width: 338.1px;
+  }
+
+  .hyper-agents-tab {
+    min-width: auto;
+    height: 38.7px;
+  }
+
+  .hyper-agents-tab-text {
+    font-size: 21.6px;
+    white-space: nowrap;
+  }
+
+  .hyper-agents-tab-underline {
+    width: 100%;
+    height: 3.6px;
+  }
+}
+
+/* QHD 반응형 (1921px ~ 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .hyper-agents-sidebar {
+    max-width: 300px;
+  }
+
+  .hyper-agents-main-content {
+    left: 300px;
+    width: calc(100% - 300px);
+    padding-top: calc(96px * (100vh / 810px));
+  }
+
+  .hyper-agents-tabs-section {
+    margin-left: 364px; /* 664 - 300 = 364 */
+  }
+
+  .hyper-agents-content-area {
+    padding-left: 364px;
+  }
+}
+
+/* UHD 반응형 (2561px 이상) */
+@media (min-width: 2561px) {
+  .hyper-agents-sidebar {
+    max-width: 350px;
+  }
+
+  .hyper-agents-main-content {
+    left: 350px;
+    width: calc(100% - 350px);
+    padding-top: calc(96px * (100vh / 810px));
+  }
+
+  .hyper-agents-tabs-section {
+    margin-left: 314px; /* 664 - 350 = 314 */
+  }
+
+  .hyper-agents-content-area {
+    padding-left: 314px;
+  }
+}
+

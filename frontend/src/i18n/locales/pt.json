@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "Produto",
+    "pricing": "Preços",
+    "blog": "Blog",
+    "support": "Suporte",
+    "login": "Entrar"
+  },
+  "hero": {
+    "tagline": "Uma plataforma integrada para construir soluções de IA poderosas sem código",
+    "title": "Complete seu fluxo de trabalho de IA\nsem codificação complexa.",
+    "description": "Combine vários LLMs e crie, implante chatbots de uma vez.\nQualquer um pode criar IA com a interface de arrastar e soltar do HyperFlow AI.",
+    "cta": "Começar"
+  },
+  "features": {
+    "intro": {
+      "text": "Trabalhe rápida e flexivelmente desde o desenvolvimento sem código até testes em tempo real e lançamento do serviço",
+      "title": "HyperFlow automatiza todos os processos de desenvolvimento de IA"
+    },
+    "sectionTitle": "Pontos fortes únicos do HyperFlow AI, a plataforma de desenvolvimento de próxima geração",
+    "cards": {
+      "dragDrop": {
+        "title": "Fluxo de trabalho arrastar e soltar",
+        "description": "Projete fluxos de IA conectando nós com uma interface intuitiva. A lógica complexa pode ser implementada apenas com arrastar e soltar, permitindo que você construa rapidamente aplicações de IA de alta qualidade sem codificar."
+      },
+      "ragChatbot": {
+        "title": "Chatbot RAG fácil com integrado",
+        "description": "Use os modelos pré-construídos do HyperFlow para construir um chatbot de IA completo baseado em conhecimento apenas com uploads de documentos e conexões de banco de dados."
+      },
+      "multimodal": {
+        "title": "Suporte multimodal multidimensional",
+        "description": "Expanda as capacidades de IA processando várias formas de dados, incluindo texto, imagens, áudio, PDFs e mais."
+      },
+      "deployment": {
+        "title": "Implante instantâneo com um clique",
+        "description": "Implante serviços de IA instantaneamente com um único clique. Sem configuração complexa do ambiente, tudo do desenvolvimento ao lançamento está conectado em tempo real."
+      },
+      "noCode": {
+        "title": "Ambiente sem código escalável",
+        "description": "Construa rapidamente sem código e adicione código personalizado quando necessário. O ambiente híbrido do HyperFlow fornece controle completo e flexibilidade."
+      },
+      "security": {
+        "title": "Segurança de nível empresarial",
+        "description": "HyperFlow fornece segurança de nível empresarial. Registre chaves APT com privilégios de administrador e defina permissões de acesso granulares por projeto para segurança aprimorada."
+      }
+    }
+  },
+  "llm": {
+    "title": "Utilize livremente vários LLMs suportados pelo HyperFlow AI para completar sua própria IA"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Fluxo circular",
+      "description": "Suporta uma estrutura de loop de aprendizado automático onde a IA aprende com os resultados e ajusta as entradas. Repete automaticamente o processo de teste-modificar-melhorar, implementando um ambiente de desenvolvimento evolutivo com otimização contínua."
+    },
+    "superNode": {
+      "title": "02 Super nó",
+      "description": "Os super nós do HyperFlow não estão vinculados a APIs ou plataformas específicas, permitindo que você reutilize fluxos sem recriá-los ao introduzir novas tecnologias ou mudar de fornecedor. Isso fornece um ambiente de desenvolvimento mais rápido e flexível."
+    },
+    "processData": {
+      "title": "03 Integração de processo e dados",
+      "description": "O HyperFlow integra fluxos de dados multimodais e fluxos de trabalho de processo dentro de um único sistema. Também armazena o contexto em cada estágio através da funcionalidade de memória de fluxo, permitindo referências a resultados anteriores ou estados de dados."
+    },
+    "dualEngine": {
+      "title": "04 Motor de execução duplo",
+      "description": "O HyperFlow executa de forma idêntica tanto em ambientes de teste IDE quanto em ambientes de produção reais. Os desenvolvedores podem implantar fluxos experimentais diretamente na produção sem um processo de transição separado, permitindo a construção de fluxos de trabalho de IA que quebram os limites entre desenvolvimento e implantação."
+    },
+    "assetStore": {
+      "title": "05 Loja de ativos integrada",
+      "description": "O HyperFlow integrou todas as ferramentas essenciais para desenvolvimento em um só lugar. Reutilize fluxos e nós através da Asset Store, e complete tudo desde o design até a implantação e gerenciamento automatizado em uma única parada através do Chatbot e DevOps."
+    }
+  },
+  "superNodeSection": {
+    "title": "Automatize tarefas complexas de IA com super nós integrados",
+    "cardTitle": "Super nó que conecta vários serviços em um",
+    "cardDescription": "O super nó do HyperFlow é um motor de abstração flexível que controla todos os serviços através de uma única interface.",
+    "button": "Explorar super nó"
+  },
+  "workflow": {
+    "title": "Começando com HyperFlow AI",
+    "subtitle": "Três passos são suficientes sem codificação complexa. Sua ideia se torna um serviço.",
+    "steps": {
+      "dataConnection": {
+        "title": "Conexão de dados",
+        "description": "Faça upload de documentos ou conecte-se a dados para criar uma base de conhecimento para serviços de IA."
+      },
+      "workflowDesign": {
+        "title": "Design de fluxo de trabalho",
+        "description": "Projete fluxos de trabalho de IA com uma interface intuitiva de arrastar e soltar."
+      },
+      "deployManage": {
+        "title": "Implantar e gerenciar",
+        "description": "Incorpore em várias formas, como chatbots e integrações de API, e implante e gerencie com um clique."
+      }
+    }
+  },
+  "templates": {
+    "title": "Crie tudo que você pode imaginar",
+    "subtitle": "Crie aplicações de IA adaptadas a várias indústrias e propósitos. Construa fluxos de trabalho e ferramentas personalizados que resolvem problemas reais.",
+    "documentSearch": {
+      "title": "Busca e resumo de documentos",
+      "description": "Construa um sistema de IA que encontre e resuma rapidamente as informações necessárias de grandes volumes de documentos.",
+      "features": {
+        "instantSearch": "Busca instantânea",
+        "knowledgeRef": "Referência de conhecimento",
+        "fileFormats": "Vários formatos de arquivo",
+        "autoSummary": "Resumo automático"
+      },
+      "button": "Ver modelo"
+    },
+    "customerService": {
+      "title": "Chatbot de atendimento ao cliente",
+      "description": "Construa um chatbot que forneça suporte ao cliente 24/7 para aumentar a satisfação do cliente e reduzir os custos operacionais.",
+      "features": {
+        "autoResponse": "Resposta automática 24/7",
+        "faqAuto": "Processamento automático de FAQ",
+        "humanConnect": "Conexão de agente humano",
+        "autoSummary": "Resumo automático"
+      },
+      "button": "Ver modelo"
+    },
+    "personalized": {
+      "title": "Sistema de recomendação personalizado",
+      "description": "Crie sua própria IA que analisa preferências e padrões de comportamento do usuário para fornecer recomendações personalizadas.",
+      "features": {
+        "realtimeAnalysis": "Análise em tempo real",
+        "behaviorPattern": "Aprendizado de padrões de comportamento",
+        "knowledgeLearning": "Aprendizado de conhecimento",
+        "personalized": "Recomendações personalizadas"
+      },
+      "button": "Ver modelo"
+    },
+    "contentGeneration": {
+      "title": "Ferramenta de geração de conteúdo",
+      "description": "Desenvolva uma ferramenta de IA que gere automaticamente posts de blog, cópias de marketing e conteúdo de mídia social.",
+      "features": {
+        "autoWriting": "Escrita automática",
+        "seoOptimization": "Otimização SEO",
+        "variousStyles": "Vários estilos",
+        "brandTone": "Tom e maneira da marca"
+      },
+      "button": "Ver modelo"
+    }
+  },
+  "lowContent": {
+    "title": "Lidere a inovação na era da IA com HyperFlow AI",
+    "text": "A era da IA já começou. O HyperFlow será o motor que acelera essa mudança e conecta sua imaginação ao negócio."
+  },
+  "footer": {
+    "tagline": "Uma plataforma integrada para construir soluções de IA poderosas sem código",
+    "copyright": "© 2025 Mirinae Technologies Inc. Todos os direitos reservados."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Por favor, insira seu ID.",
+      "password": "Por favor, insira sua senha"
+    },
+    "link": {
+      "signIn": "Cadastrar",
+      "findPassword": "Recuperar senha"
+    },
+    "button": {
+      "login": "Entrar",
+      "google": "Entrar com Google"
+    },
+    "divider": {
+      "text": "Ou entrar com email"
+    },
+    "warning": {
+      "enterCredentials": "Por favor, insira seu ID e senha."
+    },
+    "success": "Login bem-sucedido!",
+    "successGoogle": "Login com Google bem-sucedido!",
+    "info": {
+      "googleLogin": "Tentando fazer login com Google..."
+    },
+    "error": {
+      "google": "Falha no login com Google."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Biblioteca",
+      "knowledgeBases": "Bases de conhecimento"
+    },
+    "filter": {
+      "all": "Todos",
+      "favorites": "Favoritos"
+    },
+    "share": {
+      "title": "Compartilhar HyperFlow com uma equipe",
+      "subtitle": "Receber 500 créditos"
+    },
+    "input": {
+      "title": "Como posso ajudá-lo hoje?",
+      "placeholder": "Como posso ajudá-lo hoje?"
+    },
+    "media": {
+      "image": "Imagem",
+      "video": "Vídeo",
+      "audio": "Áudio"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Agente que criei"
+    },
+    "emptyState": "Sem exemplos"
+  },
+  "library": {
+    "title": "Minha biblioteca",
+    "description": "Gerencie e implante seus chatbots construídos com agentes e gráficos de fluxo",
+    "table": {
+      "name": "Nome",
+      "memo": "Memo",
+      "deploymentDate": "Data de implantação",
+      "access": "Acesso",
+      "status": "Status",
+      "deploy": "Implantar"
+    },
+    "moveToFlowgraph": "Mover para Flowgraph"
+  },
+  "knowledgeBase": {
+    "title": "Base de conhecimento",
+    "description": "O HyperFlow gerencia e modifica o banco de dados de conhecimento para fornecer respostas otimizadas de acordo com as necessidades e preferências do usuário, e suporta funcionalidade RAG.",
+    "uploadText": "Por favor, selecione um arquivo para fazer upload"
+  },
+  "settings": {
+    "title": "Configurações",
+    "sidebar": {
+      "settings": "Configurações",
+      "usage": "Uso",
+      "connectors": "Conectores",
+      "getHelp": "Obter ajuda"
+    },
+    "language": "Idioma",
+    "mode": "Modo",
+    "mode.light": "Claro",
+    "mode.dark": "Escuro",
+    "manageCookies": "Gerenciar cookies",
+    "manage": "Gerenciar",
+    "goToHyperFlow": "Ir para HyperFlow"
+  }
+}

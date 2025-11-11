@@ -1,0 +1,134 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  NODE_VERSION: "18"
+  PNPM_VERSION: "10.10.0"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - frontend/node_modules/
+    - backend/node_modules/
+    - .pnpm-store/
+
+before_script:
+  - npm install -g pnpm@${PNPM_VERSION}
+  - pnpm config set store-dir .pnpm-store
+  - pnpm install --frozen-lockfile
+
+# Build stage - Vite build for frontend
+build:frontend:
+  stage: build
+  script:
+    - echo "Building frontend with Vite..."
+    - pnpm --filter frontend build
+  artifacts:
+    paths:
+      - frontend/dist/
+    expire_in: 1 hour
+    reports:
+      dotenv: build.env
+
+build:backend:
+  stage: build
+  script:
+    - echo "Building backend..."
+    - pnpm --filter backend build
+  artifacts:
+    paths:
+      - backend/dist/
+    expire_in: 1 hour
+
+# Test stage - Vitest for both frontend and backend
+test:frontend:
+  stage: test
+  script:
+    - echo "Running frontend tests with Vitest..."
+    - pnpm --filter frontend test --run --coverage
+  coverage: '/Lines\s*:\s*(\d+\.\d+)%/'
+  artifacts:
+    when: always
+    paths:
+      - frontend/coverage/
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: frontend/coverage/cobertura-coverage.xml
+    expire_in: 30 days
+
+test:backend:
+  stage: test
+  script:
+    - echo "Running backend tests with Vitest..."
+    - pnpm --filter backend test --run --coverage
+  coverage: '/Lines\s*:\s*(\d+\.\d+)%/'
+  artifacts:
+    when: always
+    paths:
+      - backend/coverage/
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: backend/coverage/cobertura-coverage.xml
+    expire_in: 30 days
+
+# Deploy to GCP Cloud Run
+deploy:gcp:
+  stage: deploy
+  image: docker:latest
+  services:
+    - docker:dind
+  dependencies:
+    - build:frontend
+    - build:backend
+  before_script:
+    - apk add --no-cache curl
+    - curl -sSL https://sdk.cloud.google.com | bash
+    - export PATH=$PATH:/root/google-cloud-sdk/bin
+    - |
+      # Authenticate with GCP
+      echo $GCP_SERVICE_ACCOUNT_KEY | base64 -d > /tmp/gcp-key.json
+      gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
+      gcloud config set project $GCP_PROJECT_ID
+      gcloud config set run/region $GCP_REGION
+      gcloud auth configure-docker --quiet
+  script:
+    - echo "Building Docker image..."
+    - |
+      # Build Docker image
+      docker build -t gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:$CI_COMMIT_SHORT_SHA .
+      docker tag gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:$CI_COMMIT_SHORT_SHA gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:latest
+    - |
+      # Push Docker image to GCR
+      docker push gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:$CI_COMMIT_SHORT_SHA
+      docker push gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:latest
+    - |
+      # Deploy to Cloud Run
+      gcloud run deploy $GCP_SERVICE_NAME \
+        --image gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:$CI_COMMIT_SHORT_SHA \
+        --platform managed \
+        --region $GCP_REGION \
+        --allow-unauthenticated \
+        --port 3000 \
+        --memory 512Mi \
+        --cpu 1 \
+        --max-instances 10 \
+        --set-env-vars NODE_ENV=production \
+        --quiet
+    - |
+      # Get service URL
+      SERVICE_URL=$(gcloud run services describe $GCP_SERVICE_NAME --platform managed --region $GCP_REGION --format 'value(status.url)')
+      echo "Deployment completed successfully!"
+      echo "Service URL: $SERVICE_URL"
+  only:
+    - main
+    - master
+  when: on_success
+  environment:
+    name: production
+    url: https://$GCP_SERVICE_NAME-$GCP_PROJECT_HASH.$GCP_REGION.run.app
+

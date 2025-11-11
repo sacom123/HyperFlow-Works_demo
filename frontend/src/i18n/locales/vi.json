@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "product": "Sản phẩm",
+    "pricing": "Giá cả",
+    "blog": "Blog",
+    "support": "Hỗ trợ",
+    "login": "Đăng nhập"
+  },
+  "hero": {
+    "tagline": "Nền tảng tích hợp để xây dựng giải pháp AI mạnh mẽ không cần mã",
+    "title": "Hoàn thành quy trình làm việc AI của bạn\nmà không cần mã hóa phức tạp.",
+    "description": "Kết hợp các LLM khác nhau và tạo, triển khai chatbot cùng một lúc.\nBất kỳ ai cũng có thể tạo AI với giao diện kéo và thả của HyperFlow AI.",
+    "cta": "Bắt đầu"
+  },
+  "features": {
+    "intro": {
+      "text": "Làm việc nhanh chóng và linh hoạt từ phát triển không cần mã đến kiểm tra thời gian thực và ra mắt dịch vụ",
+      "title": "HyperFlow tự động hóa mọi quy trình phát triển AI"
+    },
+    "sectionTitle": "Điểm mạnh độc đáo của HyperFlow AI, nền tảng phát triển thế hệ tiếp theo",
+    "cards": {
+      "dragDrop": {
+        "title": "Quy trình làm việc kéo và thả",
+        "description": "Thiết kế luồng AI bằng cách kết nối các nút với giao diện trực quan. Logic phức tạp có thể được triển khai chỉ bằng kéo và thả, cho phép bạn nhanh chóng xây dựng các ứng dụng AI chất lượng cao mà không cần mã hóa."
+      },
+      "ragChatbot": {
+        "title": "Chatbot RAG dễ dàng với tích hợp sẵn",
+        "description": "Sử dụng các mẫu được xây dựng sẵn của HyperFlow để xây dựng chatbot AI dựa trên kiến thức hoàn chỉnh chỉ với tải lên tài liệu và kết nối cơ sở dữ liệu."
+      },
+      "multimodal": {
+        "title": "Hỗ trợ đa phương thức đa chiều",
+        "description": "Mở rộng khả năng AI bằng cách xử lý các dạng dữ liệu khác nhau bao gồm văn bản, hình ảnh, âm thanh, PDF và nhiều hơn nữa."
+      },
+      "deployment": {
+        "title": "Triển khai tức thì với một cú nhấp",
+        "description": "Triển khai dịch vụ AI ngay lập tức với một cú nhấp. Không cần cấu hình môi trường phức tạp, mọi thứ từ phát triển đến ra mắt đều được kết nối theo thời gian thực."
+      },
+      "noCode": {
+        "title": "Môi trường no-code có thể mở rộng",
+        "description": "Xây dựng nhanh chóng với no-code và thêm mã tùy chỉnh khi cần thiết. Môi trường hybrid của HyperFlow cung cấp kiểm soát hoàn toàn và tính linh hoạt."
+      },
+      "security": {
+        "title": "Bảo mật cấp doanh nghiệp",
+        "description": "HyperFlow cung cấp bảo mật cấp doanh nghiệp. Đăng ký khóa APT với quyền quản trị viên và đặt quyền truy cập chi tiết cho mỗi dự án để tăng cường bảo mật."
+      }
+    }
+  },
+  "llm": {
+    "title": "Sử dụng tự do các LLM khác nhau được hỗ trợ bởi HyperFlow AI để hoàn thành AI của riêng bạn"
+  },
+  "advancedWorkflow": {
+    "circularFlow": {
+      "title": "01 Luồng tuần hoàn",
+      "description": "Hỗ trợ cấu trúc vòng lặp học tập tự động nơi AI học từ kết quả và điều chỉnh đầu vào. Tự động lặp lại quy trình kiểm tra-sửa đổi-cải thiện, triển khai môi trường phát triển tiến hóa với tối ưu hóa liên tục."
+    },
+    "superNode": {
+      "title": "02 Siêu nút",
+      "description": "Các siêu nút của HyperFlow không bị ràng buộc với API hoặc nền tảng cụ thể, cho phép bạn tái sử dụng luồng mà không cần tạo lại khi giới thiệu công nghệ mới hoặc thay đổi nhà cung cấp. Điều này cung cấp môi trường phát triển nhanh hơn và linh hoạt hơn."
+    },
+    "processData": {
+      "title": "03 Tích hợp quy trình và dữ liệu",
+      "description": "HyperFlow tích hợp luồng dữ liệu đa phương thức và quy trình làm việc trong một hệ thống duy nhất. Nó cũng lưu trữ ngữ cảnh ở mỗi giai đoạn thông qua chức năng bộ nhớ luồng, cho phép tham chiếu đến kết quả trước đó hoặc trạng thái dữ liệu."
+    },
+    "dualEngine": {
+      "title": "04 Động cơ thực thi kép",
+      "description": "HyperFlow chạy giống hệt nhau trong cả môi trường kiểm tra IDE và môi trường sản xuất thực tế. Các nhà phát triển có thể triển khai luồng thử nghiệm trực tiếp vào sản xuất mà không cần quy trình chuyển đổi riêng, cho phép xây dựng quy trình làm việc AI phá vỡ ranh giới giữa phát triển và triển khai."
+    },
+    "assetStore": {
+      "title": "05 Cửa hàng tài sản tích hợp",
+      "description": "HyperFlow đã tích hợp tất cả các công cụ cần thiết cho phát triển ở một nơi. Tái sử dụng luồng và nút thông qua Asset Store, và hoàn thành mọi thứ từ thiết kế đến triển khai và quản lý tự động trong một bước thông qua Chatbot và DevOps."
+    }
+  },
+  "superNodeSection": {
+    "title": "Tự động hóa các tác vụ AI phức tạp với siêu nút tích hợp",
+    "cardTitle": "Siêu nút kết nối nhiều dịch vụ thành một",
+    "cardDescription": "Siêu nút của HyperFlow là một động cơ trừu tượng linh hoạt điều khiển tất cả các dịch vụ thông qua một giao diện duy nhất.",
+    "button": "Khám phá siêu nút"
+  },
+  "workflow": {
+    "title": "Bắt đầu với HyperFlow AI",
+    "subtitle": "Ba bước là đủ mà không cần mã hóa phức tạp. Ý tưởng của bạn trở thành dịch vụ.",
+    "steps": {
+      "dataConnection": {
+        "title": "Kết nối dữ liệu",
+        "description": "Tải lên tài liệu hoặc kết nối với dữ liệu để tạo cơ sở kiến thức cho các dịch vụ AI."
+      },
+      "workflowDesign": {
+        "title": "Thiết kế quy trình làm việc",
+        "description": "Thiết kế quy trình làm việc AI với giao diện kéo và thả trực quan."
+      },
+      "deployManage": {
+        "title": "Triển khai và quản lý",
+        "description": "Nhúng ở nhiều dạng như chatbot và tích hợp API, và triển khai và quản lý bằng một cú nhấp chuột."
+      }
+    }
+  },
+  "templates": {
+    "title": "Tạo mọi thứ bạn có thể tưởng tượng",
+    "subtitle": "Tạo ứng dụng AI phù hợp với các ngành và mục đích khác nhau. Xây dựng quy trình làm việc và công cụ tùy chỉnh giải quyết các vấn đề thực tế.",
+    "documentSearch": {
+      "title": "Tìm kiếm và tóm tắt tài liệu",
+      "description": "Xây dựng hệ thống AI nhanh chóng tìm và tóm tắt thông tin cần thiết từ khối lượng lớn tài liệu.",
+      "features": {
+        "instantSearch": "Tìm kiếm tức thì",
+        "knowledgeRef": "Tham chiếu kiến thức",
+        "fileFormats": "Các định dạng tệp khác nhau",
+        "autoSummary": "Tóm tắt tự động"
+      },
+      "button": "Xem mẫu"
+    },
+    "customerService": {
+      "title": "Chatbot dịch vụ khách hàng",
+      "description": "Xây dựng chatbot cung cấp hỗ trợ khách hàng 24/7 để tăng sự hài lòng của khách hàng và giảm chi phí vận hành.",
+      "features": {
+        "autoResponse": "Phản hồi tự động 24/7",
+        "faqAuto": "Xử lý FAQ tự động",
+        "humanConnect": "Kết nối đại lý con người",
+        "autoSummary": "Tóm tắt tự động"
+      },
+      "button": "Xem mẫu"
+    },
+    "personalized": {
+      "title": "Hệ thống đề xuất cá nhân hóa",
+      "description": "Tạo AI của riêng bạn phân tích sở thích và mẫu hành vi của người dùng để cung cấp đề xuất cá nhân hóa.",
+      "features": {
+        "realtimeAnalysis": "Phân tích thời gian thực",
+        "behaviorPattern": "Học mẫu hành vi",
+        "knowledgeLearning": "Học kiến thức",
+        "personalized": "Đề xuất cá nhân hóa"
+      },
+      "button": "Xem mẫu"
+    },
+    "contentGeneration": {
+      "title": "Công cụ tạo nội dung",
+      "description": "Phát triển công cụ AI tự động tạo bài đăng blog, bản sao tiếp thị và nội dung truyền thông xã hội.",
+      "features": {
+        "autoWriting": "Viết tự động",
+        "seoOptimization": "Tối ưu hóa SEO",
+        "variousStyles": "Nhiều phong cách",
+        "brandTone": "Giọng điệu và cách thức thương hiệu"
+      },
+      "button": "Xem mẫu"
+    }
+  },
+  "lowContent": {
+    "title": "Dẫn đầu đổi mới trong kỷ nguyên AI với HyperFlow AI",
+    "text": "Kỷ nguyên AI đã bắt đầu. HyperFlow sẽ là động cơ thúc đẩy sự thay đổi đó và kết nối trí tưởng tượng của bạn với kinh doanh."
+  },
+  "footer": {
+    "tagline": "Nền tảng tích hợp để xây dựng giải pháp AI mạnh mẽ không cần mã",
+    "copyright": "© 2025 Mirinae Technologies Inc. Bảo lưu mọi quyền."
+  },
+  "login": {
+    "placeholder": {
+      "id": "Vui lòng nhập ID của bạn.",
+      "password": "Vui lòng nhập mật khẩu của bạn"
+    },
+    "link": {
+      "signIn": "Đăng ký",
+      "findPassword": "Khôi phục mật khẩu"
+    },
+    "button": {
+      "login": "Đăng nhập",
+      "google": "Đăng nhập bằng Google"
+    },
+    "divider": {
+      "text": "Hoặc đăng nhập bằng email"
+    },
+    "warning": {
+      "enterCredentials": "Vui lòng nhập ID và mật khẩu của bạn."
+    },
+    "success": "Đăng nhập thành công!",
+    "successGoogle": "Đăng nhập Google thành công!",
+    "info": {
+      "googleLogin": "Đang thử đăng nhập Google..."
+    },
+    "error": {
+      "google": "Đăng nhập Google thất bại."
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "hyperChat": "Hyper Chat",
+      "hyperAgent": "Hyper Agent",
+      "library": "Thư viện",
+      "knowledgeBases": "Cơ sở kiến thức"
+    },
+    "filter": {
+      "all": "Tất cả",
+      "favorites": "Yêu thích"
+    },
+    "share": {
+      "title": "Chia sẻ HyperFlow với nhóm",
+      "subtitle": "Nhận 500 tín dụng"
+    },
+    "input": {
+      "title": "Tôi có thể giúp gì cho bạn hôm nay?",
+      "placeholder": "Tôi có thể giúp gì cho bạn hôm nay?"
+    },
+    "media": {
+      "image": "Hình ảnh",
+      "video": "Video",
+      "audio": "Âm thanh"
+    },
+    "tabs": {
+      "hyperAgents": "Hyper Agents",
+      "agentICreated": "Đại lý tôi đã tạo"
+    },
+    "emptyState": "Không có ví dụ"
+  },
+  "library": {
+    "title": "Thư viện của tôi",
+    "description": "Quản lý và triển khai chatbot của bạn được xây dựng bằng đại lý và biểu đồ luồng",
+    "table": {
+      "name": "Tên",
+      "memo": "Ghi chú",
+      "deploymentDate": "Ngày triển khai",
+      "access": "Truy cập",
+      "status": "Trạng thái",
+      "deploy": "Triển khai"
+    },
+    "moveToFlowgraph": "Chuyển đến Flowgraph"
+  },
+  "knowledgeBase": {
+    "title": "Cơ sở kiến thức",
+    "description": "HyperFlow quản lý và chỉnh sửa cơ sở dữ liệu kiến thức để cung cấp câu trả lời tối ưu theo nhu cầu và sở thích của người dùng, và hỗ trợ chức năng RAG.",
+    "uploadText": "Vui lòng chọn tệp để tải lên"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "sidebar": {
+      "settings": "Cài đặt",
+      "usage": "Sử dụng",
+      "connectors": "Bộ kết nối",
+      "getHelp": "Nhận trợ giúp"
+    },
+    "language": "Ngôn ngữ",
+    "mode": "Chế độ",
+    "mode.light": "Sáng",
+    "mode.dark": "Tối",
+    "manageCookies": "Quản lý cookie",
+    "manage": "Quản lý",
+    "goToHyperFlow": "Đi tới HyperFlow"
+  }
+}
