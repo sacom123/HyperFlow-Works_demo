@@ -22,6 +22,14 @@ This README documents the project structure, deployment architecture, CI/CD pipe
 - [Installation Details](#installation-details)
 - [Access and URLs](#access-and-urls)
 - [Development Workflow](#development-workflow)
+- [API Documentation](#api-documentation)
+- [Performance & Scaling](#performance--scaling)
+- [Monitoring & Logging](#monitoring--logging)
+- [Security](#security)
+- [Health Checks](#health-checks)
+- [Scripts Reference](#scripts-reference)
+- [Cloud Run Configuration](#cloud-run-configuration)
+- [Error Handling](#error-handling)
 
 ---
 
@@ -573,6 +581,372 @@ Configure in GitLab: **Settings → CI/CD → Variables**
 
 ---
 
+### API Documentation
+
+#### Available Endpoints
+
+The backend API provides the following endpoints:
+
+##### Health Check
+- **Endpoint**: `GET /api/health`
+- **Description**: Health check endpoint for monitoring and load balancers
+- **Response**:
+  ```json
+  {
+    "status": "ok",
+    "message": "Hyperflow Works API is running",
+    "timestamp": "2024-01-01T00:00:00.000Z"
+  }
+  ```
+
+##### Hello Endpoint
+- **Endpoint**: `GET /api/hello`
+- **Description**: Simple hello endpoint for testing
+- **Response**:
+  ```json
+  {
+    "message": "Hello from Hyperflow Works Backend!"
+  }
+  ```
+
+#### Error Response Format
+
+All errors follow a consistent format:
+
+```json
+{
+  "error": {
+    "message": "Error message",
+    "status": 500
+  }
+}
+```
+
+#### Base URL
+
+- **Local Development**: `http://localhost:3000/api`
+- **Production**: `https://<service-url>/api`
+
+---
+
+### Performance & Scaling
+
+#### Cloud Run Configuration
+
+The application is configured with the following Cloud Run settings:
+
+- **Memory**: 512Mi
+- **CPU**: 1 vCPU
+- **Port**: 3000
+- **Min Instances**: 0 (default, scales to zero when idle)
+- **Max Instances**: 10 (configurable)
+- **Concurrency**: 80 (default, requests per instance)
+- **Timeout**: 300 seconds (default)
+
+#### Auto-scaling
+
+Cloud Run automatically scales based on traffic:
+- **Scale to zero**: When no traffic, instances scale down to zero
+- **Scale up**: Automatically scales up to handle increased traffic
+- **Scale down**: Scales down when traffic decreases
+
+#### Performance Optimization
+
+- **Cold Start**: First request may experience cold start (container initialization)
+- **Warm Instances**: Keep at least 1 instance warm for faster response times
+- **Caching**: Static files are cached with 1-day max-age
+- **Image Optimization**: Images are converted to AVIF format for better performance
+
+#### Scaling Configuration
+
+To modify scaling settings, update the `.gitlab-ci.yml` deploy stage:
+
+```yaml
+gcloud run deploy "${SERVICE_NAME}" \
+  --min-instances 1 \      # Keep at least 1 instance warm
+  --max-instances 10 \     # Maximum instances
+  --concurrency 80 \       # Requests per instance
+  --timeout 300            # Request timeout in seconds
+```
+
+---
+
+### Monitoring & Logging
+
+#### Cloud Run Logs
+
+View application logs in GCP Console:
+
+```bash
+# View logs in Cloud Console
+# https://console.cloud.google.com/logs
+
+# View logs via gcloud CLI
+gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=hyperflow-works" --limit 50
+```
+
+#### Application Logging
+
+The application uses a custom logger middleware that logs:
+- HTTP method
+- Request URL
+- Response time in milliseconds
+
+Example log output:
+```
+GET /api/health - 5ms
+GET /api/hello - 2ms
+```
+
+#### Error Logging
+
+Errors are logged with:
+- Error message
+- HTTP status code
+- Stack trace (in development mode)
+
+#### GitLab Pipeline Logs
+
+Monitor deployment pipelines:
+- **GitLab Pipelines**: https://gitlab.com/seonhohong/hyperflow-works-demohong/-/pipelines
+- Each pipeline stage logs detailed information
+- Build and deployment logs are available in GitLab
+
+#### Health Check Monitoring
+
+The `/api/health` endpoint can be used for:
+- **Load Balancer Health Checks**: Configure load balancer to check this endpoint
+- **Monitoring Alerts**: Set up alerts based on health check responses
+- **Uptime Monitoring**: Use external monitoring services to check this endpoint
+
+---
+
+### Security
+
+#### Authentication & Authorization
+
+- **Workload Identity Federation (WIF)**: Secure authentication without service account keys
+- **No Key Storage**: Service account keys are not stored in GitLab variables
+- **OIDC Tokens**: Uses GitLab OIDC tokens for authentication
+
+#### CORS Configuration
+
+CORS is enabled for all origins in development. For production, configure specific origins:
+
+```typescript
+// backend/src/index.ts
+app.use(cors({
+  origin: process.env.ALLOWED_ORIGINS?.split(',') || '*',
+  credentials: true
+}))
+```
+
+#### Environment Variables
+
+- **Sensitive Data**: Never commit sensitive data to the repository
+- **Environment Variables**: Use environment variables for configuration
+- **Secrets Management**: Use GCP Secret Manager for sensitive data (future enhancement)
+
+#### Best Practices
+
+- ✅ Use WIF instead of service account keys
+- ✅ Enable CORS only for trusted origins in production
+- ✅ Use environment variables for configuration
+- ✅ Keep dependencies up to date
+- ✅ Regular security audits
+- ✅ Use HTTPS in production (automatically enabled by Cloud Run)
+
+---
+
+### Health Checks
+
+#### Health Check Endpoint
+
+The application provides a health check endpoint at `/api/health`:
+
+```bash
+# Check health
+curl https://<service-url>/api/health
+```
+
+**Response**:
+```json
+{
+  "status": "ok",
+  "message": "Hyperflow Works API is running",
+  "timestamp": "2024-01-01T00:00:00.000Z"
+}
+```
+
+#### Cloud Run Health Checks
+
+Cloud Run automatically performs health checks:
+- **Startup Probe**: Checks if the container is ready
+- **Liveness Probe**: Checks if the container is still alive
+- **Readiness Probe**: Checks if the container is ready to serve traffic
+
+#### Monitoring Integration
+
+The health check endpoint can be integrated with:
+- **GCP Cloud Monitoring**: Set up alerts based on health check failures
+- **External Monitoring**: Use services like UptimeRobot or Pingdom
+- **Load Balancers**: Configure health checks for load balancers
+
+---
+
+### Scripts Reference
+
+#### Available Scripts
+
+##### Root Level Scripts
+
+```bash
+# Development
+pnpm dev                    # Start frontend and backend in development mode
+
+# Build
+pnpm build                  # Build both frontend and backend for production
+
+# Testing
+pnpm test                   # Run all tests
+pnpm --filter frontend test # Run frontend tests only
+pnpm --filter backend test  # Run backend tests only
+
+# Linting
+pnpm lint                   # Lint all projects
+pnpm --filter frontend lint # Lint frontend only
+pnpm --filter backend lint  # Lint backend only
+```
+
+##### Frontend Scripts
+
+```bash
+cd frontend
+
+pnpm dev                    # Start Vite dev server
+pnpm build                  # Build for production
+pnpm preview                # Preview production build
+pnpm test                   # Run tests
+pnpm test:ui                # Run tests with UI
+pnpm test:coverage          # Run tests with coverage
+pnpm lint                   # Lint code
+```
+
+##### Backend Scripts
+
+```bash
+cd backend
+
+pnpm dev                    # Start backend in development mode (with watch)
+pnpm build                  # Build TypeScript to JavaScript
+pnpm start                  # Start production server
+pnpm test                   # Run tests
+pnpm test:coverage          # Run tests with coverage
+pnpm lint                   # Lint code
+```
+
+##### Utility Scripts
+
+```bash
+# GCP Setup
+./setup-gitlab-gcp.sh       # Automated GCP setup for GitLab CI/CD
+
+# Image Conversion
+./convert-images-to-avif.sh # Convert images to AVIF format
+```
+
+---
+
+### Cloud Run Configuration
+
+#### Current Settings
+
+The application is deployed with the following Cloud Run configuration:
+
+```yaml
+Service Name: hyperflow-works
+Region: asia-northeast3
+Platform: managed
+Memory: 512Mi
+CPU: 1 vCPU
+Port: 3000
+Min Instances: 0
+Max Instances: 10 (default, not explicitly set)
+Concurrency: 80 (default)
+Timeout: 300 seconds (default)
+Authentication: Unauthenticated (public access)
+Service Account: hyperflow-works-sa@hyperflow-works-hong.iam.gserviceaccount.com
+```
+
+#### Environment Variables
+
+Production environment variables:
+- `NODE_ENV=production` (set automatically)
+- `PORT=3000` (set automatically by Cloud Run)
+
+#### Resource Allocation
+
+- **Memory**: 512Mi is sufficient for most workloads
+- **CPU**: 1 vCPU provides good performance for moderate traffic
+- **Scaling**: Auto-scales based on traffic (0 to 10 instances)
+
+#### Modifying Configuration
+
+To modify Cloud Run configuration, update the `.gitlab-ci.yml` deploy stage or use `gcloud`:
+
+```bash
+gcloud run services update hyperflow-works \
+  --region asia-northeast3 \
+  --memory 1Gi \
+  --cpu 2 \
+  --min-instances 1 \
+  --max-instances 20
+```
+
+---
+
+### Error Handling
+
+#### Error Handler Middleware
+
+The application uses a centralized error handler middleware (`backend/src/middleware/errorHandler.ts`):
+
+- **Catches Errors**: Catches all errors in the request/response cycle
+- **Error Response**: Returns consistent error response format
+- **Status Codes**: Uses appropriate HTTP status codes
+- **Logging**: Logs errors to console (and Cloud Run logs in production)
+
+#### Error Response Format
+
+All errors follow a consistent format:
+
+```json
+{
+  "error": {
+    "message": "Error message description",
+    "status": 500
+  }
+}
+```
+
+#### Common Error Codes
+
+- **400**: Bad Request - Invalid request parameters
+- **401**: Unauthorized - Authentication required
+- **403**: Forbidden - Access denied
+- **404**: Not Found - Resource not found
+- **500**: Internal Server Error - Server error
+
+#### Error Logging
+
+Errors are logged with:
+- Error message
+- HTTP status code
+- Stack trace (in development mode)
+- Request details (method, URL, etc.)
+
+---
+
 ### Environment Variables
 
 #### Frontend
@@ -682,6 +1056,14 @@ Hyperflow Works는 Figma 디자인을 기반으로 구축된 React 18, Koa.js, A
 - [설치 세부사항](#설치-세부사항)
 - [접근 및 URL](#접근-및-url)
 - [개발 워크플로우](#개발-워크플로우)
+- [API 문서](#api-문서)
+- [성능 및 확장성](#성능-및-확장성)
+- [모니터링 및 로깅](#모니터링-및-로깅)
+- [보안](#보안)
+- [헬스 체크](#헬스-체크)
+- [스크립트 참조](#스크립트-참조)
+- [Cloud Run 설정](#cloud-run-설정)
+- [에러 처리](#에러-처리)
 
 ---
 
@@ -1152,6 +1534,372 @@ GitLab에서 설정: **Settings → CI/CD → Variables**
 - **GitHub Actions** - 코드 동기화
 - **Workload Identity Federation** - 안전한 인증
 - **Docker** - 컨테이너화
+
+---
+
+### API 문서
+
+#### 사용 가능한 엔드포인트
+
+백엔드 API는 다음 엔드포인트를 제공합니다:
+
+##### 헬스 체크
+- **엔드포인트**: `GET /api/health`
+- **설명**: 모니터링 및 로드 밸런서용 헬스 체크 엔드포인트
+- **응답**:
+  ```json
+  {
+    "status": "ok",
+    "message": "Hyperflow Works API is running",
+    "timestamp": "2024-01-01T00:00:00.000Z"
+  }
+  ```
+
+##### Hello 엔드포인트
+- **엔드포인트**: `GET /api/hello`
+- **설명**: 테스트용 간단한 hello 엔드포인트
+- **응답**:
+  ```json
+  {
+    "message": "Hello from Hyperflow Works Backend!"
+  }
+  ```
+
+#### 에러 응답 형식
+
+모든 에러는 일관된 형식을 따릅니다:
+
+```json
+{
+  "error": {
+    "message": "Error message",
+    "status": 500
+  }
+}
+```
+
+#### 기본 URL
+
+- **로컬 개발**: `http://localhost:3000/api`
+- **프로덕션**: `https://<service-url>/api`
+
+---
+
+### 성능 및 확장성
+
+#### Cloud Run 설정
+
+애플리케이션은 다음 Cloud Run 설정으로 구성됩니다:
+
+- **메모리**: 512Mi
+- **CPU**: 1 vCPU
+- **포트**: 3000
+- **최소 인스턴스**: 0 (기본값, 유휴 시 0으로 축소)
+- **최대 인스턴스**: 10 (설정 가능)
+- **동시성**: 80 (기본값, 인스턴스당 요청 수)
+- **타임아웃**: 300초 (기본값)
+
+#### 자동 스케일링
+
+Cloud Run은 트래픽에 따라 자동으로 스케일링됩니다:
+- **0으로 축소**: 트래픽이 없을 때 인스턴스가 0으로 축소
+- **확장**: 증가한 트래픽을 처리하기 위해 자동 확장
+- **축소**: 트래픽이 감소하면 축소
+
+#### 성능 최적화
+
+- **콜드 스타트**: 첫 요청은 콜드 스타트(컨테이너 초기화)를 경험할 수 있음
+- **웜 인스턴스**: 더 빠른 응답 시간을 위해 최소 1개 인스턴스를 유지
+- **캐싱**: 정적 파일은 1일 max-age로 캐시됨
+- **이미지 최적화**: 더 나은 성능을 위해 이미지를 AVIF 형식으로 변환
+
+#### 스케일링 설정
+
+스케일링 설정을 수정하려면 `.gitlab-ci.yml`의 deploy 단계를 업데이트하세요:
+
+```yaml
+gcloud run deploy "${SERVICE_NAME}" \
+  --min-instances 1 \      # 최소 1개 인스턴스 유지 (웜 상태)
+  --max-instances 10 \     # 최대 인스턴스
+  --concurrency 80 \       # 인스턴스당 요청 수
+  --timeout 300            # 요청 타임아웃 (초)
+```
+
+---
+
+### 모니터링 및 로깅
+
+#### Cloud Run 로그
+
+GCP Console에서 애플리케이션 로그 확인:
+
+```bash
+# Cloud Console에서 로그 확인
+# https://console.cloud.google.com/logs
+
+# gcloud CLI로 로그 확인
+gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=hyperflow-works" --limit 50
+```
+
+#### 애플리케이션 로깅
+
+애플리케이션은 다음을 로깅하는 사용자 정의 logger 미들웨어를 사용합니다:
+- HTTP 메서드
+- 요청 URL
+- 밀리초 단위 응답 시간
+
+로그 출력 예시:
+```
+GET /api/health - 5ms
+GET /api/hello - 2ms
+```
+
+#### 에러 로깅
+
+에러는 다음 정보와 함께 로깅됩니다:
+- 에러 메시지
+- HTTP 상태 코드
+- 스택 추적 (개발 모드에서)
+
+#### GitLab 파이프라인 로그
+
+배포 파이프라인 모니터링:
+- **GitLab 파이프라인**: https://gitlab.com/seonhohong/hyperflow-works-demohong/-/pipelines
+- 각 파이프라인 단계는 상세한 정보를 로깅
+- 빌드 및 배포 로그는 GitLab에서 확인 가능
+
+#### 헬스 체크 모니터링
+
+`/api/health` 엔드포인트는 다음 용도로 사용할 수 있습니다:
+- **로드 밸런서 헬스 체크**: 로드 밸런서가 이 엔드포인트를 확인하도록 구성
+- **모니터링 알림**: 헬스 체크 응답을 기반으로 알림 설정
+- **가동 시간 모니터링**: 외부 모니터링 서비스를 사용하여 이 엔드포인트 확인
+
+---
+
+### 보안
+
+#### 인증 및 권한 부여
+
+- **Workload Identity Federation (WIF)**: 서비스 계정 키 없이 안전한 인증
+- **키 저장 없음**: 서비스 계정 키는 GitLab 변수에 저장되지 않음
+- **OIDC 토큰**: 인증을 위해 GitLab OIDC 토큰 사용
+
+#### CORS 설정
+
+개발 환경에서는 모든 출처에 대해 CORS가 활성화됩니다. 프로덕션에서는 특정 출처를 구성하세요:
+
+```typescript
+// backend/src/index.ts
+app.use(cors({
+  origin: process.env.ALLOWED_ORIGINS?.split(',') || '*',
+  credentials: true
+}))
+```
+
+#### 환경 변수
+
+- **민감한 데이터**: 민감한 데이터를 저장소에 커밋하지 마세요
+- **환경 변수**: 구성을 위해 환경 변수 사용
+- **시크릿 관리**: 민감한 데이터는 GCP Secret Manager 사용 (향후 개선 사항)
+
+#### 모범 사례
+
+- ✅ 서비스 계정 키 대신 WIF 사용
+- ✅ 프로덕션에서는 신뢰할 수 있는 출처에만 CORS 활성화
+- ✅ 구성을 위해 환경 변수 사용
+- ✅ 의존성을 최신 상태로 유지
+- ✅ 정기적인 보안 감사
+- ✅ 프로덕션에서 HTTPS 사용 (Cloud Run에서 자동으로 활성화)
+
+---
+
+### 헬스 체크
+
+#### 헬스 체크 엔드포인트
+
+애플리케이션은 `/api/health`에서 헬스 체크 엔드포인트를 제공합니다:
+
+```bash
+# 헬스 체크
+curl https://<service-url>/api/health
+```
+
+**응답**:
+```json
+{
+  "status": "ok",
+  "message": "Hyperflow Works API is running",
+  "timestamp": "2024-01-01T00:00:00.000Z"
+}
+```
+
+#### Cloud Run 헬스 체크
+
+Cloud Run은 자동으로 헬스 체크를 수행합니다:
+- **시작 프로브**: 컨테이너가 준비되었는지 확인
+- **라이브니스 프로브**: 컨테이너가 여전히 활성 상태인지 확인
+- **준비 상태 프로브**: 컨테이너가 트래픽을 처리할 준비가 되었는지 확인
+
+#### 모니터링 통합
+
+헬스 체크 엔드포인트는 다음과 통합할 수 있습니다:
+- **GCP Cloud Monitoring**: 헬스 체크 실패를 기반으로 알림 설정
+- **외부 모니터링**: UptimeRobot 또는 Pingdom과 같은 서비스 사용
+- **로드 밸런서**: 로드 밸런서의 헬스 체크 구성
+
+---
+
+### 스크립트 참조
+
+#### 사용 가능한 스크립트
+
+##### 루트 레벨 스크립트
+
+```bash
+# 개발
+pnpm dev                    # 개발 모드로 프론트엔드와 백엔드 시작
+
+# 빌드
+pnpm build                  # 프로덕션용으로 프론트엔드와 백엔드 빌드
+
+# 테스트
+pnpm test                   # 모든 테스트 실행
+pnpm --filter frontend test # 프론트엔드 테스트만 실행
+pnpm --filter backend test  # 백엔드 테스트만 실행
+
+# 린팅
+pnpm lint                   # 모든 프로젝트 린트
+pnpm --filter frontend lint # 프론트엔드만 린트
+pnpm --filter backend lint  # 백엔드만 린트
+```
+
+##### 프론트엔드 스크립트
+
+```bash
+cd frontend
+
+pnpm dev                    # Vite 개발 서버 시작
+pnpm build                  # 프로덕션 빌드
+pnpm preview                # 프로덕션 빌드 미리보기
+pnpm test                   # 테스트 실행
+pnpm test:ui                # UI와 함께 테스트 실행
+pnpm test:coverage          # 커버리지와 함께 테스트 실행
+pnpm lint                   # 코드 린트
+```
+
+##### 백엔드 스크립트
+
+```bash
+cd backend
+
+pnpm dev                    # 개발 모드로 백엔드 시작 (watch 모드)
+pnpm build                  # TypeScript를 JavaScript로 빌드
+pnpm start                  # 프로덕션 서버 시작
+pnpm test                   # 테스트 실행
+pnpm test:coverage          # 커버리지와 함께 테스트 실행
+pnpm lint                   # 코드 린트
+```
+
+##### 유틸리티 스크립트
+
+```bash
+# GCP 설정
+./setup-gitlab-gcp.sh       # GitLab CI/CD용 자동화된 GCP 설정
+
+# 이미지 변환
+./convert-images-to-avif.sh # 이미지를 AVIF 형식으로 변환
+```
+
+---
+
+### Cloud Run 설정
+
+#### 현재 설정
+
+애플리케이션은 다음 Cloud Run 설정으로 배포됩니다:
+
+```yaml
+서비스 이름: hyperflow-works
+리전: asia-northeast3
+플랫폼: managed
+메모리: 512Mi
+CPU: 1 vCPU
+포트: 3000
+최소 인스턴스: 0
+최대 인스턴스: 10 (기본값, 명시적으로 설정되지 않음)
+동시성: 80 (기본값)
+타임아웃: 300초 (기본값)
+인증: 인증 없음 (공개 액세스)
+서비스 계정: hyperflow-works-sa@hyperflow-works-hong.iam.gserviceaccount.com
+```
+
+#### 환경 변수
+
+프로덕션 환경 변수:
+- `NODE_ENV=production` (자동으로 설정됨)
+- `PORT=3000` (Cloud Run이 자동으로 설정)
+
+#### 리소스 할당
+
+- **메모리**: 512Mi는 대부분의 워크로드에 충분
+- **CPU**: 1 vCPU는 중간 규모 트래픽에 좋은 성능 제공
+- **스케일링**: 트래픽에 따라 자동 스케일링 (0~10개 인스턴스)
+
+#### 설정 수정
+
+Cloud Run 설정을 수정하려면 `.gitlab-ci.yml`의 deploy 단계를 업데이트하거나 `gcloud`를 사용하세요:
+
+```bash
+gcloud run services update hyperflow-works \
+  --region asia-northeast3 \
+  --memory 1Gi \
+  --cpu 2 \
+  --min-instances 1 \
+  --max-instances 20
+```
+
+---
+
+### 에러 처리
+
+#### 에러 핸들러 미들웨어
+
+애플리케이션은 중앙화된 에러 핸들러 미들웨어(`backend/src/middleware/errorHandler.ts`)를 사용합니다:
+
+- **에러 캐치**: 요청/응답 주기에서 모든 에러를 캐치
+- **에러 응답**: 일관된 에러 응답 형식 반환
+- **상태 코드**: 적절한 HTTP 상태 코드 사용
+- **로깅**: 에러를 콘솔에 로깅 (프로덕션에서는 Cloud Run 로그)
+
+#### 에러 응답 형식
+
+모든 에러는 일관된 형식을 따릅니다:
+
+```json
+{
+  "error": {
+    "message": "에러 메시지 설명",
+    "status": 500
+  }
+}
+```
+
+#### 일반적인 에러 코드
+
+- **400**: Bad Request - 잘못된 요청 매개변수
+- **401**: Unauthorized - 인증 필요
+- **403**: Forbidden - 액세스 거부
+- **404**: Not Found - 리소스를 찾을 수 없음
+- **500**: Internal Server Error - 서버 오류
+
+#### 에러 로깅
+
+에러는 다음 정보와 함께 로깅됩니다:
+- 에러 메시지
+- HTTP 상태 코드
+- 스택 추적 (개발 모드에서)
+- 요청 세부사항 (메서드, URL 등)
 
 ---
 

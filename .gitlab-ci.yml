@@ -6,7 +6,6 @@ variables:
   IMAGE: '${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${GCP_AR_REPO}/${SERVICE_NAME}:${CI_COMMIT_SHA}'
 
 auth:
-  auth:
   stage: auth
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
   id_tokens:
@@ -20,22 +19,20 @@ auth:
     - echo "OIDC token length: ${#GITLAB_OIDC_TOKEN}"
     - echo -n "$GITLAB_OIDC_TOKEN" > /tmp/oidc_token
 
-    # 🔧 여기! heredoc 따옴표 제거해서 변수 확장되게
+    # WIF 설정 파일 생성
     - |
       cat > /tmp/wif.json <<EOF
       {
         "type": "external_account",
         "audience": "//iam.googleapis.com/${GCP_WIF_PROVIDER}",
-        "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
+        "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
         "token_url": "https://sts.googleapis.com/v1/token",
         "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${GCP_SERVICE_ACCOUNT}:generateAccessToken",
         "credential_source": { "file": "/tmp/oidc_token" }
       }
       EOF
 
-    # 디버그: 관건이던 두 줄만 확인(마스킹 없이 노출되면 안 되니 부분만)
-    - grep -E '"audience"|service_account_impersonation_url' /tmp/wif.json || true
-
+    # 인증 설정
     - export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/wif.json
     - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/wif.json
     - gcloud auth login --cred-file=/tmp/wif.json --no-launch-browser --quiet
