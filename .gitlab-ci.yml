@@ -7,16 +7,13 @@ variables:
 
 # 1) GitLab OIDC 토큰 → WIF 교환 (키 파일 불필요)
 auth:
-  stage: auth
+ stage: auth
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
-  # ← GitLab이 이 잡에 OIDC ID 토큰을 발급하도록 설정 (aud는 provider에 등록한 값과 동일해야 함)
   id_tokens:
     GITLAB_OIDC_TOKEN:
       aud: https://gitlab.com
   script:
-    # 토큰을 파일로 저장
     - echo -n "$GITLAB_OIDC_TOKEN" > /tmp/oidc_token
-    # 외부 계정(Workload Identity Federation) 자격 파일 생성
     - |
       cat > /tmp/wif.json <<EOF
       {
@@ -28,8 +25,7 @@ auth:
         "credential_source": { "file": "/tmp/oidc_token" }
       }
       EOF
-    # gcloud 로그인 및 프로젝트 설정
-    - gcloud auth login --cred-file=/tmp/wif.json
+    - gcloud auth login --cred-file=/tmp/wif.json --no-launch-browser --quiet
     - gcloud config set project "${GCP_PROJECT_ID}"
   artifacts:
     paths:
