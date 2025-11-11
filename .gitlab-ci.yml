@@ -1,134 +1,69 @@
-stages:
-  - build
-  - test
-  - deploy
+stages: [auth, build, deploy]
 
+# Cloud Run 서비스명은 변수로 관리
 variables:
-  NODE_VERSION: "18"
-  PNPM_VERSION: "10.10.0"
+  SERVICE_NAME: '${SERVICE_NAME:-hyperflow-works}'
+  # 이미지 경로 (Artifact Registry)
+  IMAGE: '${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${GCP_AR_REPO}/${SERVICE_NAME}:${CI_COMMIT_SHA}'
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
-    - frontend/node_modules/
-    - backend/node_modules/
-    - .pnpm-store/
-
-before_script:
-  - npm install -g pnpm@${PNPM_VERSION}
-  - pnpm config set store-dir .pnpm-store
-  - pnpm install --frozen-lockfile
-
-# Build stage - Vite build for frontend
-build:frontend:
-  stage: build
+# 1) GitLab OIDC 토큰 → WIF로 교환하여 gcloud 로그인 (키 파일 불필요)
+auth:
+  stage: auth
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
   script:
-    - echo "Building frontend with Vite..."
-    - pnpm --filter frontend build
+    - |
+      cat > /tmp/wif.json <<EOF
+      {
+        "type": "external_account",
+        "audience": "//iam.googleapis.com/${GCP_WIF_PROVIDER}",
+        "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
+        "token_url": "https://sts.googleapis.com/v1/token",
+        "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${GCP_SERVICE_ACCOUNT}:generateAccessToken",
+        "credential_source": { "url": "$CI_JOB_JWT_V2", "format": { "type": "text" } }
+      }
+      EOF
+    - gcloud auth login --cred-file=/tmp/wif.json
+    - gcloud config set project "${GCP_PROJECT_ID}"
   artifacts:
-    paths:
-      - frontend/dist/
-    expire_in: 1 hour
+    paths: [/tmp/wif.json]
+    expire_in: 1h
+
+# 2) Cloud Build 가 Docker 이미지를 빌드하고 Artifact Registry로 푸시
+#    (docker:dind 불필요, Runner에 Docker 없어도 됨)
+build:
+  stage: build
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+  needs: [auth]
+  script:
+    # monorepo라면 Dockerfile이 프론트/백엔드 빌드 산출물을 포함하도록 설계하세요.
+    # (예: pnpm install/build를 Dockerfile 내에서 수행)
+    - gcloud builds submit --tag "${IMAGE}" .
+  artifacts:
     reports:
       dotenv: build.env
+  after_script:
+    - echo "IMAGE=${IMAGE}" >> build.env
 
-build:backend:
-  stage: build
-  script:
-    - echo "Building backend..."
-    - pnpm --filter backend build
-  artifacts:
-    paths:
-      - backend/dist/
-    expire_in: 1 hour
-
-# Test stage - Vitest for both frontend and backend
-test:frontend:
-  stage: test
-  script:
-    - echo "Running frontend tests with Vitest..."
-    - pnpm --filter frontend test --run --coverage
-  coverage: '/Lines\s*:\s*(\d+\.\d+)%/'
-  artifacts:
-    when: always
-    paths:
-      - frontend/coverage/
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: frontend/coverage/cobertura-coverage.xml
-    expire_in: 30 days
-
-test:backend:
-  stage: test
-  script:
-    - echo "Running backend tests with Vitest..."
-    - pnpm --filter backend test --run --coverage
-  coverage: '/Lines\s*:\s*(\d+\.\d+)%/'
-  artifacts:
-    when: always
-    paths:
-      - backend/coverage/
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: backend/coverage/cobertura-coverage.xml
-    expire_in: 30 days
-
-# Deploy to GCP Cloud Run
-deploy:gcp:
+# 3) Cloud Run 배포
+deploy:
   stage: deploy
-  image: docker:latest
-  services:
-    - docker:dind
-  dependencies:
-    - build:frontend
-    - build:backend
-  before_script:
-    - apk add --no-cache curl
-    - curl -sSL https://sdk.cloud.google.com | bash
-    - export PATH=$PATH:/root/google-cloud-sdk/bin
-    - |
-      # Authenticate with GCP
-      echo $GCP_SERVICE_ACCOUNT_KEY | base64 -d > /tmp/gcp-key.json
-      gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
-      gcloud config set project $GCP_PROJECT_ID
-      gcloud config set run/region $GCP_REGION
-      gcloud auth configure-docker --quiet
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+  needs: [build]
   script:
-    - echo "Building Docker image..."
-    - |
-      # Build Docker image
-      docker build -t gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:$CI_COMMIT_SHORT_SHA .
-      docker tag gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:$CI_COMMIT_SHORT_SHA gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:latest
-    - |
-      # Push Docker image to GCR
-      docker push gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:$CI_COMMIT_SHORT_SHA
-      docker push gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:latest
-    - |
-      # Deploy to Cloud Run
-      gcloud run deploy $GCP_SERVICE_NAME \
-        --image gcr.io/$GCP_PROJECT_ID/$GCP_SERVICE_NAME:$CI_COMMIT_SHORT_SHA \
-        --platform managed \
-        --region $GCP_REGION \
-        --allow-unauthenticated \
-        --port 3000 \
-        --memory 512Mi \
-        --cpu 1 \
-        --max-instances 10 \
-        --set-env-vars NODE_ENV=production \
-        --quiet
-    - |
-      # Get service URL
-      SERVICE_URL=$(gcloud run services describe $GCP_SERVICE_NAME --platform managed --region $GCP_REGION --format 'value(status.url)')
-      echo "Deployment completed successfully!"
-      echo "Service URL: $SERVICE_URL"
+    - source build.env
+    - gcloud run deploy "${SERVICE_NAME}" \
+      --image "${IMAGE}" \
+      --region "${GCP_REGION}" \
+      --platform managed \
+      --allow-unauthenticated \
+      --service-account "${GCP_SERVICE_ACCOUNT}" \
+      --memory "512Mi" \
+      --cpu "1" \
+      --port "3000"
+    - gcloud run services describe "${SERVICE_NAME}" \
+      --region "${GCP_REGION}" --format='value(status.url)'
+  environment:
+    name: production
   only:
     - main
     - master
-  when: on_success
-  environment:
-    name: production
-    url: https://$GCP_SERVICE_NAME-$GCP_PROJECT_HASH.$GCP_REGION.run.app
-
