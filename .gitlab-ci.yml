@@ -51,15 +51,37 @@ auth:
 build:
   stage: build
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
-  needs:
-    - job: auth
-      artifacts: true
+  id_tokens:
+    GITLAB_OIDC_TOKEN:
+      aud: 'https://gitlab.com'
   script:
     - |
-      # 인증 정보 복원 (auth job의 artifacts)
+      # 기본 확인
+      test -n "${GCP_WIF_PROVIDER}" || (echo "GCP_WIF_PROVIDER empty" && exit 1)
+      test -n "${GCP_SERVICE_ACCOUNT}" || (echo "GCP_SERVICE_ACCOUNT empty" && exit 1)
+      test -n "${GITLAB_OIDC_TOKEN}" || (echo "GITLAB_OIDC_TOKEN empty" && exit 1)
+
+      # OIDC 토큰 저장
+      echo -n "$GITLAB_OIDC_TOKEN" > /tmp/oidc_token
+
+      # WIF 설정 파일 생성
+      cat > /tmp/wif.json <<EOF
+      {
+        "type": "external_account",
+        "audience": "//iam.googleapis.com/${GCP_WIF_PROVIDER}",
+        "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
+        "token_url": "https://sts.googleapis.com/v1/token",
+        "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${GCP_SERVICE_ACCOUNT}:generateAccessToken",
+        "credential_source": { "file": "/tmp/oidc_token" }
+      }
+      EOF
+
+      # 인증 설정
       export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/wif.json
       export GOOGLE_APPLICATION_CREDENTIALS=/tmp/wif.json
+      gcloud auth login --cred-file=/tmp/wif.json --no-launch-browser --quiet
       gcloud config set project "${GCP_PROJECT_ID}"
+      gcloud auth list
 
       # Docker 이미지 빌드 및 푸시
       gcloud builds submit --tag "${IMAGE}" .
@@ -70,17 +92,40 @@ build:
 deploy:
   stage: deploy
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+  id_tokens:
+    GITLAB_OIDC_TOKEN:
+      aud: 'https://gitlab.com'
   needs:
-    - job: auth
-      artifacts: true
     - job: build
       artifacts: false
   script:
     - |
-      # 인증 정보 복원 (auth job의 artifacts)
+      # 기본 확인
+      test -n "${GCP_WIF_PROVIDER}" || (echo "GCP_WIF_PROVIDER empty" && exit 1)
+      test -n "${GCP_SERVICE_ACCOUNT}" || (echo "GCP_SERVICE_ACCOUNT empty" && exit 1)
+      test -n "${GITLAB_OIDC_TOKEN}" || (echo "GITLAB_OIDC_TOKEN empty" && exit 1)
+
+      # OIDC 토큰 저장
+      echo -n "$GITLAB_OIDC_TOKEN" > /tmp/oidc_token
+
+      # WIF 설정 파일 생성
+      cat > /tmp/wif.json <<EOF
+      {
+        "type": "external_account",
+        "audience": "//iam.googleapis.com/${GCP_WIF_PROVIDER}",
+        "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
+        "token_url": "https://sts.googleapis.com/v1/token",
+        "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${GCP_SERVICE_ACCOUNT}:generateAccessToken",
+        "credential_source": { "file": "/tmp/oidc_token" }
+      }
+      EOF
+
+      # 인증 설정
       export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/wif.json
       export GOOGLE_APPLICATION_CREDENTIALS=/tmp/wif.json
+      gcloud auth login --cred-file=/tmp/wif.json --no-launch-browser --quiet
       gcloud config set project "${GCP_PROJECT_ID}"
+      gcloud auth list
 
       # Cloud Run 배포
       gcloud run deploy "${SERVICE_NAME}" \
