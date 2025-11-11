@@ -84,7 +84,46 @@ build:
       gcloud auth list
 
       # Docker 이미지 빌드 및 푸시
-      gcloud builds submit --tag "${IMAGE}" .
+      # --async 플래그를 사용하여 비동기로 빌드 시작 (로그 스트리밍 권한 문제 회피)
+      BUILD_ID=$(gcloud builds submit --async --tag "${IMAGE}" . --format="value(id)")
+      echo "✅ Build started with ID: ${BUILD_ID}"
+      echo "Build URL: https://console.cloud.google.com/cloud-build/builds/${BUILD_ID}?project=${GCP_PROJECT_ID}"
+
+      # 빌드 완료까지 폴링 (최대 30분, 10초마다 확인)
+      echo "Waiting for build to complete..."
+      MAX_WAIT_TIME=1800  # 30분 (초)
+      POLL_INTERVAL=10    # 10초
+      ELAPSED=0
+
+      while [ $ELAPSED -lt $MAX_WAIT_TIME ]; do
+        BUILD_STATUS=$(gcloud builds describe "${BUILD_ID}" --format="value(status)" 2>/dev/null || echo "UNKNOWN")
+        
+        if [ "${BUILD_STATUS}" = "SUCCESS" ]; then
+          echo "✅ Build completed successfully!"
+          break
+        elif [ "${BUILD_STATUS}" = "FAILURE" ] || [ "${BUILD_STATUS}" = "CANCELLED" ] || [ "${BUILD_STATUS}" = "EXPIRED" ]; then
+          echo "❌ Build failed with status: ${BUILD_STATUS}"
+          echo "Build logs: https://console.cloud.google.com/cloud-build/builds/${BUILD_ID}?project=${GCP_PROJECT_ID}"
+          exit 1
+        elif [ "${BUILD_STATUS}" = "WORKING" ] || [ "${BUILD_STATUS}" = "QUEUED" ]; then
+          echo "⏳ Build status: ${BUILD_STATUS} (elapsed: ${ELAPSED}s)"
+        else
+          echo "⚠️  Build status: ${BUILD_STATUS} (elapsed: ${ELAPSED}s)"
+        fi
+        
+        sleep $POLL_INTERVAL
+        ELAPSED=$((ELAPSED + POLL_INTERVAL))
+      done
+
+      # 최종 상태 확인
+      FINAL_STATUS=$(gcloud builds describe "${BUILD_ID}" --format="value(status)" 2>/dev/null || echo "UNKNOWN")
+      if [ "${FINAL_STATUS}" != "SUCCESS" ]; then
+        echo "❌ Build did not complete successfully. Final status: ${FINAL_STATUS}"
+        echo "Build logs: https://console.cloud.google.com/cloud-build/builds/${BUILD_ID}?project=${GCP_PROJECT_ID}"
+        exit 1
+      fi
+
+      echo "✅ Build completed and image pushed to: ${IMAGE}"
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
 
