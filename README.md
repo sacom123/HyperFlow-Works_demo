@@ -92,6 +92,8 @@ hyperflow-works/
 │   └── vitest.config.ts        # Vitest configuration
 │
 ├── .gitlab-ci.yml              # GitLab CI/CD configuration
+├── .github/workflows/          # GitHub Actions workflows
+│   └── sync-to-gitlab.yml     # GitHub to GitLab sync workflow
 ├── cloudbuild.yaml             # GCP Cloud Build configuration
 ├── Dockerfile                  # Docker configuration
 ├── DEPLOYMENT.md               # Deployment guide
@@ -192,24 +194,44 @@ pnpm --filter backend lint
 
 #### GCP Cloud Run Deployment via GitLab CI/CD
 
-The project is configured to deploy automatically to GCP Cloud Run using GitLab CI/CD with webhook support.
+The project is configured to deploy automatically to GCP Cloud Run using GitLab CI/CD. The workflow supports automatic synchronization from GitHub to GitLab, which then triggers the CI/CD pipeline.
+
+##### GitHub → GitLab Auto Sync
+
+When you push code to GitHub, it automatically syncs to GitLab, which then triggers the CI/CD pipeline:
+
+1. **Push to GitHub** → GitHub Actions syncs to GitLab
+2. **GitLab receives sync** → GitLab CI/CD pipeline triggers
+3. **Build & Test** → Frontend and backend are built and tested
+4. **Deploy** → Application is deployed to GCP Cloud Run
 
 ##### Prerequisites
 
 1. **GCP Account** with Cloud Run API enabled
-2. **GitLab CI/CD Variables** configured:
+2. **GitHub Secrets** configured:
+   - `GITLAB_TOKEN` - GitLab Personal Access Token with `write_repository` scope
+   - `GCP_SERVICE_ACCOUNT_KEY` - Base64 encoded GCP service account key JSON
+   - `GCP_PROJECT_ID` - GCP project ID
+   - `GCP_SERVICE_NAME` - Cloud Run service name
+   - `GCP_REGION` - Cloud Run region (e.g., `asia-northeast3`)
+3. **GitLab CI/CD Variables** configured (same as GitHub Secrets):
    - `GCP_SERVICE_ACCOUNT_KEY` - Base64 encoded GCP service account key JSON
    - `GCP_PROJECT_ID` - GCP project ID
    - `GCP_SERVICE_NAME` - Cloud Run service name
    - `GCP_REGION` - Cloud Run region (e.g., `asia-northeast3`)
    - `GCP_PROJECT_HASH` - Optional: Project hash for URL
 
-##### GitLab Webhook Setup
+##### GitHub Actions Setup
 
-1. Go to GitLab project settings → Webhooks
-2. Add a webhook URL pointing to your GCP Cloud Build webhook endpoint
-3. Configure trigger events (push to main/master branch)
-4. Save the webhook configuration
+1. **Create GitLab Personal Access Token**
+   - Go to https://gitlab.com/-/profile/personal_access_tokens
+   - Create token with `write_repository` scope
+   - Copy the token
+
+2. **Add GitHub Secrets**
+   - Go to GitHub repository → Settings → Secrets and variables → Actions
+   - Add `GITLAB_TOKEN` with your GitLab Personal Access Token
+   - Add GCP-related secrets (see Prerequisites)
 
 ##### CI/CD Pipeline
 
@@ -480,6 +502,8 @@ hyperflow-works/
 │   └── vitest.config.ts        # Vitest 설정
 │
 ├── .gitlab-ci.yml              # GitLab CI/CD 설정
+├── .github/workflows/          # GitHub Actions 워크플로우
+│   └── sync-to-gitlab.yml     # GitHub to GitLab 동기화 워크플로우
 ├── cloudbuild.yaml             # GCP Cloud Build 설정
 ├── Dockerfile                  # Docker 설정
 ├── DEPLOYMENT.md               # 배포 가이드
@@ -580,24 +604,44 @@ pnpm --filter backend lint
 
 #### GitLab CI/CD를 통한 GCP Cloud Run 배포
 
-프로젝트는 GitLab CI/CD를 사용하여 webhook 지원과 함께 GCP Cloud Run에 자동으로 배포되도록 구성되어 있습니다.
+프로젝트는 GitLab CI/CD를 사용하여 GCP Cloud Run에 자동으로 배포되도록 구성되어 있습니다. 워크플로우는 GitHub에서 GitLab로의 자동 동기화를 지원합니다.
+
+##### GitHub → GitLab 자동 동기화
+
+GitHub에 코드를 푸시하면 자동으로 GitLab에 동기화되고, 이는 CI/CD 파이프라인을 트리거합니다:
+
+1. **GitHub에 푸시** → GitHub Actions가 GitLab에 동기화
+2. **GitLab이 동기화 수신** → GitLab CI/CD 파이프라인 트리거
+3. **빌드 & 테스트** → 프론트엔드와 백엔드 빌드 및 테스트
+4. **배포** → 애플리케이션이 GCP Cloud Run에 배포
 
 ##### 사전 요구사항
 
 1. **GCP 계정** 및 Cloud Run API 활성화
-2. **GitLab CI/CD 변수** 설정:
+2. **GitHub Secrets** 설정:
+   - `GITLAB_TOKEN` - `write_repository` 권한이 있는 GitLab Personal Access Token
+   - `GCP_SERVICE_ACCOUNT_KEY` - Base64 인코딩된 GCP 서비스 계정 키 JSON
+   - `GCP_PROJECT_ID` - GCP 프로젝트 ID
+   - `GCP_SERVICE_NAME` - Cloud Run 서비스 이름
+   - `GCP_REGION` - Cloud Run 리전 (예: `asia-northeast3`)
+3. **GitLab CI/CD 변수** 설정 (GitHub Secrets와 동일):
    - `GCP_SERVICE_ACCOUNT_KEY` - Base64 인코딩된 GCP 서비스 계정 키 JSON
    - `GCP_PROJECT_ID` - GCP 프로젝트 ID
    - `GCP_SERVICE_NAME` - Cloud Run 서비스 이름
    - `GCP_REGION` - Cloud Run 리전 (예: `asia-northeast3`)
    - `GCP_PROJECT_HASH` - 선택사항: URL용 프로젝트 해시
 
-##### GitLab Webhook 설정
+##### GitHub Actions 설정
 
-1. GitLab 프로젝트 설정 → Webhooks로 이동
-2. GCP Cloud Build webhook 엔드포인트를 가리키는 webhook URL 추가
-3. 트리거 이벤트 구성 (main/master 브랜치에 푸시)
-4. Webhook 설정 저장
+1. **GitLab Personal Access Token 생성**
+   - https://gitlab.com/-/profile/personal_access_tokens 접속
+   - `write_repository` 권한이 있는 토큰 생성
+   - 토큰 복사
+
+2. **GitHub Secrets 추가**
+   - GitHub 저장소 → Settings → Secrets and variables → Actions
+   - GitLab Personal Access Token으로 `GITLAB_TOKEN` 추가
+   - GCP 관련 Secrets 추가 (사전 요구사항 참조)
 
 ##### CI/CD 파이프라인
 
