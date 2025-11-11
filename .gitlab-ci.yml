@@ -1,42 +1,50 @@
 stages: [auth, build, deploy]
 
-# Cloud Run 서비스명은 변수로 관리
+# Cloud Run 서비스명/이미지 경로
 variables:
   SERVICE_NAME: '${SERVICE_NAME:-hyperflow-works}'
-  # 이미지 경로 (Artifact Registry)
   IMAGE: '${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${GCP_AR_REPO}/${SERVICE_NAME}:${CI_COMMIT_SHA}'
 
-# 1) GitLab OIDC 토큰 → WIF로 교환하여 gcloud 로그인 (키 파일 불필요)
+# 1) GitLab OIDC 토큰 → WIF 교환 (키 파일 불필요)
 auth:
   stage: auth
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+  # ← GitLab이 이 잡에 OIDC ID 토큰을 발급하도록 설정 (aud는 provider에 등록한 값과 동일해야 함)
+  id_tokens:
+    GITLAB_OIDC_TOKEN:
+      aud: https://gitlab.com
   script:
+    # 토큰을 파일로 저장
+    - echo -n "$GITLAB_OIDC_TOKEN" > /tmp/oidc_token
+    # 외부 계정(Workload Identity Federation) 자격 파일 생성
     - |
       cat > /tmp/wif.json <<EOF
       {
         "type": "external_account",
         "audience": "//iam.googleapis.com/${GCP_WIF_PROVIDER}",
-        "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
+        "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
         "token_url": "https://sts.googleapis.com/v1/token",
         "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${GCP_SERVICE_ACCOUNT}:generateAccessToken",
-        "credential_source": { "url": "$CI_JOB_JWT_V2", "format": { "type": "text" } }
+        "credential_source": { "file": "/tmp/oidc_token" }
       }
       EOF
+    # gcloud 로그인 및 프로젝트 설정
     - gcloud auth login --cred-file=/tmp/wif.json
     - gcloud config set project "${GCP_PROJECT_ID}"
   artifacts:
-    paths: [/tmp/wif.json]
+    paths:
+      - /tmp/wif.json
+      - /tmp/oidc_token
     expire_in: 1h
 
-# 2) Cloud Build 가 Docker 이미지를 빌드하고 Artifact Registry로 푸시
-#    (docker:dind 불필요, Runner에 Docker 없어도 됨)
+# 2) Cloud Build가 Docker 이미지 빌드 & Artifact Registry 푸시
 build:
   stage: build
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
   needs: [auth]
   script:
-    # monorepo라면 Dockerfile이 프론트/백엔드 빌드 산출물을 포함하도록 설계하세요.
-    # (예: pnpm install/build를 Dockerfile 내에서 수행)
+    # Dockerfile 없이도 빌드팩 사용 가능 (원하면 --pack 사용)
+    # 일반 Dockerfile 빌드면 아래 명령 그대로 사용
     - gcloud builds submit --tag "${IMAGE}" .
   artifacts:
     reports:
@@ -61,7 +69,8 @@ deploy:
       --cpu "1" \
       --port "3000"
     - gcloud run services describe "${SERVICE_NAME}" \
-      --region "${GCP_REGION}" --format='value(status.url)'
+      --region "${GCP_REGION}" \
+      --format='value(status.url)'
   environment:
     name: production
   only:
