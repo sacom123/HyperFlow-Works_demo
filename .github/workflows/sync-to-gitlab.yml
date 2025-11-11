@@ -1,0 +1,47 @@
+name: Sync to GitLab
+
+# GitHub에 푸시하면 GitLab에 자동으로 동기화
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  sync-to-gitlab:
+    name: Sync to GitLab
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 전체 히스토리 가져오기
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Add GitLab remote
+        run: |
+          # GitLab Personal Access Token을 사용한 HTTPS URL
+          git remote remove gitlab 2>/dev/null || true
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/sacom123/hyperflow-works-hong.git
+
+      - name: Push to GitLab
+        run: |
+          # 현재 브랜치 확인
+          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          echo "Current branch: $CURRENT_BRANCH"
+          
+          # GitLab에 푸시
+          git push gitlab $CURRENT_BRANCH:main --force || \
+          git push gitlab $CURRENT_BRANCH:master --force
+
+      - name: Verify push
+        run: |
+          echo "✅ Code has been synced to GitLab"
+          echo "GitLab will automatically trigger CI/CD pipeline"
+
