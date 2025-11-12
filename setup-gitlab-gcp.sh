@@ -57,6 +57,14 @@ fi
 echo -e "\n${BLUE}3단계: 서비스 계정 권한 부여${NC}"
 echo -e "${YELLOW}필요한 권한을 부여합니다...${NC}"
 
+# Cloud Build 빌드 트리거 권한 (필수)
+echo -e "${YELLOW}- Cloud Build 빌드 트리거 권한 부여...${NC}"
+gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+  --member="serviceAccount:${SERVICE_ACCOUNT_EMAIL}" \
+  --role="roles/cloudbuild.builds.editor" \
+  --condition=None \
+  --quiet || echo -e "${YELLOW}권한이 이미 부여되어 있습니다${NC}"
+
 # Cloud Run 관리 권한
 echo -e "${YELLOW}- Cloud Run 관리 권한 부여...${NC}"
 gcloud projects add-iam-policy-binding ${PROJECT_ID} \
@@ -70,6 +78,14 @@ echo -e "${YELLOW}- Container Registry 권한 부여...${NC}"
 gcloud projects add-iam-policy-binding ${PROJECT_ID} \
   --member="serviceAccount:${SERVICE_ACCOUNT_EMAIL}" \
   --role="roles/storage.admin" \
+  --condition=None \
+  --quiet || echo -e "${YELLOW}권한이 이미 부여되어 있습니다${NC}"
+
+# Artifact Registry 권한
+echo -e "${YELLOW}- Artifact Registry 권한 부여...${NC}"
+gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+  --member="serviceAccount:${SERVICE_ACCOUNT_EMAIL}" \
+  --role="roles/artifactregistry.writer" \
   --condition=None \
   --quiet || echo -e "${YELLOW}권한이 이미 부여되어 있습니다${NC}"
 
@@ -90,8 +106,34 @@ echo -e "${YELLOW}필요한 API를 활성화합니다...${NC}"
 gcloud services enable run.googleapis.com --quiet || true
 gcloud services enable containerregistry.googleapis.com --quiet || true
 gcloud services enable artifactregistry.googleapis.com --quiet || true
+gcloud services enable cloudbuild.googleapis.com --quiet || true
 
 echo -e "${GREEN}✅ API 활성화 완료${NC}"
+
+# 4-1. Cloud Build 서비스 계정 권한 부여
+echo -e "\n${BLUE}4-1단계: Cloud Build 서비스 계정 권한 부여${NC}"
+PROJECT_NUMBER=$(gcloud projects describe ${PROJECT_ID} --format="value(projectNumber)")
+CLOUDBUILD_SA="${PROJECT_NUMBER}@cloudbuild.gserviceaccount.com"
+
+echo -e "${YELLOW}Cloud Build 서비스 계정: ${CLOUDBUILD_SA}${NC}"
+
+# Artifact Registry Writer 권한 부여
+echo -e "${YELLOW}- Artifact Registry 권한 부여...${NC}"
+gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+  --member="serviceAccount:${CLOUDBUILD_SA}" \
+  --role="roles/artifactregistry.writer" \
+  --condition=None \
+  --quiet || echo -e "${YELLOW}권한이 이미 부여되어 있습니다${NC}"
+
+# Storage Object Admin 권한 부여 (소스 업로드용)
+echo -e "${YELLOW}- Storage 권한 부여...${NC}"
+gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+  --member="serviceAccount:${CLOUDBUILD_SA}" \
+  --role="roles/storage.objectAdmin" \
+  --condition=None \
+  --quiet || echo -e "${YELLOW}권한이 이미 부여되어 있습니다${NC}"
+
+echo -e "${GREEN}✅ Cloud Build 서비스 계정 권한 부여 완료${NC}"
 
 # 5. 서비스 계정 키 생성
 echo -e "\n${BLUE}5단계: 서비스 계정 키 생성${NC}"

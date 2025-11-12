@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Dropdown, Button } from 'antd'
 import { GlobalOutlined } from '@ant-design/icons'
 import type { MenuProps } from 'antd'

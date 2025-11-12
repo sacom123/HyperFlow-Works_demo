@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useMediaQuery } from 'react-responsive'
+// import { useMediaQuery } from 'react-responsive'
 import { useNavigate } from 'react-router-dom'
 import {
   MenuOutlined,
@@ -8,6 +8,7 @@ import {
   ArrowUpOutlined,
 } from '@ant-design/icons'
 import LanguageSelector from '../components/LanguageSelector'
+import SettingsModal from '../components/SettingsModal'
 import './KnowledgeBase.css'
 import headerLogo from '../assets/images/header-logo.avif'
 import formIcon from '../assets/images/form-icon.svg'
@@ -26,28 +27,28 @@ const KnowledgeBase = () => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [settingsModalOpen, setSettingsModalOpen] = useState(false)
 
-  // 반응형 브레이크포인트 설정 (Figma 기준: 1440x810)
-  const isMobile = useMediaQuery({ maxWidth: 767 })
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 })
-  const isFHD = useMediaQuery({ minWidth: 1025, maxWidth: 1920 })
-  const isQHD = useMediaQuery({ minWidth: 1921, maxWidth: 2560 })
-  const isUHD = useMediaQuery({ minWidth: 2561 })
+  // 반응형 브레이크포인트 설정 (Figma 기준: 1440x810) - 현재 사용되지 않음
+  // const isMobile = useMediaQuery({ maxWidth: 767 })
+  // const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 })
+  // const isFHD = useMediaQuery({ minWidth: 1025, maxWidth: 1920 })
+  // const isQHD = useMediaQuery({ minWidth: 1921, maxWidth: 2560 })
+  // const isUHD = useMediaQuery({ minWidth: 2561 })
 
-  // 반응형 값 계산 함수
-  const getResponsiveValue = <T,>(
-    mobile: T,
-    tablet: T,
-    fhd: T,
-    qhd: T,
-    uhd: T
-  ): T => {
-    if (isMobile) return mobile
-    if (isTablet) return tablet
-    if (isFHD) return fhd
-    if (isQHD) return qhd
-    if (isUHD) return uhd
-    return fhd
-  }
+  // 반응형 값 계산 함수 - 현재 사용되지 않음
+  // const getResponsiveValue = <T,>(
+  //   mobile: T,
+  //   tablet: T,
+  //   fhd: T,
+  //   qhd: T,
+  //   uhd: T
+  // ): T => {
+  //   if (isMobile) return mobile
+  //   if (isTablet) return tablet
+  //   if (isFHD) return fhd
+  //   if (isQHD) return qhd
+  //   if (isUHD) return uhd
+  //   return fhd
+  // }
 
   // 모바일에서 사이드바 열릴 때 body 스크롤 막기
   useEffect(() => {

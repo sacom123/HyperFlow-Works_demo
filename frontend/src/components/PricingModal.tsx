@@ -1,4 +1,4 @@
-import { Modal, Typography, Row, Col, Card, Button, Space } from 'antd'
+import { Modal, Typography, Row, Col, Card, Button } from 'antd'
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons'
 import './PricingModal.css'
 
