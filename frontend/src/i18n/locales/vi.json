@@ -180,8 +180,8 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
-      "hyperAgent": "Hyper Agent",
+      "hyperChat": "Trò chuyện Hyper",
+      "hyperAgent": "Đại lý Hyper",
       "library": "Thư viện",
       "knowledgeBases": "Cơ sở kiến thức"
     },
@@ -203,7 +203,7 @@
       "audio": "Âm thanh"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "Đại lý Hyper",
       "agentICreated": "Đại lý tôi đã tạo"
     },
     "emptyState": "Không có ví dụ"

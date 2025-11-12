@@ -180,8 +180,8 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
-      "hyperAgent": "Hyper Agent",
+      "hyperChat": "แชท Hyper",
+      "hyperAgent": "เอเจนต์ Hyper",
       "library": "ไลบรารี",
       "knowledgeBases": "ฐานความรู้"
     },
@@ -203,7 +203,7 @@
       "audio": "เสียง"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "เอเจนต์ Hyper",
       "agentICreated": "เอเจนต์ที่ฉันสร้าง"
     },
     "emptyState": "ไม่มีตัวอย่าง"

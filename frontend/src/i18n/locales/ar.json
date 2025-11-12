@@ -180,8 +180,8 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
-      "hyperAgent": "Hyper Agent",
+      "hyperChat": "محادثة Hyper",
+      "hyperAgent": "وكيل Hyper",
       "library": "المكتبة",
       "knowledgeBases": "قاعدة المعرفة"
     },
@@ -203,7 +203,7 @@
       "audio": "صوت"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "وكلاء Hyper",
       "agentICreated": "العميل الذي أنشأته"
     },
     "emptyState": "لا توجد أمثلة"

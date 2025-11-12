@@ -54,7 +54,7 @@
       "description": "Mendukung struktur loop pembelajaran otomatis di mana AI belajar dari hasil dan menyesuaikan input. Secara otomatis mengulangi proses uji-modifikasi-perbaikan, mengimplementasikan lingkungan pengembangan evolusioner dengan optimisasi berkelanjutan."
     },
     "superNode": {
-      "title": "02 Super Node",
+      "title": "02 Simpul Super",
       "description": "Super node HyperFlow tidak terikat pada API atau platform tertentu, memungkinkan Anda menggunakan kembali alur tanpa membuat ulang saat memperkenalkan teknologi baru atau mengubah vendor. Ini menyediakan lingkungan pengembangan yang lebih cepat dan lebih fleksibel."
     },
     "processData": {
@@ -180,8 +180,8 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
-      "hyperAgent": "Hyper Agent",
+      "hyperChat": "Obrolan Hyper",
+      "hyperAgent": "Agen Hyper",
       "library": "Perpustakaan",
       "knowledgeBases": "Basis pengetahuan"
     },
@@ -203,7 +203,7 @@
       "audio": "Audio"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "Agen Hyper",
       "agentICreated": "Agen yang saya buat"
     },
     "emptyState": "Tidak ada contoh"

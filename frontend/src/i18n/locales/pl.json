@@ -180,7 +180,7 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
+      "hyperChat": "Hyper Czat",
       "hyperAgent": "Hyper Agent",
       "library": "Biblioteka",
       "knowledgeBases": "Baza wiedzy"
@@ -200,10 +200,10 @@
     "media": {
       "image": "Obraz",
       "video": "Wideo",
-      "audio": "Audio"
+      "audio": "Dźwięk"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "Agenci Hyper",
       "agentICreated": "Agent, który utworzyłem"
     },
     "emptyState": "Brak przykładów"

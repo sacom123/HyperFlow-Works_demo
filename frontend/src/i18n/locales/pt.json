@@ -180,8 +180,8 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
-      "hyperAgent": "Hyper Agent",
+      "hyperChat": "Chat Hyper",
+      "hyperAgent": "Agente Hyper",
       "library": "Biblioteca",
       "knowledgeBases": "Bases de conhecimento"
     },
@@ -203,7 +203,7 @@
       "audio": "Áudio"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "Agentes Hyper",
       "agentICreated": "Agente que criei"
     },
     "emptyState": "Sem exemplos"
@@ -213,7 +213,7 @@
     "description": "Gerencie e implante seus chatbots construídos com agentes e gráficos de fluxo",
     "table": {
       "name": "Nome",
-      "memo": "Memo",
+      "memo": "Nota",
       "deploymentDate": "Data de implantação",
       "access": "Acesso",
       "status": "Status",

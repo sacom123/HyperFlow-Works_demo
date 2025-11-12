@@ -180,8 +180,8 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
-      "hyperAgent": "Hyper Agent",
+      "hyperChat": "Hyper Sohbet",
+      "hyperAgent": "Hyper Ajan",
       "library": "Kütüphane",
       "knowledgeBases": "Bilgi tabanı"
     },
@@ -203,7 +203,7 @@
       "audio": "Ses"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "Hyper Ajanlar",
       "agentICreated": "Oluşturduğum Ajan"
     },
     "emptyState": "Örnek yok"

@@ -180,8 +180,8 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
-      "hyperAgent": "Hyper Agent",
+      "hyperChat": "Hyper Чат",
+      "hyperAgent": "Hyper Агент",
       "library": "Библиотека",
       "knowledgeBases": "База знаний"
     },
@@ -203,7 +203,7 @@
       "audio": "Аудио"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "Hyper Агенты",
       "agentICreated": "Агент, который я создал"
     },
     "emptyState": "Нет примеров"

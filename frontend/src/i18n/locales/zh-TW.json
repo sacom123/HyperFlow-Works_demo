@@ -180,8 +180,8 @@
   },
   "dashboard": {
     "menu": {
-      "hyperChat": "Hyper Chat",
-      "hyperAgent": "Hyper Agent",
+      "hyperChat": "Hyper 聊天",
+      "hyperAgent": "Hyper 代理",
       "library": "資料庫",
       "knowledgeBases": "知識庫"
     },
@@ -203,7 +203,7 @@
       "audio": "音訊"
     },
     "tabs": {
-      "hyperAgents": "Hyper Agents",
+      "hyperAgents": "Hyper 代理",
       "agentICreated": "我建立的代理"
     },
     "emptyState": "無範例"
