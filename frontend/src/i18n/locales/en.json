@@ -151,13 +151,18 @@
     "copyright": "© 2025 Mirinae Technologies Inc. All rights reserved."
   },
   "login": {
+    "welcome": "Welcome back to HyperFlow.",
+    "instruction": "Please log in with your Google account or email.",
     "placeholder": {
-      "id": "Please enter your ID.",
+      "email": "gildonhong@example.com",
       "password": "Please enter your Password"
     },
     "link": {
-      "signIn": "Sign in",
-      "findPassword": "Find Password"
+      "signUp": "Sign up",
+      "forgotPassword": "Forgot password?",
+      "haveAccount": "Already have an account?",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy"
     },
     "button": {
       "login": "Log in",
@@ -166,8 +171,9 @@
     "divider": {
       "text": "Or log in with email"
     },
+    "rememberMe": "Remember me",
     "warning": {
-      "enterCredentials": "Please enter your ID and password."
+      "enterCredentials": "Please enter your email and password."
     },
     "success": "Login successful!",
     "successGoogle": "Google login successful!",

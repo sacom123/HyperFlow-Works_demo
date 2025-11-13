@@ -63,13 +63,13 @@ const PricingModal = ({ open, onClose }: PricingModalProps) => {
       width="95%"
       style={{ 
         maxWidth: '1200px',
-        top: '5%',
+        top: '2.5vh',
         paddingBottom: 0
       }}
       className="pricing-modal"
       styles={{ 
         mask: { backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.5)' },
-        body: { padding: 0, maxHeight: '90vh', overflow: 'auto' }
+        body: { padding: 0, overflowY: 'auto', overflowX: 'hidden' }
       }}
     >
       <div className="pricing-modal-content">
@@ -90,9 +90,9 @@ const PricingModal = ({ open, onClose }: PricingModalProps) => {
           </Paragraph>
         </div>
 
-        <Row gutter={[24, 24]} className="pricing-cards">
+        <Row gutter={0} className="pricing-cards">
           {pricingPlans.map((plan, index) => (
-            <Col xs={24} md={8} key={index}>
+            <Col xs={24} md={8} key={index} className="pricing-card-col">
               <Card
                 className={`pricing-card ${plan.isPopular ? 'pricing-card-popular' : ''}`}
               >

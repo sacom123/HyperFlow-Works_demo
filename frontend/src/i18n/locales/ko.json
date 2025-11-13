@@ -151,13 +151,18 @@
     "copyright": "© 2025 Mirinae Technologies Inc. All rights reserved."
   },
   "login": {
+    "welcome": "다시 HyperFlow에 돌아오신 것을 환영합니다.",
+    "instruction": "구글계정이나 이메일로 로그인 해주세요",
     "placeholder": {
-      "id": "ID를 입력해주세요.",
+      "email": "gildonhong@example.com",
       "password": "비밀번호를 입력해주세요."
     },
     "link": {
-      "signIn": "회원가입",
-      "findPassword": "비밀번호 찾기"
+      "signUp": "가입하기",
+      "forgotPassword": "비밀번호를 잊어버리셨나요?",
+      "haveAccount": "이미 계정이 있으신가요?",
+      "terms": "이용약관",
+      "privacy": "개인정보 보호방침"
     },
     "button": {
       "login": "로그인",
@@ -166,8 +171,9 @@
     "divider": {
       "text": "또는 이메일로 로그인"
     },
+    "rememberMe": "기억하기",
     "warning": {
-      "enterCredentials": "ID와 비밀번호를 입력해주세요."
+      "enterCredentials": "이메일과 비밀번호를 입력해주세요."
     },
     "success": "로그인 성공!",
     "successGoogle": "Google 로그인 성공!",
