@@ -1,9 +1,6 @@
-/**
- * Landing Page Base Styles
- * 랜딩 페이지 기본 스타일 / Landing page base styles
- */
+/* Landing Page Base Styles / 랜딩 페이지 기본 스타일 / Landing page base styles */
 
-/* Landing Page Base - 랜딩 페이지 기본 컨테이너 / Landing Page Base Container */
+/* Landing Page Base / Landing Page Base Container */
 .landing-page {
   width: 100%;
   min-height: 100vh;
@@ -16,12 +13,7 @@
   color: inherit;
 }
 
-/**
- * 전역 텍스트 방향 강제 설정
- * Global text direction enforcement
- * 텍스트가 세로로 표시되는 문제를 방지하기 위한 전역 스타일
- * Global styles to prevent text from displaying vertically
- */
+/* Global text direction enforcement / 전역 텍스트 방향 강제 설정 */
 .landing-page,
 .landing-page *,
 .landing-page *::before,
@@ -32,7 +24,7 @@
   unicode-bidi: normal !important;
 }
 
-/* 모든 텍스트 요소에 강제 적용 */
+/* Apply to all text elements / 모든 텍스트 요소에 강제 적용 */
 .landing-page h1,
 .landing-page h2,
 .landing-page h3,
@@ -55,12 +47,9 @@
   text-transform: none !important;
 }
 
-/**
- * Navigation Styles
- * 네비게이션 스타일 / Navigation styles
- */
+/* Navigation Styles / 네비게이션 스타일 / Navigation styles */
 
-/* Navigation Bar - 상단 고정 네비게이션 바 / Fixed Top Navigation Bar */
+/* Navigation Bar / Fixed Top Navigation Bar */
 .navbar {
   position: fixed;
   top: 0;
@@ -73,9 +62,9 @@
   padding: 20px 0;
 }
 
-/* .nav-container 스타일은 react-responsive로 동적 관리 / .nav-container styles are dynamically managed by react-responsive */
+/* .nav-container styles are dynamically managed by react-responsive / .nav-container 스타일은 react-responsive로 동적 관리 */
 
-/* Navigation Logo - 로고 영역 / Logo Area */
+/* Navigation Logo / Logo Area */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -88,20 +77,20 @@
   object-fit: contain;
 }
 
-/* .nav-menu 스타일은 react-responsive로 동적 관리 / .nav-menu styles are dynamically managed by react-responsive */
+/* .nav-menu styles are dynamically managed by react-responsive / .nav-menu 스타일은 react-responsive로 동적 관리 */
 
-/* Mobile Menu Button - 모바일 메뉴 버튼 / Mobile Menu Button */
+/* Mobile Menu Button / Mobile Menu Button */
 .nav-mobile-menu-btn {
-  /* 모바일에서만 표시 - react-responsive로 제어 / Only shown on mobile - controlled by react-responsive */
+  /* Only shown on mobile - controlled by react-responsive / 모바일에서만 표시 */
   color: #ffffff !important;
-  font-size: 24px;
+  font-size: 21.6px;
   padding: 8px;
   background: transparent !important;
   border: none !important;
   min-width: auto !important;
 }
 
-/* Mobile Dropdown Menu - 모바일 드롭다운 메뉴 / Mobile Dropdown Menu */
+/* Mobile Dropdown Menu / Mobile Dropdown Menu */
 .nav-mobile-menu {
   display: flex;
   flex-direction: column;
@@ -118,11 +107,11 @@
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation Link - 네비게이션 링크 / Navigation Link */
+/* Navigation Link / Navigation Link */
 .nav-link {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16.2px;
   line-height: 1.1111111111111112em;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -142,9 +131,12 @@
   text-orientation: mixed !important;
   direction: ltr !important;
   unicode-bidi: normal !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
-/* Active Navigation Link - 활성화된 네비게이션 링크 / Active Navigation Link */
+/* Active Navigation Link / Active Navigation Link */
 .nav-link.active {
   font-weight: 700 !important;
   background: linear-gradient(
@@ -181,7 +173,7 @@
   padding: 0 52px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 17.6px;
+  font-size: 15.8px;
   line-height: 2.5em;
   letter-spacing: 0.125em;
   color: #ffffff !important;
@@ -195,12 +187,9 @@
   opacity: 0.9;
 }
 
-/**
- * Hero Section Styles
- * 히어로 섹션 스타일 / Hero section styles
- */
+/* Hero Section Styles / 히어로 섹션 스타일 / Hero section styles */
 
-/* Hero Section - 메인 히어로 섹션 / Main Hero Section */
+/* Hero Section / Main Hero Section */
 .hero-section {
   position: relative;
   width: 100%;
@@ -211,7 +200,7 @@
   min-height: 100vh;
 }
 
-/* 4K 모니터 대응: 2560px 이상에서는 중앙 정렬 및 적절한 크기 제한 */
+/* 4K monitor support: center alignment and size limit for 2560px+ / 4K 모니터 대응: 2560px 이상에서는 중앙 정렬 및 적절한 크기 제한 */
 @media (min-width: 2561px) {
   .hero-section {
     max-width: 1920px;
@@ -265,14 +254,14 @@
   position: relative;
   z-index: 1;
   max-width: 893px;
-  /* margin은 react-responsive로 동적 관리 */
+  /* Margin is dynamically managed by react-responsive / margin은 react-responsive로 동적 관리 */
   margin-top: 141px;
 }
 
 .hero-tagline {
   font-family: 'Pretendard Variable', 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 13.5px;
   line-height: 1.3em;
   letter-spacing: -0.028199999332427974em;
   color: #ffffff;
@@ -283,7 +272,7 @@
 .hero-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 72px;
+  font-size: 64.8px;
   line-height: 1.1388888888888888em;
   letter-spacing: -0.027777777777777777em; /* -2.7777777777777777% */
   color: #ffffff;
@@ -300,7 +289,7 @@
 .hero-description {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 23.4px;
   line-height: 1.3846153846153846em;
   letter-spacing: 0.5px; /* 1.9230769230769231% of 26px ≈ 0.5px */
   color: #e2e2e2;
@@ -321,9 +310,9 @@
   padding: 14.4px 28.8px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 28.8px;
+  font-size: 25.9px;
   line-height: 1.4999999668863098em;
-  letter-spacing: 1.2px; /* 4.166666666666666% of 28.8px ≈ 1.2px */
+  letter-spacing: 1.2px;
   color: #ffffff;
   height: auto;
   box-shadow: 0px 4px 20px rgba(155, 81, 224, 0.4);
@@ -344,22 +333,18 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  /* 바깥으로 밀림 방지 + 큰 화면에서 자연스러운 수축/확장 */
+  /* Prevent overflow and natural scaling / 바깥으로 밀림 방지 + 큰 화면에서 자연스러운 수축/확장 */
   width: clamp(40%, 54vw, 60%);
-  max-width: 1270px;
-  transform: translateX(5%);
-  pointer-events: none;
+  max-width: 100%;
 }
 
 .hero-artwork-image {
   width: 100%;
   height: auto;
-  max-width: 1270.32px;
-  max-height: 946.53px;
   object-fit: contain;
 }
 
-/* Super Node Section */
+/* Super Node Section / 슈퍼노드 섹션 */
 .supernode-section {
   padding: 100px 0;
   background: transparent;
@@ -388,7 +373,7 @@
 .supernode-section-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 54px;
+  font-size: 48.6px;
   line-height: 1.3333333333333333em;
   letter-spacing: -0.018518518518518517em;
   color: #ffffff !important;
@@ -414,7 +399,7 @@
 .supernode-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 25.2px; /* Reduced from 28.8px */
   line-height: 1.4em;
   letter-spacing: -0.034375em;
   color: #ffffff !important;
@@ -430,7 +415,7 @@
 .supernode-description {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16.2px; /* Reduced from 18px */
   line-height: 1.5em;
   letter-spacing: -0.055em;
   color: #ffffff !important;
@@ -451,7 +436,7 @@
   padding: 12px 24px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 12.2px; /* Reduced from 13.5px */
   line-height: 5.28em;
   letter-spacing: -0.073333em;
   display: flex;
@@ -459,6 +444,67 @@
   justify-content: center;
   gap: 8px;
   margin: 0 auto;
+}
+
+/* Supernode card responsive / 슈퍼노드 카드 반응형 */
+@media (max-width: 1024px) {
+  .supernode-card {
+    padding: 28px 80px;
+    min-height: 220px;
+  }
+
+  .supernode-title {
+    font-size: 22.5px;
+  }
+
+  .supernode-description {
+    font-size: 14.4px;
+  }
+
+  .supernode-btn {
+    font-size: 11.5px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .supernode-card {
+    padding: 24px 40px;
+    min-height: 200px;
+  }
+
+  .supernode-title {
+    font-size: 19.8px;
+  }
+
+  .supernode-description {
+    font-size: 13px;
+  }
+
+  .supernode-btn {
+    font-size: 10.8px;
+    padding: 9px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .supernode-card {
+    padding: 20px 24px;
+    min-height: 180px;
+  }
+
+  .supernode-title {
+    font-size: 18px;
+  }
+
+  .supernode-description {
+    font-size: 12px;
+  }
+
+  .supernode-btn {
+    font-size: 10px;
+    padding: 8px 16px;
+  }
 }
 
 /* Features Intro Section */
@@ -490,7 +536,7 @@
 .features-intro-text {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 32.4px;
   line-height: 1.4em;
   color: #ffffff !important;
   margin-bottom: 23px !important;
@@ -506,7 +552,7 @@
 .features-intro-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 54px;
+  font-size: 48.6px;
   line-height: 1.4em;
   letter-spacing: -1px; /* -1.8518518518518516% of 54px */
   color: #ffffff !important;
@@ -561,7 +607,7 @@
 .section-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 54px;
+  font-size: 48.6px;
   line-height: 1.4em;
   letter-spacing: -1.1px; /* -2.037037081188626% of 54px */
   color: #ffffff;
@@ -578,7 +624,7 @@
   display: block;
 }
 
-/* Features Grid - 피그마 디자인 기준 / Features Grid based on Figma design */
+/* Features Grid / Features Grid based on Figma design */
 .features-grid {
   position: relative;
   z-index: 1;
@@ -618,7 +664,7 @@
   visibility: visible;
 }
 
-/* 모바일 반응형 / Mobile responsive */
+/* Mobile responsive / 모바일 반응형 */
 @media (max-width: 767px) {
   .feature-card {
     padding: 32px 24px;
@@ -626,7 +672,7 @@
   }
 }
 
-/* 태블릿 반응형 / Tablet responsive */
+/* Tablet responsive / 태블릿 반응형 */
 @media (min-width: 768px) and (max-width: 1024px) {
   .feature-card {
     padding: 40px 32px;
@@ -650,7 +696,7 @@
   z-index: 1;
 }
 
-/* 모바일 아이콘 위치 조정 / Mobile icon position adjustment */
+/* Mobile icon position adjustment / 모바일 아이콘 위치 조정 */
 @media (max-width: 767px) {
   .feature-icon {
     position: relative;
@@ -662,7 +708,7 @@
   }
 }
 
-/* 태블릿 아이콘 위치 조정 / Tablet icon position adjustment */
+/* Tablet icon position adjustment / 태블릿 아이콘 위치 조정 */
 @media (min-width: 768px) and (max-width: 1024px) {
   .feature-icon {
     top: 40px;
@@ -682,31 +728,31 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-top: 114px; /* 아이콘(54px) + 간격(60px) = 114px */
+  padding-top: 114px; /* Icon(54px) + gap(60px) = 114px / 아이콘(54px) + 간격(60px) = 114px */
   flex: 1;
   min-height: 0;
 }
 
-/* 모바일 컨텐츠 패딩 조정 / Mobile content padding adjustment */
+/* Mobile content padding adjustment / 모바일 컨텐츠 패딩 조정 */
 @media (max-width: 767px) {
   .feature-content {
     padding-top: 0;
   }
 }
 
-/* 태블릿 컨텐츠 패딩 조정 / Tablet content padding adjustment */
+/* Tablet content padding adjustment / 태블릿 컨텐츠 패딩 조정 */
 @media (min-width: 768px) and (max-width: 1024px) {
   .feature-content {
-    padding-top: 88px; /* 아이콘(48px) + 간격(40px) = 88px */
+    padding-top: 88px; /* Icon(48px) + gap(40px) = 88px / 아이콘(48px) + 간격(40px) = 88px */
   }
 }
 
 .feature-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 25.2px; /* Reduced from 28.8px */
   line-height: 1.3;
-  letter-spacing: -0.16px; /* -0.5% of 32px */
+  letter-spacing: -0.16px;
   color: #ececec;
   margin: 0;
   padding: 0;
@@ -716,27 +762,38 @@
   white-space: normal;
 }
 
-/* 모바일 타이틀 크기 조정 / Mobile title size adjustment */
+/* Feature card responsive font sizes / 기능 카드 반응형 폰트 크기 */
+@media (max-width: 1920px) {
+  .feature-title {
+    font-size: 23.4px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .feature-title {
+    font-size: 20.7px;
+    line-height: 1.3;
+  }
+}
+
 @media (max-width: 767px) {
   .feature-title {
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.4;
     margin-bottom: 12px;
   }
 }
 
-/* 태블릿 타이틀 크기 조정 / Tablet title size adjustment */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 480px) {
   .feature-title {
-    font-size: 24px;
-    line-height: 1.3;
+    font-size: 16.2px;
   }
 }
 
 .feature-description {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14.4px; /* Reduced from 16.2px */
   line-height: 1.5;
   color: #ececec;
   margin: 0;
@@ -747,20 +804,30 @@
   white-space: normal;
 }
 
-/* 모바일 설명 크기 조정 / Mobile description size adjustment */
+@media (max-width: 1920px) {
+  .feature-description {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .feature-description {
+    font-size: 12.6px;
+    line-height: 1.5;
+  }
+}
+
 @media (max-width: 767px) {
   .feature-description {
-    font-size: 15px;
+    font-size: 12px;
     line-height: 1.6;
     font-weight: 400;
   }
 }
 
-/* 태블릿 설명 크기 조정 / Tablet description size adjustment */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 480px) {
   .feature-description {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 11px;
   }
 }
 
@@ -845,7 +912,7 @@
 .llm-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 28.8px;
   line-height: 1.125em;
   letter-spacing: 0.015625em;
   color: #ffffff;
@@ -856,7 +923,7 @@
 
 @media (max-width: 767px) {
   .llm-title {
-    font-size: 20px;
+    font-size: 18px;
     padding: 0 20px;
   }
 }
@@ -967,17 +1034,20 @@
 .llm-model-name {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 19.5px;
+  font-size: 17.6px;
   line-height: 1.2102272610564344em;
   color: #f0eaea;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
   width: 100%;
+  max-width: 100%;
 }
 
 @media (max-width: 767px) {
   .llm-model-name {
-    font-size: 14px;
+    font-size: 12.6px;
     white-space: normal;
     word-break: break-word;
   }
@@ -985,7 +1055,7 @@
 
 /* Advanced Workflow Section */
 .advanced-workflow-section {
-  padding: 100px 0;
+  padding: 120px 0;
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -1001,26 +1071,28 @@
 .advanced-workflow-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 77px;
+  gap: 60px;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
   align-items: stretch;
 }
 
-/* 모바일: 1열 */
+/* Mobile: 1 column / 모바일: 1열 */
 @media (max-width: 767px) {
   .advanced-workflow-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+    padding: 0 20px;
   }
 }
 
-/* 태블릿: 2열 */
+/* Tablet: 2 columns / 태블릿: 2열 */
 @media (min-width: 768px) and (max-width: 1024px) {
   .advanced-workflow-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 40px;
+    padding: 0 30px;
   }
 }
 
@@ -1028,7 +1100,8 @@
 @media (min-width: 1025px) {
   .advanced-workflow-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 77px;
+    gap: 60px;
+    padding: 0 40px;
   }
 }
 
@@ -1037,9 +1110,14 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 70px;
   padding: 0;
-  height: 100%;
+  height: auto;
+  min-height: 680px;
+  max-height: 680px;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
 }
 
 .advanced-workflow-card:hover {
@@ -1050,9 +1128,12 @@
 
 .advanced-workflow-image {
   width: 100%;
-  height: 420px;
+  height: 280px;
+  min-height: 280px;
+  max-height: 280px;
   overflow: hidden;
   border-radius: 70px 70px 0 0;
+  flex-shrink: 0;
 }
 
 .advanced-workflow-image img {
@@ -1063,31 +1144,172 @@
 }
 
 .advanced-workflow-content {
-  padding: 32px;
+  padding: 36px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 400px;
+  box-sizing: border-box;
+  gap: 16px;
 }
 
 .advanced-workflow-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 45px;
+  font-size: 31.5px; /* Reduced from 36px */
   line-height: 1.4em;
   letter-spacing: -0.003555555476082696em;
   color: #44c2fe !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
   white-space: normal !important;
   word-break: keep-all;
   display: block;
+  overflow: visible;
+  text-overflow: clip;
+  max-width: 100%;
+  flex-shrink: 0;
 }
 
 .advanced-workflow-description {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 18px; /* Reduced from 20px */
   line-height: 1.5em;
   color: rgba(236, 236, 236, 0.9) !important;
   white-space: normal !important;
   word-break: keep-all;
   display: block;
+  overflow: visible;
+  text-overflow: clip;
+  max-width: 100%;
+  flex: 1;
+}
+
+/* Advanced workflow card responsive / 고급 워크플로우 카드 반응형 */
+@media (max-width: 1920px) {
+  .advanced-workflow-card {
+    min-height: 620px;
+    max-height: 620px;
+  }
+
+  .advanced-workflow-image {
+    height: 260px;
+    min-height: 260px;
+    max-height: 260px;
+  }
+
+  .advanced-workflow-content {
+    min-height: 360px;
+    padding: 32px 28px;
+    gap: 14px;
+  }
+
+  .advanced-workflow-title {
+    font-size: 28.4px;
+  }
+
+  .advanced-workflow-description {
+    font-size: 16.2px;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 1024px) {
+  .advanced-workflow-card {
+    min-height: 580px;
+    max-height: 580px;
+  }
+
+  .advanced-workflow-image {
+    height: 240px;
+    min-height: 240px;
+    max-height: 240px;
+  }
+
+  .advanced-workflow-content {
+    padding: 28px 24px;
+    min-height: 340px;
+    gap: 12px;
+  }
+
+  .advanced-workflow-title {
+    font-size: 25.2px;
+  }
+
+  .advanced-workflow-description {
+    font-size: 14.4px;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 767px) {
+  .advanced-workflow-card {
+    border-radius: 50px;
+    min-height: 540px;
+    max-height: 540px;
+  }
+
+  .advanced-workflow-image {
+    height: 220px;
+    min-height: 220px;
+    max-height: 220px;
+    border-radius: 50px 50px 0 0;
+  }
+
+  .advanced-workflow-image img {
+    border-radius: 50px 50px 0 0;
+  }
+
+  .advanced-workflow-content {
+    padding: 24px 20px;
+    min-height: 320px;
+    gap: 12px;
+  }
+
+  .advanced-workflow-title {
+    font-size: 22.5px;
+  }
+
+  .advanced-workflow-description {
+    font-size: 13.5px;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .advanced-workflow-card {
+    border-radius: 40px;
+    min-height: 500px;
+    max-height: 500px;
+  }
+
+  .advanced-workflow-image {
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    border-radius: 40px 40px 0 0;
+  }
+
+  .advanced-workflow-image img {
+    border-radius: 40px 40px 0 0;
+  }
+
+  .advanced-workflow-content {
+    padding: 20px 18px;
+    min-height: 300px;
+    gap: 10px;
+  }
+
+  .advanced-workflow-title {
+    font-size: 19.8px;
+  }
+
+  .advanced-workflow-description {
+    font-size: 12.6px;
+    overflow: visible;
+  }
 }
 
 /* Workflow Section */
@@ -1124,7 +1346,7 @@
 .workflow-main-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 54px;
+  font-size: 48.6px;
   line-height: 1.8666665818956163em;
   letter-spacing: -0.02592592548441004em;
   color: #ffffff !important;
@@ -1140,7 +1362,7 @@
 .workflow-subtitle {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 32.4px;
   line-height: 1em;
   color: #ffffff !important;
   margin: 0 !important;
@@ -1187,7 +1409,10 @@
   border-radius: 14.399999618530273px;
   padding: 0;
   width: 378.72px;
-  height: 519.84px;
+  max-width: 100%;
+  height: 580px;
+  min-height: 580px;
+  max-height: none;
   position: relative;
   box-shadow: 7.199999809265137px 7.199999809265137px 7.199999809265137px 7.199999809265137px
       rgba(101, 145, 255, 0.5),
@@ -1198,15 +1423,15 @@
   display: block;
   flex-shrink: 0;
   color: #000000;
+  box-sizing: border-box;
 }
 
-/* 카드 내부의 모든 텍스트를 검정색으로 강제 */
-.workflow-step-card,
+/* Force all text in card to black / 카드 내부의 모든 텍스트를 검정색으로 강제 */
 .workflow-step-card * {
   color: #000000 !important;
 }
 
-/* 제목과 설명만 검정색 유지, 나머지는 초기화 */
+/* Keep title and description black, reset others / 제목과 설명만 검정색 유지, 나머지는 초기화 */
 .workflow-step-card .step-title,
 .workflow-step-card .step-description {
   color: #000000 !important;
@@ -1216,12 +1441,87 @@
   width: 379px;
 }
 
+/* Workflow step card responsive / 워크플로우 스텝 카드 반응형 */
+@media (max-width: 1920px) {
+  .workflow-step-card {
+    width: 340px;
+    max-width: 100%;
+    height: 468px;
+    min-height: 468px;
+    max-height: 468px;
+  }
+
+  .workflow-step-card:nth-child(3) {
+    width: 341px;
+    max-width: 100%;
+  }
+
+  .step-title {
+    font-size: 18.9px;
+    top: 130px;
+    width: calc(100% - 75px);
+    max-width: 300px;
+  }
+
+  .step-description {
+    font-size: 12.6px;
+    top: 165px;
+    width: calc(100% - 75px);
+    max-width: 300px;
+  }
+
+  .step-number {
+    font-size: 37.4px;
+  }
+}
+
 @media (max-width: 1024px) {
   .workflow-step-card {
     width: 100%;
-    max-width: 378.72px;
-    height: auto;
-    min-height: 519.84px;
+    max-width: 340px;
+    height: 450px;
+    min-height: 450px;
+    max-height: 450px;
+  }
+
+  .workflow-step-card:nth-child(3) {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .step-title {
+    font-size: 17.8px;
+    top: 125px;
+    width: calc(100% - 75px);
+    max-width: 300px;
+  }
+
+  .step-description {
+    font-size: 11.8px;
+    top: 160px;
+    width: calc(100% - 75px);
+    max-width: 300px;
+  }
+
+  .step-number {
+    font-size: 33.6px;
+  }
+
+  .step-icon-circle {
+    width: 30px;
+    height: 30px;
+    top: 56px;
+    left: 34px;
+  }
+
+  .step-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .step-icon svg {
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -1229,8 +1529,92 @@
   .workflow-step-card {
     width: 100%;
     max-width: 100%;
-    height: auto;
-    min-height: auto;
+    height: 480px;
+    min-height: 480px;
+    max-height: none;
+  }
+
+  .workflow-step-card:nth-child(3) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .step-title {
+    font-size: 16.2px;
+    top: 100px;
+    left: 20px;
+    width: auto;
+    max-width: calc(100% - 40px);
+  }
+
+  .step-description {
+    font-size: 10.8px;
+    left: 20px;
+    top: 140px;
+    width: calc(100% - 40px);
+  }
+
+  .step-number {
+    font-size: 29.2px;
+    top: 6px;
+    right: 6px;
+    left: auto;
+  }
+
+  .step-icon-circle {
+    top: 30px;
+    left: 20px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .step-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .step-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workflow-step-card {
+    height: 450px;
+    min-height: 450px;
+    max-height: none;
+  }
+
+  .step-title {
+    font-size: 14.4px;
+    top: 90px;
+  }
+
+  .step-description {
+    font-size: 9.7px;
+    top: 125px;
+  }
+
+  .step-number {
+    font-size: 25.2px;
+  }
+
+  .step-icon-circle {
+    width: 26px;
+    height: 26px;
+    top: 24px;
+    left: 16px;
+  }
+
+  .step-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .step-icon svg {
+    width: 13px;
+    height: 13px;
   }
 }
 
@@ -1244,8 +1628,8 @@
   position: absolute;
   top: 62.63px;
   left: 37.44px;
-  width: 73.44px;
-  height: 73.44px;
+  width: 30px;
+  height: 30px;
   background: #0958d9;
   border-radius: 50%;
   display: flex;
@@ -1256,32 +1640,87 @@
   z-index: 1;
 }
 
-@media (max-width: 767px) {
-  .step-icon-circle {
-    top: 40px;
-    left: 24px;
-    width: 60px;
-    height: 60px;
-  }
-}
-
 .step-icon {
-  width: 36px;
-  height: 36px;
+  width: 15px;
+  height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media (max-width: 767px) {
+.step-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Responsive icon sizes / 반응형 아이콘 크기 */
+@media (max-width: 1920px) {
+  .step-icon-circle {
+    width: 30px;
+    height: 30px;
+  }
+
   .step-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .step-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .step-icon-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .step-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .step-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .step-icon-circle {
+    top: 40px;
+    left: 24px;
     width: 28px;
     height: 28px;
   }
 
+  .step-icon {
+    width: 14px;
+    height: 14px;
+  }
+
   .step-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-icon-circle {
+    width: 26px;
+    height: 26px;
+  }
+
+  .step-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .step-icon svg {
+    width: 13px;
+    height: 13px;
   }
 }
 
@@ -1291,7 +1730,7 @@
   left: 297.36px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 46.07999801635742px;
+  font-size: 41.5px;
   line-height: 1.2999999586078839em;
   letter-spacing: -0.0025000002263631355em;
   color: rgba(101, 145, 255, 0.5);
@@ -1315,7 +1754,7 @@
 
 @media (max-width: 767px) {
   .step-number {
-    font-size: 36px;
+    font-size: 32.4px;
     top: 6px;
     right: 6px;
   }
@@ -1324,13 +1763,13 @@
 .step-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 25.920000076293945px;
-  line-height: 1em;
+  font-size: 20.97px; /* Reduced from 23.3px */
+  line-height: 1.2em;
   letter-spacing: 0.013888888250121694em;
   color: #000000 !important;
   margin: 0;
   position: absolute;
-  top: 157.67px;
+  top: 140px;
   left: 37.44px;
   text-align: left;
   word-wrap: break-word;
@@ -1338,7 +1777,8 @@
   white-space: normal;
   word-break: keep-all;
   display: block;
-  width: 127.44px;
+  width: calc(100% - 75px);
+  max-width: 300px;
   min-height: 26px;
   height: auto;
   opacity: 1 !important;
@@ -1355,41 +1795,33 @@
 }
 
 .workflow-step-card:nth-child(2) .step-title {
-  top: 158px;
+  top: 140px;
   left: 37px;
-  width: 181px;
+  width: calc(100% - 75px);
+  max-width: 300px;
   min-height: 26px;
   height: auto;
 }
 
 .workflow-step-card:nth-child(3) .step-title {
-  top: 158px;
+  top: 140px;
   left: 37px;
-  width: 141px;
+  width: calc(100% - 75px);
+  max-width: 300px;
   min-height: 26px;
   height: auto;
-}
-
-@media (max-width: 767px) {
-  .step-title {
-    font-size: 22px;
-    top: 120px;
-    left: 24px;
-    width: auto;
-    max-width: calc(100% - 48px);
-  }
 }
 
 .step-description {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 17.280000686645508px;
-  line-height: 1.4999999448105164em;
+  font-size: 14.04px; /* Reduced from 15.6px */
+  line-height: 1.5em;
   letter-spacing: 0.012499999827532864em;
   color: #000000 !important;
   margin: 0;
   position: absolute;
-  top: 194.4px;
+  top: 175px;
   left: 37.44px;
   text-align: left;
   word-wrap: break-word;
@@ -1397,12 +1829,439 @@
   white-space: normal;
   word-break: keep-all;
   display: block;
-  width: 324.72px;
-  min-height: 52px;
+  width: calc(100% - 75px);
+  max-width: 300px;
+  min-height: 100px;
   height: auto;
+  max-height: none;
   opacity: 1 !important;
   visibility: visible;
   z-index: 3;
+  overflow: visible;
+}
+
+/* Workflow step card responsive / 워크플로우 스텝 카드 반응형 */
+@media (max-width: 1920px) {
+  .workflow-step-card {
+    width: 378.72px;
+    max-width: 100%;
+    height: 530px;
+    min-height: 530px;
+    max-height: none;
+  }
+
+  .workflow-step-card:nth-child(3) {
+    width: 379px;
+    max-width: 100%;
+  }
+
+  .step-title {
+    font-size: 20.97px;
+    top: 130px;
+    width: calc(100% - 75px);
+    max-width: 300px;
+  }
+
+  .step-description {
+    font-size: 14.04px;
+    top: 165px;
+    width: calc(100% - 75px);
+    max-width: 300px;
+  }
+
+  .step-number {
+    font-size: 41.5px;
+  }
+
+  .step-images {
+    height: 530px;
+  }
+
+  .step-images-01,
+  .step-images-02,
+  .step-images-three {
+    height: 530px;
+    overflow: visible;
+  }
+
+  .step-image-01,
+  .step-image-02 {
+    width: 115px;
+    height: 115px;
+  }
+
+  .step-image-single,
+  .step-image-large {
+    width: 280px;
+    height: 168px;
+  }
+
+  .step-image-small-1,
+  .step-image-small-2 {
+    width: 115px;
+    height: 115px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .workflow-step-card {
+    width: 100%;
+    max-width: 378.72px;
+    height: 510px;
+    min-height: 510px;
+    max-height: none;
+  }
+
+  .workflow-step-card:nth-child(3) {
+    width: 100%;
+    max-width: 379px;
+  }
+
+  .step-title {
+    font-size: 19.8px;
+    top: 125px;
+    width: calc(100% - 75px);
+    max-width: 300px;
+  }
+
+  .step-description {
+    font-size: 13.5px;
+    top: 160px;
+    width: calc(100% - 75px);
+    max-width: 300px;
+  }
+
+  .step-number {
+    font-size: 38px;
+  }
+
+  .step-icon-circle {
+    width: 30px;
+    height: 30px;
+    top: 60px;
+    left: 37px;
+  }
+
+  .step-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .step-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .step-images {
+    height: 510px;
+  }
+
+  .step-images-01,
+  .step-images-02,
+  .step-images-three {
+    height: 510px;
+    overflow: visible;
+  }
+
+  .step-image-01 {
+    width: 100px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 35px;
+    top: 280px;
+    object-fit: contain;
+  }
+
+  .step-image-02 {
+    width: 100px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 150px;
+    top: 280px;
+    object-fit: contain;
+  }
+
+  .step-image-single {
+    width: 260px;
+    max-width: calc(100% - 70px);
+    height: auto;
+    aspect-ratio: 308 / 185;
+    left: 35px;
+    top: 300px;
+    object-fit: contain;
+  }
+
+  .step-image-large {
+    width: 260px;
+    max-width: calc(100% - 70px);
+    height: auto;
+    aspect-ratio: 308 / 185;
+    left: 35px;
+    top: 250px;
+    max-height: calc(100% - 400px);
+    object-fit: contain;
+  }
+
+  .step-image-small-1 {
+    width: 100px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 35px;
+    top: 440px;
+    max-height: calc(100% - 450px);
+    object-fit: contain;
+  }
+
+  .step-image-small-2 {
+    width: 100px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 150px;
+    top: 440px;
+    max-height: calc(100% - 450px);
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 767px) {
+  .workflow-step-card {
+    width: 100%;
+    max-width: 100%;
+    height: 480px;
+    min-height: 480px;
+    max-height: 480px;
+  }
+
+  .workflow-step-card:nth-child(3) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .step-title {
+    font-size: 18px;
+    top: 120px;
+    left: 24px;
+    width: calc(100% - 48px);
+    max-width: 300px;
+  }
+
+  .step-description {
+    font-size: 12.6px;
+    left: 24px;
+    top: 155px;
+    width: calc(100% - 48px);
+    max-width: 300px;
+  }
+
+  .step-number {
+    font-size: 32.4px;
+    top: 6px;
+    right: 6px;
+    left: auto;
+  }
+
+  .step-icon-circle {
+    top: 40px;
+    left: 24px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .step-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .step-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .step-images {
+    height: 480px;
+  }
+
+  .step-images-01,
+  .step-images-02,
+  .step-images-three {
+    height: 480px;
+    overflow: visible;
+  }
+
+  .step-image-01 {
+    width: 100px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 24px;
+    top: 250px;
+    object-fit: contain;
+  }
+
+  .step-image-02 {
+    width: 100px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 140px;
+    top: 250px;
+    object-fit: contain;
+  }
+
+  .step-image-single {
+    width: calc(100% - 48px);
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 308 / 185;
+    left: 24px;
+    top: 250px;
+    object-fit: contain;
+  }
+
+  .step-image-large {
+    width: calc(100% - 48px);
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 308 / 185;
+    left: 24px;
+    top: 240px;
+    max-height: calc(100% - 380px);
+    object-fit: contain;
+  }
+
+  .step-image-small-1 {
+    width: 100px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 24px;
+    top: 360px;
+    max-height: calc(100% - 370px);
+    object-fit: contain;
+  }
+
+  .step-image-small-2 {
+    width: 100px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 140px;
+    top: 360px;
+    max-height: calc(100% - 370px);
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .workflow-step-card {
+    height: 450px;
+    min-height: 450px;
+    max-height: 450px;
+  }
+
+  .step-title {
+    font-size: 16.2px;
+    top: 110px;
+    width: calc(100% - 48px);
+    max-width: 300px;
+  }
+
+  .step-description {
+    font-size: 11.3px;
+    top: 145px;
+    width: calc(100% - 48px);
+    max-width: 300px;
+  }
+
+  .step-number {
+    font-size: 28.8px;
+  }
+
+  .step-icon-circle {
+    width: 26px;
+    height: 26px;
+    top: 32px;
+    left: 20px;
+  }
+
+  .step-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .step-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .step-images {
+    height: 450px;
+  }
+
+  .step-images-01,
+  .step-images-02,
+  .step-images-three {
+    height: 450px;
+    overflow: visible;
+  }
+
+  .step-image-01 {
+    width: 90px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 20px;
+    top: 230px;
+    object-fit: contain;
+  }
+
+  .step-image-02 {
+    width: 90px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 120px;
+    top: 230px;
+    object-fit: contain;
+  }
+
+  .step-image-single,
+  .step-image-large {
+    width: calc(100% - 40px);
+    max-width: 260px;
+    height: auto;
+    aspect-ratio: 308 / 185;
+    left: 20px;
+    top: 220px;
+    max-height: calc(100% - 360px);
+    object-fit: contain;
+  }
+
+  .step-image-small-1 {
+    width: 90px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 20px;
+    top: 340px;
+    max-height: calc(100% - 350px);
+    object-fit: contain;
+  }
+
+  .step-image-small-2 {
+    width: 90px;
+    max-width: calc(100% - 75px);
+    height: auto;
+    aspect-ratio: 1;
+    left: 125px;
+    top: 340px;
+    max-height: calc(100% - 350px);
+    object-fit: contain;
+  }
 }
 
 .step-description *,
@@ -1416,11 +2275,13 @@
 .workflow-step-card:nth-child(2) .step-description,
 .workflow-step-card:nth-child(3) .step-description {
   left: 37px;
+  width: calc(100% - 75px);
+  max-width: 300px;
 }
 
 @media (max-width: 767px) {
   .step-description {
-    font-size: 15px;
+    font-size: 13.5px;
     left: 24px;
     top: 160px;
     width: calc(100% - 48px);
@@ -1435,10 +2296,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 519.84px;
+  height: 580px;
   width: 100%;
   pointer-events: none;
   z-index: 1;
+  overflow: visible;
 }
 
 .step-image {
@@ -1452,155 +2314,133 @@
 .step-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-/* Step 01 이미지 레이아웃 */
+/* Step 01 image layout / Step 01 이미지 레이아웃 */
 .step-images-01 {
   padding: 0;
   position: absolute;
   top: 0;
   left: 0;
-  height: 519.84px;
+  height: 580px;
   width: 100%;
+  overflow: visible;
 }
 
 .step-image-01 {
-  width: 234.36px;
-  height: 109.44px;
+  width: 110px;
+  height: auto;
+  border-radius: 7.2px;
   position: absolute;
-  left: 23.76px;
-  top: 286.55px;
-  border-radius: 7.199999809265137px;
+  left: 37.44px;
+  top: 259.2px;
   z-index: 1;
+  max-width: calc(100% - 75px);
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .step-image-02 {
-  width: 132.48px;
-  height: 151.92px;
+  width: 110px;
+  height: auto;
+  border-radius: 7.2px;
   position: absolute;
-  left: 218.16px;
-  top: 329.03px;
-  border-radius: 7.199999809265137px;
+  left: 170px;
+  top: 259.2px;
   z-index: 1;
+  max-width: calc(100% - 75px);
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
-/* Step 02 이미지 레이아웃 */
+/* Step 02 image layout / Step 02 이미지 레이아웃 */
 .step-images-02 {
   padding: 0;
   position: absolute;
   top: 0;
   left: 0;
-  height: 519.84px;
+  height: 580px;
   width: 100%;
+  overflow: visible;
 }
 
 .step-image-single {
-  width: 308px;
-  height: 185px;
+  width: 280px;
+  height: auto;
   border-radius: 30px;
   position: absolute;
   left: 35.28px;
   top: 296px;
   z-index: 1;
+  max-width: calc(100% - 70px);
+  box-sizing: border-box;
+  aspect-ratio: 308 / 185;
+  object-fit: contain;
 }
 
-/* Step 03 이미지 레이아웃 */
+/* Step 03 image layout / Step 03 이미지 레이아웃 */
 .step-images-three {
-  display: block;
+  padding: 0;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0;
-  margin-top: 0;
-  height: 519.84px;
+  height: 580px;
   width: 100%;
+  overflow: visible;
 }
 
 .step-image-large {
+  width: 280px;
+  height: auto;
+  border-radius: 7.2px;
   position: absolute;
-  width: 164px;
-  height: 221px;
-  left: 37.56px;
-  top: 280px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 0;
+  left: 35.28px;
+  top: 250px;
   z-index: 1;
+  max-width: calc(100% - 70px);
+  max-height: calc(100% - 400px);
+  box-sizing: border-box;
+  aspect-ratio: 308 / 185;
+  object-fit: contain;
 }
 
 .step-image-small-1 {
+  width: 110px;
+  height: auto;
+  border-radius: 7.2px;
   position: absolute;
-  width: 172px;
-  height: 35px;
-  left: 189.56px;
-  top: 324px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+  left: 37.44px;
+  top: 450px;
   z-index: 1;
+  max-width: calc(100% - 75px);
+  max-height: calc(100% - 460px);
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .step-image-small-2 {
+  width: 110px;
+  height: auto;
+  border-radius: 7.2px;
   position: absolute;
-  width: 231px;
-  height: 78px;
-  left: 126.56px;
-  top: 366px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+  left: 170px;
+  top: 450px;
   z-index: 1;
+  max-width: calc(100% - 75px);
+  max-height: calc(100% - 460px);
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
-@media (max-width: 1024px) {
-  .step-images-three {
-    height: auto;
-    min-height: 400px;
-  }
-
-  .step-image-large,
-  .step-image-small-1,
-  .step-image-small-2 {
-    position: relative;
-    left: auto;
-    top: auto;
-    margin: 0 auto 16px;
-    display: block;
-  }
-}
-
-@media (max-width: 767px) {
-  .step-images {
-    padding: 20px;
-  }
-
-  .step-image-01,
-  .step-image-02,
-  .step-image-single,
-  .step-image-large,
-  .step-image-small-1,
-  .step-image-small-2 {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0 0 16px 0;
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-  }
-
-  .step-images-three {
-    height: auto;
-    min-height: auto;
-  }
-
-  .step-image-single {
-    width: 100%;
-    max-width: 308px;
-  }
-}
-
-/* Templates Section */
+/* Templates Section / 템플릿 섹션 */
 .templates-section {
   padding: 100px 0;
   max-width: 1920px;
@@ -1627,7 +2467,7 @@
 .templates-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 54px;
+  font-size: 48.6px;
   line-height: 1.3333333333333333em;
   letter-spacing: -0.018518518518518517em;
   color: #ffffff !important;
@@ -1637,7 +2477,7 @@
 .templates-subtitle {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 28.8px;
   line-height: 1.3125em;
   color: #ffffff !important;
   margin-top: 0 !important;
@@ -1655,188 +2495,317 @@
   align-items: stretch;
 }
 
-/* 같은 행의 모든 카드가 같은 높이를 가지도록 */
-.templates-grid .ant-row > .ant-col {
-  display: flex;
-  align-items: stretch;
-}
-
+/* All cards in same row have same height / 같은 행의 모든 카드가 같은 높이를 가지도록 */
 .templates-grid .ant-col {
-  width: 100%;
   display: flex;
   height: 100%;
 }
 
 .template-card {
-  background: linear-gradient(180deg, rgba(1, 0, 2, 1) 0%, rgba(54, 23, 100, 1) 100%);
-  border: none;
-  border-radius: 11px;
-  padding: 32px;
-  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 28px;
   height: 100%;
-  min-height: 460px;
+  min-height: 500px;
+  max-height: none;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0px -2px 40px 0px rgba(155, 193, 255, 0.15),
+    0px -2px 10px 0px rgba(155, 193, 255, 0.4), inset 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
   position: relative;
-  box-shadow: 0px 11px 81.4px 11px rgba(78, 0, 191, 0.41);
-  overflow: visible;
-  box-sizing: border-box;
-  flex: 1;
-}
-
-.template-card .ant-card-body {
-  padding: 0 !important;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  flex: 1;
-  min-height: 0;
-}
-
-.template-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0px 15px 100px 15px rgba(78, 0, 191, 0.5);
 }
 
 .template-icon {
-  margin-bottom: 24px;
-  width: 70px;
-  height: 70px;
+  width: 54px;
+  height: 54px;
+  background: rgba(9, 88, 217, 0.85);
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #56299e;
-  border-radius: 10px;
-  box-shadow: 4px 4px 4px 3px rgba(203, 181, 236, 0.4), -4px -4px 4px 3px rgba(203, 181, 236, 0.4);
-}
-
-.template-icon svg {
-  width: 38px;
-  height: 38px;
-  color: #ffffff;
+  margin-bottom: 24px;
+  flex-shrink: 0;
 }
 
 .template-title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 1.4em;
-  letter-spacing: -0.01em;
-  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 25.2px; /* Reduced from 28.8px */
+  line-height: 1.4;
+  color: #ececec !important;
   margin-bottom: 16px !important;
-  text-align: center;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  white-space: normal !important;
-  word-break: normal;
-  display: block;
-  width: 100%;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+  height: 70px;
+  min-height: 70px;
+  max-height: 70px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
   box-sizing: border-box;
-  min-width: 0;
-}
-
-.template-title,
-.template-title h3,
-.template-title .ant-typography {
-  writing-mode: horizontal-tb !important;
-  text-orientation: mixed !important;
-  direction: ltr !important;
-  unicode-bidi: normal !important;
-  text-align: center !important;
+  flex-shrink: 0;
 }
 
 .template-description {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 1.5em;
-  letter-spacing: -0.0125em;
-  color: #ffffff !important;
+  font-size: 14.4px; /* Reduced from 16.2px */
+  line-height: 1.5;
+  color: #ececec !important;
   margin-bottom: 24px !important;
-  flex: 1;
-  min-height: 0;
-  text-align: left;
+  height: 90px;
+  min-height: 90px;
+  max-height: 90px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  white-space: normal !important;
-  word-break: normal;
-  display: block;
-  width: 100%;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
   max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
   box-sizing: border-box;
-  min-width: 0;
-  writing-mode: horizontal-tb !important;
-  text-orientation: mixed !important;
-  direction: ltr !important;
-  unicode-bidi: normal !important;
-}
-
-.template-description *,
-.template-description p,
-.template-description .ant-typography {
-  writing-mode: horizontal-tb !important;
-  text-orientation: mixed !important;
-  direction: ltr !important;
-  unicode-bidi: normal !important;
-  display: inline !important;
-  white-space: normal !important;
+  flex-shrink: 0;
 }
 
 .template-features {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 24px;
+  height: 160px;
+  min-height: 160px;
+  max-height: 160px;
+  overflow: hidden;
+  max-width: 100%;
+  flex-shrink: 0;
 }
 
 .template-feature {
-  padding: 8px 16px;
-  background: transparent;
-  border: none;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.2em;
-  letter-spacing: -0.012em;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.template-feature::before {
-  content: '✓';
-  color: #ffffff;
-  font-weight: bold;
+  font-size: 13px; /* Reduced from 14.4px */
+  line-height: 1.5;
+  color: rgba(236, 236, 236, 0.8);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  box-sizing: border-box;
 }
 
 .template-button {
-  background: rgba(140, 69, 255, 0.8);
-  border: 1.1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(133deg, rgba(41, 159, 214, 1) 3%, rgba(9, 88, 217, 0.85) 75%);
+  border: none;
   border-radius: 11px;
-  padding: 6.6px 16.5px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 15.4px;
-  line-height: 1.8571428129093561em;
-  letter-spacing: -0.0001em;
-  color: #ffffff;
-  height: auto;
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16.2px;
+  line-height: 1.5;
+  color: #ffffff !important;
+  margin-top: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-align: center;
   width: 100%;
-  box-shadow: inset 0px 0px 6.6px 3.3px rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(15.4px);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: opacity 0.3s;
 }
 
 .template-button:hover {
-  background: rgba(140, 69, 255, 1);
-  border-color: rgba(255, 255, 255, 0.3);
+  opacity: 0.9;
 }
 
-/* Low Content Section */
+/* Template button responsive font sizes / 템플릿 버튼 반응형 폰트 크기 */
+@media (max-width: 1920px) {
+  .template-button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .template-button {
+    font-size: 14px;
+    padding: 11px 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .template-button {
+    font-size: 13px;
+    padding: 10px 14px;
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .template-button {
+    font-size: 12px;
+    padding: 9px 12px;
+    min-height: 40px;
+  }
+}
+
+/* Template card responsive adjustments / 템플릿 카드 반응형 조정 */
+@media (max-width: 1024px) {
+  .template-card {
+    min-height: 480px;
+    max-height: none;
+    padding: 32px 24px;
+  }
+
+  .template-title {
+    font-size: 22.5px;
+    height: 70px;
+    min-height: 70px;
+    max-height: 70px;
+    line-height: 1.4;
+  }
+
+  .template-description {
+    font-size: 13.5px;
+    height: 90px;
+    min-height: 90px;
+    max-height: 90px;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    line-height: 1.5;
+  }
+
+  .template-features {
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
+  }
+
+  .template-feature {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .template-button {
+    font-size: 13px;
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  .template-card {
+    min-height: 450px;
+    max-height: none;
+    padding: 24px 18px;
+  }
+
+  .template-title {
+    font-size: 19.8px;
+    height: 60px;
+    min-height: 60px;
+    max-height: 60px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    line-height: 1.4;
+  }
+
+  .template-description {
+    font-size: 12.5px;
+    height: 85px;
+    min-height: 85px;
+    max-height: 85px;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    line-height: 1.5;
+  }
+
+  .template-features {
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
+  }
+
+  .template-feature {
+    font-size: 11.5px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    line-height: 1.5;
+  }
+
+  .template-button {
+    font-size: 12px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .template-card {
+    min-height: 420px;
+    max-height: none;
+    padding: 20px 16px;
+  }
+
+  .template-title {
+    font-size: 18px;
+    height: 55px;
+    min-height: 55px;
+    max-height: 55px;
+    line-height: 1.4;
+  }
+
+  .template-description {
+    font-size: 11.5px;
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    line-height: 1.5;
+  }
+
+  .template-features {
+    height: 130px;
+    min-height: 130px;
+    max-height: 130px;
+  }
+
+  .template-feature {
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  .template-button {
+    font-size: 11px;
+    min-height: 38px;
+  }
+}
+
+/* Low Content Section / 마무리 CTA 섹션 */
 .low-content-section {
   padding: 148px 99px;
   text-align: center;
@@ -1856,7 +2825,7 @@
 .low-content-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 54px;
+  font-size: 48.6px;
   line-height: 1.3333333333333333em;
   letter-spacing: -0.018518518518518517em;
   color: #ffffff !important;
@@ -1866,7 +2835,7 @@
 .low-content-text {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 28.8px;
   line-height: 1.3125em;
   color: #ffffff !important;
   margin: 0 !important;
@@ -1919,7 +2888,7 @@
 .footer-tagline {
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 13.5px;
   line-height: 1.3em;
   letter-spacing: -0.028199999332427974em;
   color: #ffffff;
@@ -1928,7 +2897,7 @@
 .footer-text {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16.2px;
   line-height: 1.2999999788072374em;
   letter-spacing: -0.028199999332427983em;
   color: #ececec;
@@ -1939,6 +2908,31 @@
 .footer-social {
   display: flex;
   align-items: center;
+  gap: 16px;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.footer-social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: #56b0ff;
+}
+
+.footer-social-link svg {
+  width: 20px;
+  height: 20px;
 }
 
 .footer-social-icons {
@@ -1948,4 +2942,38 @@
   object-fit: contain;
 }
 
-/* 모든 미디어 쿼리는 react-responsive로 관리됨 - 제거됨 */
+/* Footer responsive / 푸터 반응형 */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  .footer-logo {
+    align-items: center;
+  }
+
+  .footer-text {
+    order: 3;
+  }
+
+  .footer-social {
+    order: 2;
+    justify-content: center;
+  }
+
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* All media queries are managed by react-responsive / 모든 미디어 쿼리는 react-responsive로 관리됨 */

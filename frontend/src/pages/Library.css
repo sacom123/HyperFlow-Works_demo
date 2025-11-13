@@ -44,11 +44,17 @@
 .library-premium-text {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 11.0px;
   line-height: 1.3em;
   color: #1677FF;
   margin-left: 15.75px;
   margin-right: 15.75px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* 사용자 아바타 - Figma: width: 37.5px, height: 37.5px */
@@ -72,7 +78,7 @@
 .library-user-initial {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 11.0px;
   line-height: 1.3em;
   color: #ffffff;
 }
@@ -81,20 +87,20 @@
 .library-mobile-menu-toggle {
   display: none;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 16px;
+  left: 16px;
   z-index: 1001;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  font-size: 20px;
+  font-size: 18px;
   color: #000000;
   padding: 0;
 }
@@ -127,7 +133,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   padding: 0;
   min-height: 23.25px;
 }
@@ -144,20 +150,20 @@
 .library-header-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-shrink: 0;
   margin-left: auto;
 }
 
 .library-header-action-btn {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
@@ -176,8 +182,8 @@
 }
 
 .library-header-icon {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   object-fit: contain;
   display: block;
 }
@@ -250,15 +256,14 @@
 }
 
 /* 메뉴 배경 (Active 상태) - Library가 세 번째 메뉴 아이템 */
-/* Figma: x: -18.75, y: 201, width: 247.5, height: 46.5, borderRadius: 15px */
 .library-menu-background {
   position: absolute;
-  left: -18.75px;
+  left: 0;
   top: 201px;
-  width: 247.5px;
+  width: 247.75px;
   height: 46.5px;
   background: rgba(0, 45, 116, 0.08);
-  border-radius: 15px;
+  border-radius: 5px;
   z-index: 1;
   pointer-events: none;
 }
@@ -277,6 +282,12 @@
   height: auto;
   padding: 0;
   box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* 메뉴 섹션 - Figma: gap: 32px, padding: 0px 20px */
@@ -302,7 +313,7 @@
   transition: all 0.3s ease;
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.4290000200271606em;
   letter-spacing: 1.45%;
   color: #000000;
@@ -392,7 +403,7 @@
   border-radius: 16.5px;
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 10.5px;
+  font-size: 7.7px;
   line-height: 1.4290000370570592em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.4);
@@ -419,7 +430,7 @@
 .library-knowledge-empty-state {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
@@ -473,12 +484,18 @@
   flex-direction: column;
   gap: 3px;
   width: 169px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .library-share-title {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 8.7px;
   line-height: 1.4290000597635906em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.8);
@@ -486,16 +503,28 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .library-share-subtitle {
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 6.6px;
   line-height: 1.429000006781684em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.4);
   width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .library-share-arrow {
@@ -513,25 +542,32 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
-  width: 18px;
-  height: 18px;
+  padding: 6px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   margin-bottom: 0;
+  border-radius: 6px;
 }
 
 .library-setting-btn:hover {
-  opacity: 0.7;
-  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.library-setting-btn:active {
+  background: rgba(0, 0, 0, 0.08);
+  transform: scale(0.98);
 }
 
 .library-setting-icon {
-  width: 100%;
-  height: 100%;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* Main Content - Figma: 사이드바 다음부터 시작 */
@@ -548,6 +584,12 @@
   box-sizing: border-box;
   overflow: visible;
   transition: left 0.3s ease, width 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .library-main-content.expanded {
@@ -559,32 +601,51 @@
 .library-title-section {
   position: absolute;
   left: 31.5px; /* 289.5 - 258 = 31.5 */
-  top: 128.25px;
+  top: 96px;
   width: auto;
   margin: 0;
   padding: 0;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .library-main-content.expanded .library-title-section {
   left: 229.5px; /* 289.5 - 60 = 229.5 */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .library-title {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 13.1px;
   line-height: 1.4670000076293945em;
   letter-spacing: 0.96%;
   color: #1677FF;
   margin: 0;
   padding: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* 구분선 - Figma: x: 264.75, y: 297.37, width: 1146 */
 .library-divider {
   position: absolute;
   left: 6.75px; /* 264.75 - 258 = 6.75 */
-  top: 297.37px;
+  top: 130px;
   width: 1146px;
   max-width: calc(100vw - 264.75px);
   height: 0;
@@ -602,7 +663,7 @@
 .library-table-container {
   position: absolute;
   left: 2.25px; /* 260.25 - 258 = 2.25 */
-  top: 99.75px;
+  top: 150px;
   width: 1155px;
   max-width: calc(100vw - 260.25px);
   background: rgba(230, 244, 255, 0.23);
@@ -623,13 +684,18 @@
 .library-description {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 1.1em;
+  font-size: 11.0px;
+  line-height: 1.4em;
   color: #737373;
-  margin: 59.25px 0 0 32.25px;
+  margin: 24px 0 0 32.25px;
   padding: 0;
   width: 453px;
   max-width: calc(100% - 64.5px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
 }
 
 /* Table Header - Figma: 컨테이너 내부 y: 96, height: 36.75px */
@@ -650,7 +716,7 @@
 .library-table-header-cell {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 11.0px;
   line-height: 1.1em;
   color: #ffffff;
   text-align: left;
@@ -661,8 +727,6 @@
 
 /* Table Body */
 .library-table-body {
-  width: 100%;
-  min-height: 587.25px; /* 624 - 36.75 */
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -670,6 +734,21 @@
   padding: 40px 30px;
   box-sizing: border-box;
   position: relative;
+  min-height: 200px;
+}
+
+/* Empty State in Table */
+.library-empty-state {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6em;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px;
 }
 
 /* ShareAlt Icon - Figma: x: 1081.5 (컨테이너 기준), y: 153 (컨테이너 기준) */
@@ -697,17 +776,7 @@
   height: 100%;
 }
 
-/* Empty State */
-.library-empty-state {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.4);
-  text-align: center;
-}
-
-/* Action Button - Figma: x: 711, y: 622, width: 253.5, height: 46.8 */
+/* Empty State * / .library / * Action Button - Figma: x: 711, y: 622, width: 253.5, height: 46.8 */
 .library-action-button-container {
   position: absolute;
   left: 453px; /* 711 - 258 = 453 */
@@ -739,7 +808,7 @@
   transition: all 0.3s ease;
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.4290000200271606em;
   letter-spacing: 1.45%;
   color: #ffffff;
@@ -751,7 +820,7 @@
 }
 
 .library-action-button-icon {
-  font-size: 13.65px;
+  font-size: 10.0px;
   width: 13.65px;
   height: 21.45px;
   display: flex;
@@ -759,213 +828,7 @@
   justify-content: center;
 }
 
-/* 반응형: 모바일 (767px 이하) */
-@media (max-width: 767px) {
-  .library-mobile-menu-toggle {
-    display: flex !important;
-  }
-
-  .library-top-header {
-    right: 15px;
-    top: 15px;
-    gap: 8px;
-  }
-
-  .library-premium-btn {
-    width: 80px;
-    height: 32px;
-  }
-
-  .library-premium-text {
-    font-size: 13px;
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-
-  .library-user-avatar {
-    width: 32px;
-    height: 32px;
-  }
-
-  .library-user-initial {
-    font-size: 13px;
-  }
-
-  .library-sidebar {
-    position: fixed;
-    left: -100%;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    max-width: 100%;
-    z-index: 1000;
-    transition: left 0.3s ease;
-    background: #ffffff;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .library-sidebar.open {
-    left: 0;
-  }
-
-  .library-mobile-overlay {
-    display: block !important;
-  }
-
-  .library-main-content {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 80px 20px 20px;
-    align-items: flex-start;
-  }
-
-  .library-title-section {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin-bottom: 20px;
-  }
-
-  .library-title {
-    font-size: 16px;
-  }
-
-  .library-divider {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    max-width: 100%;
-    margin: 20px 0;
-  }
-
-  .library-table-container {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 20px;
-  }
-
-  .library-description {
-    margin: 20px 0 0 0;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 20px;
-    font-size: 13px;
-  }
-
-  .library-table-header {
-    grid-template-columns: 1fr;
-    height: auto;
-    padding: 10px;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .library-table-header-cell {
-    font-size: 12px;
-    padding: 4px 0;
-  }
-
-  .library-table-body {
-    min-height: 200px;
-    padding: 20px;
-  }
-
-  .library-action-button-container {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .library-action-button {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .library-sidebar-header {
-    padding-top: 60px;
-    top: 12px;
-    left: 20px;
-    width: calc(100% - 40px);
-    justify-content: space-between;
-  }
-
-  .library-sidebar.collapsed {
-    width: 0;
-    min-width: 0;
-  }
-
-  .library-sidebar.collapsed .library-sidebar-header {
-    display: none;
-  }
-
-  .library-header-actions {
-    gap: 6px;
-  }
-
-  .library-header-action-btn {
-    width: 18px;
-    height: 18px;
-  }
-
-  .library-header-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .library-sidebar-background {
-    width: 100%;
-    left: 0;
-  }
-
-  .library-sidebar-footer {
-    width: calc(100% - 40px);
-    left: 20px;
-    top: auto;
-    bottom: 12px;
-    height: auto;
-    min-height: 85.75px;
-  }
-
-  .library-setting-btn {
-    bottom: 12px;
-    margin-bottom: 0;
-  }
-  
-  .library-sidebar-main-content {
-    left: 0;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-    top: 120px;
-  }
-  
-  .library-menu-background {
-    left: 0;
-    width: 100%;
-  }
-  
-  .library-share-banner {
-    left: 0;
-    top: 20px;
-    width: 100%;
-  }
-  
-  .library-setting-btn {
-    left: 0;
-    bottom: 20px;
-    top: auto;
-  }
-}
-
-/* 태블릿 반응형 (768px ~ 1024px) */
+/* 반응형: 모바일 (767px 이하) * / @media (max-width: 태블릿 반응형 (768px ~ 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .library-sidebar {
     width: calc(258px * (100vw / 1440px));
@@ -975,7 +838,13 @@
   .library-main-content {
     left: calc(258px * (100vw / 1440px));
     width: calc(100% - calc(258px * (100vw / 1440px)));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-main-content.expanded {
     left: calc(60px * (100vw / 1440px));
@@ -985,11 +854,23 @@
   .library-title-section {
     left: calc(31.5px * (100vw / 1440px));
     top: calc(128.25px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-main-content.expanded .library-title-section {
     left: calc(229.5px * (100vw / 1440px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-divider {
     left: calc(6.75px * (100vw / 1440px));
@@ -1042,9 +923,9 @@
   }
 
   .library-menu-background {
-    left: calc(-18.75px * (100vw / 1440px));
+    left: 0;
     top: calc(201px * (100vh / 810px));
-    width: calc(247.5px * (100vw / 1440px));
+    width: calc(247.75px * (100vw / 1440px));
     height: calc(46.5px * (100vh / 810px));
   }
 
@@ -1053,7 +934,13 @@
     top: calc(110.25px * (100vh / 810px));
     width: calc(281px * (100vw / 1440px));
     gap: calc(39px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-sidebar-footer {
     left: calc(18.75px * (100vw / 1440px));
@@ -1073,7 +960,13 @@
   .library-main-content {
     left: calc(258px * (100vw / 1440px));
     width: calc(100% - calc(258px * (100vw / 1440px)));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-main-content.expanded {
     left: calc(60px * (100vw / 1440px));
@@ -1083,11 +976,23 @@
   .library-title-section {
     left: calc(31.5px * (100vw / 1440px));
     top: calc(128.25px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-main-content.expanded .library-title-section {
     left: calc(229.5px * (100vw / 1440px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-divider {
     left: calc(6.75px * (100vw / 1440px));
@@ -1125,14 +1030,7 @@
   }
 }
 
-/* FHD 이상 반응형 (1440px 이상) */
-@media (min-width: 1440px) {
-  .library-table-container {
-    width: 1155px;
-  }
-}
-
-/* QHD 반응형 (1921px ~ 2560px) */
+/* FHD 이상 반응형 (1440px 이상) * / @media (min / * QHD 반응형 (1921px ~ 2560px) */
 @media (min-width: 1921px) and (max-width: 2560px) {
   .library-sidebar {
     max-width: 300px;
@@ -1141,7 +1039,13 @@
   .library-main-content {
     left: 300px;
     width: calc(100% - 300px);
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-main-content.expanded {
     left: 60px;
@@ -1151,11 +1055,23 @@
   .library-title-section {
     left: calc(31.5px * (100vw / 1440px));
     top: calc(128.25px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .library-main-content.expanded .library-title-section {
     left: calc(229.5px * (100vw / 1440px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 }
 
 /* UHD 반응형 (2561px 이상) */
@@ -1167,6 +1083,12 @@
   .library-main-content {
     left: 350px;
     width: calc(100% - 350px);
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
   }
 
   .library-main-content.expanded {
@@ -1177,9 +1099,103 @@
   .library-title-section {
     left: calc(31.5px * (100vw / 1440px));
     top: calc(128.25px * (100vh / 810px));
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
   }
 
   .library-main-content.expanded .library-title-section {
     left: calc(229.5px * (100vw / 1440px));
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+  }
+}
+
+/* 반응형: 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .library-page {
+    flex-direction: column;
+  }
+
+  .library-sidebar {
+    position: fixed;
+    left: -258px;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    background: #ffffff;
+  }
+
+  .library-sidebar.open {
+    transform: translateX(258px);
+  }
+
+  .library-mobile-menu-toggle {
+    display: flex;
+  }
+
+  .library-mobile-overlay {
+    display: block;
+  }
+
+  .library-main-content {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 80px 20px 20px;
+  }
+
+  .library-top-header {
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    z-index: 1001;
+  }
+
+  .library-title-section {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .library-divider {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  .library-table-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  .library-action-button-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
   }
 }

@@ -96,12 +96,18 @@
 .login-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 45px;
+  font-size: 32.9px;
   line-height: 0.36666666666666664em;
   color: rgba(0, 0, 0, 0.8) !important;
   margin: 0 !important;
   transition: all 0.3s ease;
   cursor: pointer;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .login-title:hover {
@@ -111,14 +117,26 @@
 
 @media (max-width: 767px) {
   .login-title {
-    font-size: 32px;
-  }
+    font-size: 23.3px;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .login-title {
-    font-size: 38px;
-  }
+    font-size: 27.7px;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 }
 
 .login-form-container {
@@ -172,7 +190,7 @@
   padding: 17.25px 22.5px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 13.1px;
   line-height: 1.3em;
   color: rgba(0, 0, 0, 0.8) !important;
   box-shadow: 0px 0px 11.77px 0px rgba(26, 35, 47, 0.11);
@@ -183,7 +201,7 @@
   .login-input {
     height: 50px;
     padding: 14px 18px;
-    font-size: 16px;
+    font-size: 11.7px;
   }
 }
 
@@ -206,14 +224,14 @@
   gap: 8px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.2999999523162842em;
   width: 100%;
 }
 
 @media (max-width: 767px) {
   .login-links {
-    font-size: 14px;
+    font-size: 10.2px;
     gap: 6px;
   }
 }
@@ -241,7 +259,7 @@
   border-radius: 7.5px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 13.1px;
   line-height: 1.2999999788072374em;
   color: #ffffff !important;
   box-shadow: 0px 0px 6.6px 0px rgba(26, 35, 47, 0.04);
@@ -252,7 +270,7 @@
 @media (max-width: 767px) {
   .login-button {
     height: 50px;
-    font-size: 16px;
+    font-size: 11.7px;
     padding: 12px 24px;
   }
 }
@@ -292,13 +310,19 @@
 .login-divider-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 10.2px;
   line-height: 1.2999999182564872em;
   color: rgba(0, 0, 0, 0.8);
   white-space: nowrap;
   padding: 0 12px;
   width: 121px;
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -307,10 +331,16 @@
   }
 
   .login-divider-text {
-    font-size: 12px;
+    font-size: 8.7px;
     padding: 0 8px;
     width: auto;
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .login-divider-line {
     max-width: 100px;
@@ -353,19 +383,31 @@
   gap: 12px;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.2999999523162842em;
   color: rgba(0, 0, 0, 0.8);
   width: 252px;
   margin: 0 auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 @media (max-width: 767px) {
   .login-google-content {
     width: auto;
-    font-size: 14px;
+    font-size: 10.2px;
     gap: 10px;
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 }
 
 .login-google-icon {

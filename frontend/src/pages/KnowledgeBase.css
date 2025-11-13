@@ -44,11 +44,17 @@
 .knowledge-base-premium-text {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 11.0px;
   line-height: 1.3em;
   color: #1677FF;
   margin-left: 15.75px;
   margin-right: 15.75px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* 사용자 아바타 - Figma: width: 37.5px, height: 37.5px */
@@ -72,7 +78,7 @@
 .knowledge-base-user-initial {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 11.0px;
   line-height: 1.3em;
   color: #ffffff;
 }
@@ -81,20 +87,20 @@
 .knowledge-base-mobile-menu-toggle {
   display: none;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 16px;
+  left: 16px;
   z-index: 1001;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  font-size: 20px;
+  font-size: 18px;
   color: #000000;
   padding: 0;
 }
@@ -127,7 +133,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   padding: 0;
   min-height: 23.25px;
 }
@@ -144,20 +150,20 @@
 .knowledge-base-header-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-shrink: 0;
   margin-left: auto;
 }
 
 .knowledge-base-header-action-btn {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
@@ -176,8 +182,8 @@
 }
 
 .knowledge-base-header-icon {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   object-fit: contain;
   display: block;
 }
@@ -250,15 +256,14 @@
 }
 
 /* 메뉴 배경 (Active 상태) - Knowledge bases가 네 번째 메뉴 아이템 */
-/* Figma: x: -18.75, y: 252, width: 247.5, height: 46.5, borderRadius: 15px */
 .knowledge-base-menu-background {
   position: absolute;
-  left: -18.75px;
+  left: 0;
   top: 252px;
-  width: 247.5px;
+  width: 247.75px;
   height: 46.5px;
   background: rgba(0, 45, 116, 0.08);
-  border-radius: 15px;
+  border-radius: 5px;
   z-index: 1;
   pointer-events: none;
 }
@@ -277,6 +282,12 @@
   height: auto;
   padding: 0;
   box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* 메뉴 섹션 - Figma: gap: 32px, padding: 0px 20px */
@@ -302,7 +313,7 @@
   transition: all 0.3s ease;
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.4290000200271606em;
   letter-spacing: 1.45%;
   color: #000000;
@@ -392,7 +403,7 @@
   border-radius: 16.5px;
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 10.5px;
+  font-size: 7.7px;
   line-height: 1.4290000370570592em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.4);
@@ -419,7 +430,7 @@
 .knowledge-base-knowledge-empty-state {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
@@ -473,12 +484,18 @@
   flex-direction: column;
   gap: 3px;
   width: 169px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .knowledge-base-share-title {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 8.7px;
   line-height: 1.4290000597635906em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.8);
@@ -486,16 +503,28 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .knowledge-base-share-subtitle {
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 6.6px;
   line-height: 1.429000006781684em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.4);
   width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .knowledge-base-share-arrow {
@@ -513,25 +542,32 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
-  width: 18px;
-  height: 18px;
+  padding: 6px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   margin-bottom: 0;
+  border-radius: 6px;
 }
 
 .knowledge-base-setting-btn:hover {
-  opacity: 0.7;
-  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.knowledge-base-setting-btn:active {
+  background: rgba(0, 0, 0, 0.08);
+  transform: scale(0.98);
 }
 
 .knowledge-base-setting-icon {
-  width: 100%;
-  height: 100%;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* Main Content - Figma: 사이드바 다음부터 시작 */
@@ -548,6 +584,12 @@
   box-sizing: border-box;
   overflow: visible;
   transition: left 0.3s ease, width 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .knowledge-base-main-content.expanded {
@@ -559,49 +601,72 @@
 .knowledge-base-title-section {
   position: absolute;
   left: 60px; /* 318 - 258 = 60 */
-  top: 110px;
+  top: 96px;
   width: 999px;
   max-width: calc(100vw - 318px);
   margin: 0;
   padding: 0;
   z-index: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .knowledge-base-main-content.expanded .knowledge-base-title-section {
   left: 258px; /* 318 - 60 = 258 */
   max-width: calc(100vw - 318px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .knowledge-base-title {
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
-  font-size: 21.6px;
+  font-size: 15.8px;
   line-height: 1.4670000076293945em;
   letter-spacing: 0.96%;
   color: #1677FF;
   margin: 0;
   padding: 0;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .knowledge-base-description {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.2222222222222223em;
+  font-size: 13.1px;
+  line-height: 1.5em;
   color: #000000;
   margin: 0;
   padding: 0;
-  margin-top: 6px;
+  margin-top: 8px;
   width: 999px;
   max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
 }
 
 /* Container - Figma: x: 282, y: 96, width: 1109, height: 624 */
 .knowledge-base-container {
   position: absolute;
   left: 24px; /* 282 - 258 = 24 */
-  top: 96px;
+  top: 160px;
   width: 1109px;
   max-width: calc(100vw - 282px);
   height: 624px;
@@ -611,6 +676,9 @@
   overflow: visible;
   box-sizing: border-box;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .knowledge-base-main-content.expanded .knowledge-base-container {
@@ -618,20 +686,18 @@
   max-width: calc(100vw - 282px);
 }
 
-/* Upload Area - Figma: x: 775, y: 351 (페이지 기준), 컨테이너 기준 x: 493, y: 255 */
-/* 업로드 영역은 컨테이너 내부에서 중앙에 위치 */
+/* Upload Area - 업로드 영역은 컨테이너 내부에서 중앙에 위치 */
 .knowledge-base-upload-area {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   margin: 0;
-  padding: 0;
+  gap: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .knowledge-base-file-input {
@@ -642,15 +708,14 @@
   width: 89px;
   height: 89px;
   background: #1677FF;
-  border-radius: 50%;
+  border: none;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: none;
-  padding: 0;
-  position: relative;
+  flex-shrink: 0;
 }
 
 .knowledge-base-upload-button:hover {
@@ -659,33 +724,29 @@
 }
 
 .knowledge-base-upload-icon {
-  font-size: 38px;
+  font-size: 30.8px;
   width: 38px;
   height: 36px;
-  color: rgba(255, 255, 255, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #ffffff;
 }
 
 .knowledge-base-upload-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.1em;
-  color: #000000;
+  font-size: 13.1px;
+  line-height: 1.5em;
+  color: #737373;
+  text-align: center;
   margin: 0;
   padding: 0;
-  text-align: center;
   white-space: nowrap;
 }
 
 /* ShareAlt Icon - Figma: x: 1081.5, y: 153 (페이지 기준) */
-/* 컨테이너 기준: x: 1081.5 - 282 = 799.5, y: 153 - 96 = 57 */
-/* left 계산: 799.5px */
+/* 컨테이너 기준: x: 1081.5 - 282 = 799.5px */
 .knowledge-base-share-icon {
   position: absolute;
-  left: 799.5px; /* 1081.5 - 282 = 799.5 */
+  right: 27.5px; /* 1109 - 1081.5 = 27.5px */
   top: 57px; /* 153 - 96 = 57 */
   width: 18.75px;
   height: 18.75px;
@@ -707,195 +768,7 @@
   height: 100%;
 }
 
-/* 반응형: 모바일 (767px 이하) */
-@media (max-width: 767px) {
-  .knowledge-base-mobile-menu-toggle {
-    display: flex !important;
-  }
-
-  .knowledge-base-top-header {
-    right: 15px;
-    top: 15px;
-    gap: 8px;
-  }
-
-  .knowledge-base-premium-btn {
-    width: 80px;
-    height: 32px;
-  }
-
-  .knowledge-base-premium-text {
-    font-size: 13px;
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-
-  .knowledge-base-user-avatar {
-    width: 32px;
-    height: 32px;
-  }
-
-  .knowledge-base-user-initial {
-    font-size: 13px;
-  }
-
-  .knowledge-base-sidebar {
-    position: fixed;
-    left: -100%;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    max-width: 100%;
-    z-index: 1000;
-    transition: left 0.3s ease;
-    background: #ffffff;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .knowledge-base-sidebar.open {
-    left: 0;
-  }
-
-  .knowledge-base-mobile-overlay {
-    display: block !important;
-  }
-
-  .knowledge-base-main-content {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 80px 20px 20px;
-    align-items: flex-start;
-  }
-
-  .knowledge-base-title-section {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .knowledge-base-title {
-    font-size: 18px;
-  }
-
-  .knowledge-base-description {
-    font-size: 14px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .knowledge-base-container {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    max-width: 100%;
-    height: 400px;
-    margin-top: 20px;
-  }
-
-  .knowledge-base-upload-area {
-    margin-top: 0;
-    margin-left: 0;
-    gap: 15px;
-  }
-
-  .knowledge-base-upload-button {
-    width: 70px;
-    height: 70px;
-  }
-
-  .knowledge-base-upload-icon {
-    font-size: 30px;
-    width: 30px;
-    height: 28px;
-  }
-
-  .knowledge-base-upload-text {
-    font-size: 16px;
-  }
-
-  .knowledge-base-sidebar-header {
-    padding-top: 60px;
-    top: 12px;
-    left: 20px;
-    width: calc(100% - 40px);
-    justify-content: space-between;
-  }
-
-  .knowledge-base-sidebar.collapsed {
-    width: 0;
-    min-width: 0;
-  }
-
-  .knowledge-base-sidebar.collapsed .knowledge-base-sidebar-header {
-    display: none;
-  }
-
-  .knowledge-base-header-actions {
-    gap: 6px;
-  }
-
-  .knowledge-base-header-action-btn {
-    width: 18px;
-    height: 18px;
-  }
-
-  .knowledge-base-header-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .knowledge-base-sidebar-background {
-    width: 100%;
-    left: 0;
-  }
-
-  .knowledge-base-sidebar-footer {
-    width: calc(100% - 40px);
-    left: 20px;
-    top: auto;
-    bottom: 12px;
-    height: auto;
-    min-height: 85.75px;
-  }
-
-  .knowledge-base-setting-btn {
-    bottom: 12px;
-    margin-bottom: 0;
-  }
-  
-  .knowledge-base-sidebar-main-content {
-    left: 0;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-    top: 120px;
-  }
-  
-  .knowledge-base-menu-background {
-    left: 0;
-    width: 100%;
-  }
-  
-  .knowledge-base-share-banner {
-    left: 0;
-    top: 20px;
-    width: 100%;
-  }
-  
-  .knowledge-base-setting-btn {
-    left: 0;
-    bottom: 20px;
-    top: auto;
-  }
-}
-
-/* 태블릿 반응형 (768px ~ 1024px) */
+/* 반응형: 모바일 (767px 이하) * / @media (max-width: 태블릿 반응형 (768px ~ 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .knowledge-base-sidebar {
     width: calc(258px * (100vw / 1440px));
@@ -905,7 +778,13 @@
   .knowledge-base-main-content {
     left: calc(258px * (100vw / 1440px));
     width: calc(100% - calc(258px * (100vw / 1440px)));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-main-content.expanded {
     left: calc(60px * (100vw / 1440px));
@@ -917,22 +796,46 @@
     top: calc(110px * (100vh / 810px));
     width: calc(999px * (100vw / 1440px));
     max-width: calc(100vw - calc(318px * (100vw / 1440px)));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-main-content.expanded .knowledge-base-title-section {
     left: calc(258px * (100vw / 1440px));
     max-width: calc(100vw - calc(318px * (100vw / 1440px)));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-title {
-    font-size: calc(21.6px * (100vw / 1440px));
-  }
+    font-size: 17.5px;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-description {
-    font-size: calc(18px * (100vw / 1440px));
+    font-size: 14.6px;
     width: calc(999px * (100vw / 1440px));
     max-width: 100%;
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-container {
     left: calc(24px * (100vw / 1440px));
@@ -958,14 +861,20 @@
   }
 
   .knowledge-base-upload-icon {
-    font-size: calc(38px * (100vw / 1440px));
+    font-size: 30.8px;
     width: calc(38px * (100vw / 1440px));
     height: calc(36px * (100vw / 1440px));
   }
 
   .knowledge-base-upload-text {
-    font-size: calc(20px * (100vw / 1440px));
-  }
+    font-size: 16.2px;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-top-header {
     right: calc(21.75px * (100vw / 1440px));
@@ -983,9 +892,9 @@
   }
 
   .knowledge-base-menu-background {
-    left: calc(-18.75px * (100vw / 1440px));
+    left: 0;
     top: calc(252px * (100vh / 810px));
-    width: calc(247.5px * (100vw / 1440px));
+    width: calc(247.75px * (100vw / 1440px));
     height: calc(46.5px * (100vh / 810px));
   }
 
@@ -994,7 +903,13 @@
     top: calc(110.25px * (100vh / 810px));
     width: calc(281px * (100vw / 1440px));
     gap: calc(39px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-sidebar-footer {
     left: calc(18.75px * (100vw / 1440px));
@@ -1021,7 +936,13 @@
   .knowledge-base-main-content {
     left: calc(258px * (100vw / 1440px));
     width: calc(100% - calc(258px * (100vw / 1440px)));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-main-content.expanded {
     left: calc(60px * (100vw / 1440px));
@@ -1033,12 +954,24 @@
     top: calc(110px * (100vh / 810px));
     width: calc(999px * (100vw / 1440px));
     max-width: calc(100vw - calc(318px * (100vw / 1440px)));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-main-content.expanded .knowledge-base-title-section {
     left: calc(258px * (100vw / 1440px));
     max-width: calc(100vw - calc(318px * (100vw / 1440px)));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-container {
     left: calc(24px * (100vw / 1440px));
@@ -1054,14 +987,7 @@
   }
 }
 
-/* FHD 이상 반응형 (1440px 이상) */
-@media (min-width: 1440px) {
-  .knowledge-base-container {
-    width: 1109px;
-  }
-}
-
-/* QHD 반응형 (1921px ~ 2560px) */
+/* FHD 이상 반응형 (1440px 이상) * / @media (min / * QHD 반응형 (1921px ~ 2560px) */
 @media (min-width: 1921px) and (max-width: 2560px) {
   .knowledge-base-sidebar {
     max-width: 300px;
@@ -1070,7 +996,13 @@
   .knowledge-base-main-content {
     left: 300px;
     width: calc(100% - 300px);
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-main-content.expanded {
     left: 60px;
@@ -1080,11 +1012,23 @@
   .knowledge-base-title-section {
     left: calc(60px * (100vw / 1440px));
     top: calc(110px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .knowledge-base-main-content.expanded .knowledge-base-title-section {
     left: calc(258px * (100vw / 1440px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 }
 
 /* UHD 반응형 (2561px 이상) */
@@ -1096,6 +1040,12 @@
   .knowledge-base-main-content {
     left: 350px;
     width: calc(100% - 350px);
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
   }
 
   .knowledge-base-main-content.expanded {
@@ -1106,10 +1056,94 @@
   .knowledge-base-title-section {
     left: calc(60px * (100vw / 1440px));
     top: calc(110px * (100vh / 810px));
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
   }
 
   .knowledge-base-main-content.expanded .knowledge-base-title-section {
     left: calc(258px * (100vw / 1440px));
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
+}
+
+/* 반응형: 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .knowledge-base-page {
+    flex-direction: column;
+  }
+
+  .knowledge-base-sidebar {
+    position: fixed;
+    left: -258px;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    background: #ffffff;
+  }
+
+  .knowledge-base-sidebar.open {
+    transform: translateX(258px);
+  }
+
+  .knowledge-base-mobile-menu-toggle {
+    display: flex;
+  }
+
+  .knowledge-base-mobile-overlay {
+    display: block;
+  }
+
+  .knowledge-base-main-content {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 80px 20px 20px;
+  }
+
+  .knowledge-base-top-header {
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    z-index: 1001;
+  }
+
+  .knowledge-base-title-section {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .knowledge-base-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 400px;
+    margin: 20px 0;
+  }
+
+  .knowledge-base-upload-area {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

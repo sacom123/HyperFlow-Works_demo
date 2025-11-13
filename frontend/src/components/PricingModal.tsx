@@ -60,10 +60,17 @@ const PricingModal = ({ open, onClose }: PricingModalProps) => {
       onCancel={onClose}
       footer={null}
       closable={false}
-      width="90%"
-      style={{ maxWidth: '1200px' }}
+      width="95%"
+      style={{ 
+        maxWidth: '1200px',
+        top: '5%',
+        paddingBottom: 0
+      }}
       className="pricing-modal"
-      styles={{ mask: { backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.5)' } }}
+      styles={{ 
+        mask: { backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.5)' },
+        body: { padding: 0, maxHeight: '90vh', overflow: 'auto' }
+      }}
     >
       <div className="pricing-modal-content">
         <Button

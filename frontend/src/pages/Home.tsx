@@ -1,11 +1,7 @@
 /**
- * Home Page Component
- * 랜딩 페이지 메인 컴포넌트 / Main landing page component
- *
- * Features:
- * - react-responsive 기반 완전 반응형 디자인 / Fully responsive design based on react-responsive
- * - 자동 비율 조정 시스템 / Automatic ratio adjustment system
- * - 모바일, 태블릿, 데스크톱, 대형 데스크톱 지원 / Support for mobile, tablet, desktop, large desktop
+ * Home Page Component / 랜딩 페이지 메인 컴포넌트
+ * - Fully responsive design based on react-responsive / react-responsive 기반 완전 반응형 디자인
+ * - Support for mobile, tablet, desktop, large desktop / 모바일, 태블릿, 데스크톱, 대형 데스크톱 지원
  */
 
 import React, { useState, useEffect } from 'react'
@@ -33,10 +29,7 @@ import './Home.css'
 
 const { Title, Paragraph } = Typography
 
-/**
- * 텍스트 가로 표시를 위한 공통 스타일
- * Common style for horizontal text display
- */
+// Common style for horizontal text display / 텍스트 가로 표시를 위한 공통 스타일
 const horizontalTextStyle: React.CSSProperties = {
   writingMode: 'horizontal-tb',
   textOrientation: 'mixed',
@@ -49,27 +42,7 @@ const horizontalTextStyle: React.CSSProperties = {
   width: '100%',
 }
 
-/**
- * 반응형 스타일 유틸리티 함수
- * Responsive style utility functions
- * 화면 크기에 따라 자동으로 비율 조정
- * Automatically adjust ratio based on screen size
- */
-
-/**
- * 반응형 값 계산 함수
- * Calculate responsive value based on device type
- * @param mobile - 모바일 값 / Mobile value
- * @param tablet - 태블릿 값 / Tablet value
- * @param fhd - FHD 값 / FHD value
- * @param qhd - QHD 값 / QHD value
- * @param uhd - UHD 값 / UHD value
- * @param isMobile - 모바일 여부 / Whether it's mobile
- * @param isTablet - 태블릿 여부 / Whether it's tablet
- * @param isFHD - FHD 여부 / Whether it's FHD
- * @param isQHD - QHD 여부 / Whether it's QHD
- * @param isUHD - UHD 여부 / Whether it's UHD
- */
+// Calculate responsive value based on device type / 반응형 값 계산 함수
 const getResponsiveValue = <T,>(
   mobile: T,
   tablet: T,
@@ -87,13 +60,10 @@ const getResponsiveValue = <T,>(
   if (isFHD) return fhd
   if (isQHD) return qhd
   if (isUHD) return uhd
-  return fhd // 기본값 (FHD) / Default value (FHD)
+  return fhd // Default value (FHD) / 기본값 (FHD)
 }
 
-/**
- * LLM 모델 데이터
- * LLM model data
- */
+// LLM model data / LLM 모델 데이터
 const LLM_MODELS = [
   { name: 'gpt-5', image: 'llm-gpt-5.avif', width: '104px' },
   { name: 'gemini-2.5-Pro', image: 'llm-gemini-2.5-pro.avif', width: '141px' },
@@ -106,10 +76,7 @@ const LLM_MODELS = [
   { name: 'gemini-2.0-Flash', image: 'llm-gemini-2.0-flash.avif', width: '159px' },
 ]
 
-/**
- * 기능 카드 데이터 (Figma 디자인 기준 - 6개 카드)
- * Feature card data (Based on Figma design - 6 cards)
- */
+// Feature card data (Based on Figma design - 6 cards) / 기능 카드 데이터 (Figma 디자인 기준 - 6개 카드)
 const getFeatureCards = (t: any) => [
   {
     icon: DragOutlined,
@@ -143,10 +110,6 @@ const getFeatureCards = (t: any) => [
   },
 ]
 
-/**
- * Home Component
- * 메인 랜딩 페이지 컴포넌트 / Main landing page component
- */
 const Home = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
@@ -154,44 +117,22 @@ const Home = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const featureCards = getFeatureCards(t)
 
-  /**
-   * 반응형 브레이크포인트 설정
-   * Responsive breakpoint settings
-   * react-responsive를 사용하여 화면 크기에 따른 레이아웃 조정
-   * Mobile, Tablet, FHD, QHD, UHD
-   */
-  const isMobile = useMediaQuery({ maxWidth: 767 }) // 모바일: 767px 이하 / Mobile: 767px and below
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 }) // 태블릿: 768px ~ 1024px / Tablet: 768px ~ 1024px
+  // Responsive breakpoint settings / 반응형 브레이크포인트 설정
+  const isMobile = useMediaQuery({ maxWidth: 767 }) // Mobile: 767px and below / 모바일: 767px 이하
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 }) // Tablet: 768px ~ 1024px / 태블릿: 768px ~ 1024px
   const isFHD = useMediaQuery({ minWidth: 1025, maxWidth: 1920 }) // FHD: 1025px ~ 1920px / FHD: 1025px ~ 1920px
   const isQHD = useMediaQuery({ minWidth: 1921, maxWidth: 2560 }) // QHD: 1921px ~ 2560px / QHD: 1921px ~ 2560px
-  const isUHD = useMediaQuery({ minWidth: 2561 }) // UHD: 2561px 이상 / UHD: 2561px and above
+  const isUHD = useMediaQuery({ minWidth: 2561 }) // UHD: 2561px and above / UHD: 2561px 이상
 
-  /**
-   * 가격 정책 모달 열기/닫기
-   * Open/Close pricing policy modal
-   */
   const openPricingModal = () => setIsPricingModalOpen(true)
   const closePricingModal = () => setIsPricingModalOpen(false)
 
-  /**
-   * 로고 클릭 핸들러
-   * Logo click handler
-   */
   const handleLogoClick = () => {
     navigate('/')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  /**
-   * 로그인 버튼 클릭 핸들러
-   * Login button click handler
-   */
   const handleLoginClick = () => navigate('/login')
-
-  /**
-   * ESC 키로 모달 닫기 및 body 스크롤 제어
-   * Close modal with ESC key and control body scroll
-   */
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isPricingModalOpen) {
@@ -212,7 +153,7 @@ const Home = () => {
     }
   }, [isPricingModalOpen])
 
-  // 반응형 값 계산 / Calculate responsive values
+  // Calculate responsive values / 반응형 값 계산
   const navPadding = getResponsiveValue(
     '0 20px', // Mobile
     '0 40px', // Tablet
@@ -275,14 +216,14 @@ const Home = () => {
     isUHD
   )
 
-  // 반응형 그리드 설정 / Responsive grid settings
+  // Responsive grid settings / 반응형 그리드 설정
   const gridColumns = isMobile ? '1fr' : isTablet ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)'
   const gridGap = isMobile ? '24px' : isTablet ? '20px' : '40px'
   const featuresSectionPadding = isMobile ? '80px 20px' : isTablet ? '120px 40px' : '120px 40px'
 
   return (
     <div className="landing-page">
-      {/* Navigation - 네비게이션 바 / Navigation Bar */}
+      {/* Navigation Bar / 네비게이션 바 */}
       <nav className="navbar">
         <div
           className="nav-container"
@@ -310,7 +251,7 @@ const Home = () => {
             <img src="/images/logo.avif" alt="HyperFlow" className="nav-logo-image" />
           </div>
 
-          {/* 모바일 메뉴 / Mobile Menu */}
+          {/* Mobile Menu / 모바일 메뉴 */}
           {isMobile ? (
             <>
               <Button
@@ -469,7 +410,7 @@ const Home = () => {
       {/* Pricing Modal */}
       <PricingModal open={isPricingModalOpen} onClose={closePricingModal} />
 
-      {/* Hero Section - 메인 콘텐츠 영역 / Main Content Area */}
+      {/* Hero Section / 메인 콘텐츠 영역 */}
       <section className="hero-section" style={{ padding: heroPadding }}>
         <div className="hero-background">
           <div className="ellipse ellipse-1"></div>
@@ -527,7 +468,7 @@ const Home = () => {
         )}
       </section>
 
-      {/* Features Intro Section - 기능 소개 섹션 / Features Introduction Section */}
+      {/* Features Intro Section / 기능 소개 섹션 */}
       <section className="features-intro-section">
         <div className="features-intro-wrapper">
           <Paragraph className="features-intro-text">{t('features.intro.text')}</Paragraph>
@@ -537,7 +478,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section - 주요 기능 카드 섹션 / Main Features Card Section */}
+      {/* Features Section / 주요 기능 카드 섹션 */}
       <section className="features-section" style={{ padding: featuresSectionPadding }}>
         <div className="section-header">
           <div className="section-ellipse"></div>
@@ -546,7 +487,7 @@ const Home = () => {
           </Title>
         </div>
 
-        {/* Features Grid - 기능 카드 그리드 레이아웃 / Feature Cards Grid Layout */}
+        {/* Features Grid / 기능 카드 그리드 레이아웃 */}
         <div
           className="features-grid"
           style={{
@@ -590,7 +531,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* LLM Support Section - 지원 LLM 목록 섹션 / Supported LLM List Section */}
+      {/* LLM Support Section / 지원 LLM 목록 섹션 */}
       <section
         className="llm-section"
         style={{
@@ -717,7 +658,6 @@ const Home = () => {
           </Title>
           <div className="llm-models-wrapper">
             <div className="llm-models-track">
-              {/* 첫 번째 세트 */}
               {LLM_MODELS.map((llm, index) => (
                 <div
                   key={`first-${llm.name}-${index}`}
@@ -730,7 +670,7 @@ const Home = () => {
                   <div className="llm-model-name">{llm.name}</div>
                 </div>
               ))}
-              {/* 두 번째 세트 (무한 루프를 위해 복제) */}
+              {/* Duplicate set for infinite loop / 무한 루프를 위한 복제 */}
               {LLM_MODELS.map((llm, index) => (
                 <div
                   key={`second-${llm.name}-${index}`}
@@ -748,7 +688,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Advanced Workflow Section - 고급 워크플로우 기능 섹션 / Advanced Workflow Features Section */}
+      {/* Advanced Workflow Section / 고급 워크플로우 기능 섹션 */}
       <section
         className="advanced-workflow-section"
         style={{
@@ -835,7 +775,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Super Node Section - 슈퍼노드 소개 섹션 / Super Node Introduction Section */}
+      {/* Super Node Section / 슈퍼노드 소개 섹션 */}
       <section className="supernode-section">
         <div className="supernode-wrapper">
           <Title level={2} className="supernode-section-title">
@@ -856,7 +796,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Workflow Section - 시작하기 가이드 섹션 / Getting Started Guide Section */}
+      {/* Workflow Section / 시작하기 가이드 섹션 */}
       <section
         className="workflow-section"
         style={{
@@ -886,14 +826,7 @@ const Home = () => {
           <Card className="workflow-step-card">
             <div className="step-icon-circle">
               <div className="step-icon">
-                {/* Branches 아이콘 - SVG로 대체 가능 */}
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M4.34 1.45L27.32 33.11"
                     stroke="rgba(255, 255, 255, 0.85)"
@@ -934,13 +867,7 @@ const Home = () => {
           <Card className="workflow-step-card">
             <div className="step-icon-circle">
               <div className="step-icon">
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M4.34 1.45L27.32 33.11"
                     stroke="rgba(255, 255, 255, 0.85)"
@@ -978,13 +905,7 @@ const Home = () => {
           <Card className="workflow-step-card">
             <div className="step-icon-circle">
               <div className="step-icon">
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M4.34 1.45L27.32 33.11"
                     stroke="rgba(255, 255, 255, 0.85)"
@@ -1028,7 +949,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Templates Section - 템플릿 갤러리 섹션 / Template Gallery Section */}
+      {/* Templates Section / 템플릿 갤러리 섹션 */}
       <section
         className="templates-section"
         style={{
@@ -1191,7 +1112,7 @@ const Home = () => {
         </Row>
       </section>
 
-      {/* LowContent Section - 마무리 CTA 섹션 / Final CTA Section */}
+      {/* LowContent Section / 마무리 CTA 섹션 */}
       <section
         className="low-content-section"
         style={{
@@ -1216,7 +1137,7 @@ const Home = () => {
         <Paragraph className="low-content-text">{t('lowContent.text')}</Paragraph>
       </section>
 
-      {/* Footer - 푸터 영역 / Footer Area */}
+      {/* Footer / 푸터 영역 */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
@@ -1225,16 +1146,71 @@ const Home = () => {
           </div>
           <div className="footer-text">{t('footer.copyright')}</div>
           <div className="footer-social">
-            <img
-              src="/images/social-icons.svg"
-              alt="Social Media"
-              className="footer-social-icons"
-            />
+            <a
+              href="https://discord.com/channels/1320564661959131186/1320571842343469137"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="Discord"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@HyperFlowAI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mirinae-team-751482226/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="LinkedIn"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </footer>
 
-      {/* Language Selector - 언어 선택기 */}
+      {/* Language Selector / 언어 선택기 */}
       <LanguageSelector />
     </div>
   )

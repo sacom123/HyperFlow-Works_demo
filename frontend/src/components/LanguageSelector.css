@@ -28,13 +28,13 @@
 
 .language-button .anticon {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 11.7px;
 }
 
 .language-code {
   color: #ffffff;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 8.7px;
   letter-spacing: 0.5px;
 }
 
@@ -57,47 +57,34 @@
 }
 
 .language-native {
-  font-size: 14px;
+  font-size: 10.2px;
   color: #333;
   margin-bottom: 2px;
 }
 
 .language-name {
-  font-size: 12px;
+  font-size: 8.7px;
   color: #666;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .language-item.active .language-native,
 .language-item.active .language-name {
   color: #0958d9;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
-/* 드롭다운 메뉴 최대 높이 및 스크롤 */
-.language-dropdown-menu .ant-dropdown-menu {
-  max-height: 400px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.language-dropdown-menu .ant-dropdown-menu::-webkit-scrollbar {
-  width: 6px;
-}
-
-.language-dropdown-menu .ant-dropdown-menu::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.language-dropdown-menu .ant-dropdown-menu::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
-}
-
-.language-dropdown-menu .ant-dropdown-menu::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* 모바일 반응형 */
+/* 드롭다운 메뉴 최대 높이 및 스크롤 * / .language / * 모바일 반응형 */
 @media (max-width: 767px) {
   .language-selector {
     bottom: 16px;
@@ -109,7 +96,7 @@
   }
 
   .language-code {
-    font-size: 11px;
+    font-size: 8.0px;
   }
 }
 

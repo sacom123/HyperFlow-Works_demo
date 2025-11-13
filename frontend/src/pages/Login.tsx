@@ -9,10 +9,7 @@ import './Login.css'
 
 const { Title } = Typography
 
-/**
- * 반응형 값 계산 함수
- * Calculate responsive value based on device type
- */
+// Calculate responsive value based on device type / 반응형 값 계산 함수
 const getResponsiveValue = <T,>(
   mobile: T,
   tablet: T,
@@ -24,7 +21,7 @@ const getResponsiveValue = <T,>(
   if (isMobile) return mobile
   if (isTablet) return tablet
   if (isDesktop) return desktop
-  return desktop // 기본값 (Desktop)
+  return desktop // Default value (Desktop) / 기본값 (Desktop)
 }
 
 const Login = () => {
@@ -34,13 +31,10 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   
-  /**
-   * 반응형 브레이크포인트 설정
-   * Responsive breakpoint settings
-   */
-  const isMobile = useMediaQuery({ maxWidth: 767 }) // 모바일: 767px 이하
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 }) // 태블릿: 768px ~ 1024px
-  const isDesktop = useMediaQuery({ minWidth: 1025 }) // 데스크톱: 1025px 이상
+  // Responsive breakpoint settings / 반응형 브레이크포인트 설정
+  const isMobile = useMediaQuery({ maxWidth: 767 }) // Mobile: 767px and below / 모바일: 767px 이하
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 }) // Tablet: 768px ~ 1024px / 태블릿: 768px ~ 1024px
+  const isDesktop = useMediaQuery({ minWidth: 1025 }) // Desktop: 1025px and above / 데스크톱: 1025px 이상
 
   const handleLogin = async () => {
     if (!id || !password) {

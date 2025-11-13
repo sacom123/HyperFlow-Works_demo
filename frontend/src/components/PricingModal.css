@@ -4,10 +4,22 @@
   padding: 0;
   overflow: hidden;
   box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-modal .ant-modal-body {
   padding: 0;
+  overflow-y: auto;
+  max-height: calc(90vh - 40px);
+  flex: 1;
 }
 
 .pricing-modal .ant-modal-mask {
@@ -20,6 +32,14 @@
   padding: 60px 40px 40px;
   background: #1f1d2b;
   color: #ececec;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .pricing-modal-close {
@@ -28,7 +48,7 @@
   right: 20px;
   z-index: 10;
   color: #ececec;
-  font-size: 24px;
+  font-size: 17.5px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -51,17 +71,29 @@
 .pricing-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 35.0px;
   color: #ececec !important;
   margin-bottom: 16px !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .pricing-description {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 13.1px;
   color: rgba(236, 236, 236, 0.9) !important;
   margin-bottom: 0 !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .pricing-cards {
@@ -74,7 +106,13 @@
   border-radius: 10px;
   padding: 32px;
   height: 100%;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
   transition: all 0.3s;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .pricing-card:hover {
@@ -101,15 +139,21 @@
 .pricing-card-name {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 17.5px;
   color: #ececec !important;
   margin-bottom: 8px !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .pricing-card-price {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 23.3px;
   color: #ececec !important;
   margin-bottom: 0 !important;
 }
@@ -123,6 +167,9 @@
 .pricing-card-features {
   margin-bottom: 32px;
   min-height: 200px;
+  flex: 1;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .pricing-feature-row {
@@ -134,15 +181,28 @@
 
 .pricing-feature-icon {
   color: #56b0ff;
-  font-size: 16px;
+  font-size: 11.7px;
   flex-shrink: 0;
 }
 
 .pricing-feature-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 11.7px;
   color: rgba(236, 236, 236, 0.9);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+  flex: 1;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  box-sizing: border-box;
 }
 
 .pricing-card-button {
@@ -150,8 +210,14 @@
   height: 48px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 11.7px;
   border-radius: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .pricing-card-button.ant-btn-primary {
@@ -174,42 +240,168 @@
   color: #1f1d2b;
 }
 
-/* 모달 내부 Ant Design 컴포넌트 텍스트 색상 */
-.pricing-modal .ant-typography,
-.pricing-modal .ant-card,
-.pricing-modal .ant-card-body {
-  color: #ececec !important;
+/* Responsive / 반응형 */
+@media (max-width: 1024px) {
+  .pricing-modal .ant-modal-content {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+  
+  .pricing-modal-content {
+    padding: 50px 30px 30px;
+  }
+  
+  .pricing-title {
+    font-size: 31.5px;
+  }
+  
+  .pricing-description {
+    font-size: 12.6px;
+  }
+  
+  .pricing-card {
+    padding: 28px;
+  }
+  
+  .pricing-card-name {
+    font-size: 16.2px;
+  }
+  
+  .pricing-card-price {
+    font-size: 21.0px;
+  }
 }
 
-.pricing-modal .ant-typography h1,
-.pricing-modal .ant-typography h2,
-.pricing-modal .ant-typography h3,
-.pricing-modal .ant-typography h4,
-.pricing-modal .ant-typography h5,
-.pricing-modal .ant-typography h6 {
-  color: #ececec !important;
-}
-
-.pricing-modal .ant-typography p {
-  color: rgba(236, 236, 236, 0.9) !important;
-}
-
-/* 반응형 */
 @media (max-width: 768px) {
+  .pricing-modal .ant-modal-content {
+    max-width: 95%;
+    margin: 0 auto;
+    max-height: 95vh;
+  }
+  
+  .pricing-modal .ant-modal-body {
+    max-height: calc(95vh - 20px);
+  }
+  
   .pricing-modal-content {
     padding: 40px 20px 20px;
   }
 
   .pricing-title {
-    font-size: 36px;
+    font-size: 28.0px;
+    margin-bottom: 12px !important;
   }
 
   .pricing-description {
-    font-size: 16px;
+    font-size: 11.7px;
+  }
+  
+  .pricing-header {
+    margin-bottom: 32px;
   }
 
   .pricing-card {
     padding: 24px;
+    min-height: auto;
+  }
+  
+  .pricing-card-name {
+    font-size: 15.8px;
+  }
+  
+  .pricing-card-price {
+    font-size: 19.8px;
+  }
+  
+  .pricing-card-features {
+    min-height: 180px;
+    margin-bottom: 24px;
+  }
+  
+  .pricing-feature-text {
+    font-size: 11.0px;
+  }
+  
+  .pricing-card-button {
+    height: 44px;
+    font-size: 11.0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-modal .ant-modal-content {
+    max-width: 98%;
+    margin: 0 auto;
+    max-height: 98vh;
+    border-radius: 15px;
+  }
+  
+  .pricing-modal .ant-modal-body {
+    max-height: calc(98vh - 10px);
+  }
+  
+  .pricing-modal-content {
+    padding: 35px 15px 15px;
+  }
+
+  .pricing-title {
+    font-size: 24.5px;
+    margin-bottom: 10px !important;
+  }
+
+  .pricing-description {
+    font-size: 10.5px;
+  }
+  
+  .pricing-header {
+    margin-bottom: 24px;
+  }
+  
+  .pricing-cards {
+    margin-top: 24px;
+  }
+
+  .pricing-card {
+    padding: 20px;
+  }
+  
+  .pricing-card-name {
+    font-size: 14.4px;
+  }
+  
+  .pricing-card-price {
+    font-size: 18.0px;
+  }
+  
+  .pricing-card-features {
+    min-height: 160px;
+    margin-bottom: 20px;
+  }
+  
+  .pricing-feature-row {
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+  
+  .pricing-feature-icon {
+    font-size: 10.5px;
+  }
+  
+  .pricing-feature-text {
+    font-size: 10.5px;
+  }
+  
+  .pricing-card-button {
+    height: 40px;
+    font-size: 10.5px;
+  }
+  
+  .pricing-modal-close {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    font-size: 16.2px;
   }
 }
 

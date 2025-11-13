@@ -34,7 +34,7 @@ const Dashboard = () => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [settingsModalOpen, setSettingsModalOpen] = useState(false)
 
-  // 반응형 브레이크포인트 설정 (Figma 기준: 1440x810) - 현재 사용되지 않음
+  // Responsive breakpoint settings (Figma: 1440x810) - Currently unused / 반응형 브레이크포인트 설정 (Figma 기준: 1440x810) - 현재 사용되지 않음
   // const isMobile = useMediaQuery({ maxWidth: 767 })
   // const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 })
   // const isFHD = useMediaQuery({ minWidth: 1025, maxWidth: 1920 })
@@ -103,7 +103,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-page">
-      {/* 우측 상단 Header - Premium 버튼 + 사용자 아바타 */}
+      {/* Top Header - Premium button + User avatar / 우측 상단 Header - Premium 버튼 + 사용자 아바타 */}
       <div className="dashboard-top-header">
         <button className="dashboard-premium-btn">
           <span className="dashboard-premium-text">Premium</span>
@@ -113,7 +113,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Toggle Button */}
+      {/* Mobile Menu Toggle Button / 모바일 메뉴 토글 버튼 */}
       <button 
         className="dashboard-mobile-menu-toggle"
         onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -122,7 +122,7 @@ const Dashboard = () => {
         {sidebarOpen ? <CloseOutlined /> : <MenuOutlined />}
       </button>
 
-      {/* Mobile Overlay */}
+      {/* Mobile Overlay / 모바일 오버레이 */}
       {sidebarOpen && (
         <div 
           className="dashboard-mobile-overlay"
@@ -130,11 +130,11 @@ const Dashboard = () => {
         />
       )}
 
-      {/* SideBar */}
+      {/* SideBar / 사이드바 */}
       <div className={`dashboard-sidebar ${sidebarOpen ? 'open' : ''} ${sidebarCollapsed ? 'collapsed' : ''}`}>
         <div className="dashboard-sidebar-background"></div>
         
-        {/* Header - 사이드바 내부 상단 */}
+        {/* Sidebar Header / 사이드바 내부 상단 */}
         <div className="dashboard-sidebar-header">
           <img src={headerLogo} alt="HyperFlow" className="dashboard-header-logo" />
           <div className="dashboard-header-actions">
@@ -154,12 +154,12 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* 메뉴 배경 (Active 상태) */}
+        {/* Menu background (Active state) / 메뉴 배경 (Active 상태) */}
         <div className="dashboard-menu-background"></div>
 
-        {/* Main Content Section - 메뉴와 필터를 포함 */}
+        {/* Main Content Section / 메뉴와 필터를 포함 */}
         <div className="dashboard-sidebar-main-content">
-          {/* 메뉴 */}
+          {/* Menu / 메뉴 */}
           <div className="dashboard-menu-section">
             <div className="dashboard-menu-item active" onClick={() => handleMenuClick('Hyper Chat')}>
               <img src={formIcon} alt="Form" className="dashboard-menu-icon" />
@@ -173,16 +173,16 @@ const Dashboard = () => {
               <img src={libraryIcon} alt="Library" className="dashboard-menu-icon dashboard-menu-icon-library" />
               <span>{t('dashboard.menu.library', 'Library')}</span>
             </div>
-            {/* Knowledge bases 메뉴 - Figma Frame 2087327486 */}
+            {/* Knowledge bases menu / Knowledge bases 메뉴 */}
             <div className="dashboard-menu-item dashboard-menu-item-knowledge" onClick={() => handleMenuClick('Knowledge bases')}>
               <img src={lightbulbIcon} alt="Knowledge bases" className="dashboard-menu-icon dashboard-menu-icon-lightbulb" />
               <span>{t('dashboard.menu.knowledgeBases', 'Knowledge bases')}</span>
             </div>
           </div>
 
-          {/* Knowledge Bases Section - 필터와 빈 상태 */}
+          {/* Knowledge Bases Section / 필터와 빈 상태 */}
           <div className="dashboard-knowledge-bases-section">
-            {/* 필터 */}
+            {/* Filter / 필터 */}
             <div className="dashboard-filter-section">
               <div
                 className={`dashboard-filter-tab ${selectedFilter === 'All' ? 'active' : ''}`}
@@ -198,7 +198,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/* Knowledge Bases Empty State - All 또는 Favorites 선택 시 표시 */}
+            {/* Knowledge Bases Empty State / All 또는 Favorites 선택 시 표시 */}
             {(selectedFilter === 'All' || selectedFilter === 'Favorites') && (
               <div className="dashboard-knowledge-empty-state">
                 {t('dashboard.emptyState', '사례(case)없음')}
@@ -207,12 +207,12 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Footer Section */}
+        {/* Footer Section / 푸터 섹션 */}
         <div className="dashboard-sidebar-footer">
-          {/* 구분선 */}
+          {/* Divider / 구분선 */}
           <div className="dashboard-sidebar-divider"></div>
 
-          {/* Share 배너 */}
+          {/* Share Banner / Share 배너 */}
           <div className="dashboard-share-banner">
             <div className="dashboard-share-content">
               <div className="dashboard-share-title">
@@ -225,16 +225,16 @@ const Dashboard = () => {
             <img src={chevronRightIcon} alt="Arrow" className="dashboard-share-arrow" />
           </div>
 
-          {/* Setting */}
+          {/* Setting / 설정 */}
           <button className="dashboard-setting-btn" onClick={() => setSettingsModalOpen(true)}>
             <img src={settingIcon} alt="Settings" className="dashboard-setting-icon" />
           </button>
         </div>
       </div>
 
-      {/* Main Content - Figma: x: 341.25, y: 280.5, width: 998.25 */}
+      {/* Main Content / 메인 콘텐츠 */}
       <div className={`dashboard-main-content ${sidebarCollapsed ? 'expanded' : ''}`}>
-        {/* 입력 섹션 - Figma: Frame 2087327410, column, gap: 22.5px */}
+        {/* Input Section / 입력 섹션 */}
         <div className="dashboard-input-section">
           <div className="dashboard-input-title">
             {t('dashboard.input.title', 'How may I help you today?')}
@@ -280,7 +280,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Media 버튼들 - Figma: x: 305.75, y: 208.5 (MainContent 기준) */}
+        {/* Media Buttons / Media 버튼들 */}
         <div className="dashboard-media-buttons">
           <button 
             className={`dashboard-media-btn ${selectedMedia === 'image' ? 'active' : ''}`}

@@ -45,11 +45,17 @@
 .dashboard-premium-text {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 11.0px;
   line-height: 1.3em;
   color: #1677FF;
   margin-left: 15.75px;
   margin-right: 15.75px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* 사용자 아바타 - Figma: width: 37.5px, height: 37.5px */
@@ -73,7 +79,7 @@
 .dashboard-user-initial {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 11.0px;
   line-height: 1.3em;
   color: #ffffff;
 }
@@ -95,7 +101,7 @@
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  font-size: 20px;
+  font-size: 14.6px;
   color: #000000;
   padding: 0;
 }
@@ -277,6 +283,12 @@
   height: auto;
   padding: 0;
   box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* 메뉴 섹션 - Figma: gap: 32px, padding: 0px 20px */
@@ -301,7 +313,7 @@
   transition: all 0.3s ease;
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.4290000200271606em;
   letter-spacing: 1.45%;
   color: #000000;
@@ -392,7 +404,7 @@
   border-radius: 16.5px;
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 10.5px;
+  font-size: 7.7px;
   line-height: 1.4290000370570592em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.4);
@@ -419,7 +431,7 @@
 .dashboard-knowledge-empty-state {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
@@ -473,12 +485,18 @@
   flex-direction: column;
   gap: 3px;
   width: 169px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .dashboard-share-title {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 8.7px;
   line-height: 1.4290000597635906em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.8);
@@ -486,16 +504,28 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .dashboard-share-subtitle {
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 6.6px;
   line-height: 1.429000006781684em;
   letter-spacing: 1.45%;
   color: rgba(0, 0, 0, 0.4);
   width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .dashboard-share-arrow {
@@ -534,8 +564,7 @@
   object-fit: contain;
 }
 
-/* Main Content - Figma: x: 341.25, y: 280.5, width: 998.25 */
-/* MainContent GROUP은 column 레이아웃으로 입력 섹션과 Media 버튼을 포함 */
+/* Main Content / MainContent GROUP은 column 레이아웃으로 입력 섹션과 Media 버튼을 포함 */
 .dashboard-main-content {
   position: absolute;
   left: 341.25px;
@@ -544,37 +573,30 @@
   max-width: calc(100% - 258px - 21.75px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  overflow: visible;
   gap: 22.5px;
-  transition: left 0.3s ease, width 0.3s ease, max-width 0.3s ease;
+  z-index: 1;
 }
 
 .dashboard-main-content.expanded {
-  left: 81.25px;
-  width: calc(998.25px + 198px);
+  left: 60px;
   max-width: calc(100% - 60px - 21.75px);
 }
 
 /* 입력 필드 섹션 - Figma: Frame 2087327410, column, gap: 22.5px, width: 998.25px */
-/* 위치: MainContent 내부 x: 0, y: 0 (상단) */
 .dashboard-input-section {
-  width: 998.25px;
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 22.5px;
-  align-items: stretch;
-  align-self: stretch;
+  width: 100%;
+  align-self: flex-start;
 }
 
+/* 위치: MainContent 내부 x: 0, y: 0 (상단) */
 /* 입력 제목 - Figma: align-self: flex-start */
 .dashboard-input-title {
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 23.3px;
   line-height: 1.2999999523162842em;
   letter-spacing: -2.82%;
   background: linear-gradient(
@@ -590,6 +612,12 @@
   margin: 0;
   padding: 0;
   align-self: flex-start;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .dashboard-input-container {
@@ -619,6 +647,12 @@
   align-items: center;
   padding: 0 0 0 6px;
   min-height: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .dashboard-input-field {
@@ -626,7 +660,7 @@
   outline: none;
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 11.7px;
   line-height: 1.625em;
   letter-spacing: 0.57%;
   color: rgba(0, 0, 0, 0.85);
@@ -682,7 +716,7 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 12px;
+  font-size: 8.7px;
   color: rgba(46, 47, 51, 0.88);
   padding: 0;
   flex-shrink: 0;
@@ -694,7 +728,7 @@
   border-radius: 8999.1px !important;
   font-family: 'Pretendard Variable', sans-serif;
   font-weight: 500;
-  font-size: 13.5px;
+  font-size: 9.9px;
   line-height: 1.4669999769705346em;
   letter-spacing: 0.96%;
   color: rgba(46, 47, 51, 0.88);
@@ -731,7 +765,7 @@
   justify-content: center;
   cursor: pointer;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 11.7px;
   transition: all 0.3s ease;
   padding: 0;
   flex-shrink: 0;
@@ -747,8 +781,7 @@
   cursor: not-allowed;
 }
 
-/* Media 버튼들 - Figma: x: 305.75 (입력 섹션 기준), gap: 9px */
-/* 입력 필드 섹션 아래에 위치, align-self: flex-start으로 왼쪽 정렬 */
+/* Media 버튼들 / /* 입력 필드 섹션 아래에 위치, align-self: flex-start으로 왼쪽 정렬 */
 .dashboard-media-buttons {
   display: flex;
   gap: 9px;
@@ -788,7 +821,7 @@
 }
 
 .dashboard-media-icon {
-  font-size: 21.6px;
+  font-size: 15.8px;
   color: #45474b;
   width: 21.6px;
   height: 21.6px;
@@ -806,7 +839,7 @@
 .dashboard-media-btn span {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
-  font-size: 16.8px;
+  font-size: 12.2px;
   line-height: 1.2999999205271457em;
   color: rgba(0, 0, 0, 0.8);
   transition: color 0.3s ease;
@@ -817,58 +850,29 @@
 }
 
 
-/* 반응형: react-responsive로 관리됨 */
+/* 반응형: react */
 /* 모바일 반응형 (767px 이하) */
 @media (max-width: 767px) {
-  .dashboard-mobile-menu-toggle {
-    display: flex !important;
-  }
-
-  .dashboard-top-header {
-    right: 15px;
-    top: 15px;
-    gap: 8px;
-  }
-
-  .dashboard-premium-btn {
-    width: 80px;
-    height: 32px;
-  }
-
-  .dashboard-premium-text {
-    font-size: 13px;
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-
-  .dashboard-user-avatar {
-    width: 32px;
-    height: 32px;
-  }
-
-  .dashboard-user-initial {
-    font-size: 13px;
+  .dashboard-page {
+    flex-direction: column;
   }
 
   .dashboard-sidebar {
     position: fixed;
-    left: -100%;
+    left: -258px;
     top: 0;
     height: 100vh;
-    width: 100%;
-    max-width: 100%;
     z-index: 1000;
-    transition: left 0.3s ease;
-    background: #ffffff;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
 
   .dashboard-sidebar.open {
-    left: 0;
+    transform: translateX(258px);
   }
 
+  .dashboard-mobile-menu-toggle,
   .dashboard-mobile-overlay {
-    display: block !important;
+    display: block;
   }
 
   .dashboard-main-content {
@@ -878,9 +882,14 @@
     width: 100%;
     max-width: 100%;
     padding: 80px 20px 20px;
-    margin-left: 0;
-    align-items: center;
-    gap: 22.5px;
+    gap: 20px;
+  }
+
+  .dashboard-top-header {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
   }
 
   .dashboard-input-section {
@@ -889,102 +898,7 @@
 
   .dashboard-media-buttons {
     margin-left: 0;
-    align-self: flex-start;
-  }
-
-  .dashboard-sidebar-header {
-    padding-top: 60px;
-    top: 12px;
-    left: 20px;
-    width: calc(100% - 40px);
-    justify-content: space-between;
-  }
-
-  .dashboard-sidebar.collapsed {
-    width: 0;
-    min-width: 0;
-  }
-
-  .dashboard-sidebar.collapsed .dashboard-sidebar-header {
-    display: none;
-  }
-
-  .dashboard-header-actions {
-    gap: 6px;
-  }
-
-  .dashboard-header-action-btn {
-    width: 24px;
-    height: 24px;
-  }
-
-  .dashboard-header-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .dashboard-sidebar-background {
-    width: 100%;
-    left: 0;
-  }
-
-  .dashboard-sidebar-footer {
-    width: calc(100% - 40px);
-    left: 20px;
-    top: auto;
-    bottom: 12px;
-    height: auto;
-    min-height: 85.75px;
-  }
-
-  .dashboard-setting-btn {
-    bottom: 12px;
-    margin-bottom: 0;
-  }
-  
-  .dashboard-sidebar-main-content {
-    left: 0;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-    top: 120px;
-  }
-  
-  .dashboard-menu-background {
-    left: 0;
-    width: 100%;
-  }
-  
-  .dashboard-share-banner {
-    left: 0;
-    top: 20px;
-    width: 100%;
-  }
-  
-  .dashboard-setting-btn {
-    left: 0;
-    bottom: 20px;
-    top: auto;
-  }
-
-  .dashboard-media-buttons {
-    margin-left: 0;
     flex-wrap: wrap;
-  }
-
-  .dashboard-input-title {
-    font-size: 24px;
-  }
-
-  .dashboard-input-container {
-    min-height: 100px;
-    height: auto;
-    padding: 12px;
-  }
-
-  .dashboard-send-button-wrapper {
-    width: auto;
-    min-width: 36px;
   }
 }
 
@@ -1001,7 +915,13 @@
     width: calc(998.25px * (100vw / 1440px));
     max-width: calc(100% - calc(258px * (100vw / 1440px)) - calc(21.75px * (100vw / 1440px)));
     gap: calc(22.5px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .dashboard-input-section {
     width: calc(998.25px * (100vw / 1440px));
@@ -1053,7 +973,13 @@
     top: calc(110.25px * (100vh / 810px));
     width: calc(281px * (100vw / 1440px));
     gap: calc(39px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .dashboard-sidebar-footer {
     left: calc(18.75px * (100vw / 1440px));
@@ -1082,7 +1008,13 @@
     width: calc(998.25px * (100vw / 1440px));
     max-width: calc(100% - calc(258px * (100vw / 1440px)) - calc(21.75px * (100vw / 1440px)));
     gap: calc(22.5px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .dashboard-input-section {
     width: calc(998.25px * (100vw / 1440px));
@@ -1134,7 +1066,13 @@
     top: calc(110.25px * (100vh / 810px));
     width: calc(281px * (100vw / 1440px));
     gap: calc(39px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .dashboard-sidebar-footer {
     left: calc(18.75px * (100vw / 1440px));
@@ -1151,18 +1089,7 @@
   }
 }
 
-/* FHD 이상 반응형 (1440px 이상) */
-@media (min-width: 1440px) {
-  .dashboard-input-section {
-    width: 998.25px;
-  }
-
-  .dashboard-media-buttons {
-    margin-left: 305.75px;
-  }
-}
-
-/* QHD 반응형 (1921px ~ 2560px) */
+/* FHD 이상 반응형 (1440px 이상) * / @media (min / * QHD 반응형 (1921px ~ 2560px) */
 @media (min-width: 1921px) and (max-width: 2560px) {
   .dashboard-sidebar {
     max-width: 300px;
@@ -1174,7 +1101,13 @@
     width: calc(998.25px * (100vw / 1440px));
     max-width: calc(100% - 300px - calc(21.75px * (100vw / 1440px)));
     gap: calc(22.5px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .dashboard-input-section {
     width: 1200px;
@@ -1198,7 +1131,13 @@
     width: calc(998.25px * (100vw / 1440px));
     max-width: calc(100% - 350px - calc(21.75px * (100vw / 1440px)));
     gap: calc(22.5px * (100vh / 810px));
-  }
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  overflow: hidden;
+  max-width: 100%;
+}
 
   .dashboard-input-section {
     width: 1400px;
