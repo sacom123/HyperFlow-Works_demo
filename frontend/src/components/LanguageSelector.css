@@ -10,7 +10,7 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 13px 20px;
   height: auto;
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@
 .language-code {
   color: #ffffff;
   font-weight: 600;
-  font-size: 8.7px;
+  font-size: 13px;
   letter-spacing: 0.5px;
 }
 
@@ -76,15 +76,9 @@
 .language-item.active .language-native,
 .language-item.active .language-name {
   color: #0958d9;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  word-break: keep-all;
-  overflow: hidden;
-  max-width: 100%;
 }
 
-/* 드롭다운 메뉴 최대 높이 및 스크롤 * / .language / * 모바일 반응형 */
+/* 모바일 반응형 */
 @media (max-width: 767px) {
   .language-selector {
     bottom: 16px;
@@ -92,10 +86,10 @@
   }
 
   .language-button {
-    padding: 6px 12px;
+    padding: 20px 24px;
   }
 
   .language-code {
-    font-size: 8px;
+    font-size: 20px;
   }
 }
